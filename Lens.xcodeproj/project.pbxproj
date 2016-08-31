@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9A6483021D76E18C00C5462F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6483011D76E18C00C5462F /* AppDelegate.swift */; };
+		9A6483041D76E18C00C5462F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6483031D76E18C00C5462F /* ViewController.swift */; };
+		9A6483071D76E18C00C5462F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A6483051D76E18C00C5462F /* Main.storyboard */; };
+		9A6483091D76E18C00C5462F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A6483081D76E18C00C5462F /* Assets.xcassets */; };
+		9A64830C1D76E18C00C5462F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A64830A1D76E18C00C5462F /* LaunchScreen.storyboard */; };
+		9A6483171D76E18C00C5462F /* LensTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6483161D76E18C00C5462F /* LensTests.swift */; };
+		9A6483221D76E18C00C5462F /* LensUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6483211D76E18C00C5462F /* LensUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9A6483131D76E18C00C5462F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A6482F61D76E18C00C5462F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A6482FD1D76E18C00C5462F;
+			remoteInfo = Lens;
+		};
+		9A64831E1D76E18C00C5462F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A6482F61D76E18C00C5462F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A6482FD1D76E18C00C5462F;
+			remoteInfo = Lens;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9A6482FE1D76E18C00C5462F /* Lens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lens.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A6483011D76E18C00C5462F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9A6483031D76E18C00C5462F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9A6483061D76E18C00C5462F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9A6483081D76E18C00C5462F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9A64830B1D76E18C00C5462F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9A64830D1D76E18C00C5462F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A6483121D76E18C00C5462F /* LensTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LensTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A6483161D76E18C00C5462F /* LensTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LensTests.swift; sourceTree = "<group>"; };
+		9A6483181D76E18C00C5462F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A64831D1D76E18C00C5462F /* LensUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LensUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A6483211D76E18C00C5462F /* LensUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LensUITests.swift; sourceTree = "<group>"; };
+		9A6483231D76E18C00C5462F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9A6482FB1D76E18C00C5462F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A64830F1D76E18C00C5462F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A64831A1D76E18C00C5462F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9A6482F51D76E18C00C5462F = {
+			isa = PBXGroup;
+			children = (
+				9A6483001D76E18C00C5462F /* Lens */,
+				9A6483151D76E18C00C5462F /* LensTests */,
+				9A6483201D76E18C00C5462F /* LensUITests */,
+				9A6482FF1D76E18C00C5462F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9A6482FF1D76E18C00C5462F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A6482FE1D76E18C00C5462F /* Lens.app */,
+				9A6483121D76E18C00C5462F /* LensTests.xctest */,
+				9A64831D1D76E18C00C5462F /* LensUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A6483001D76E18C00C5462F /* Lens */ = {
+			isa = PBXGroup;
+			children = (
+				9A6483011D76E18C00C5462F /* AppDelegate.swift */,
+				9A6483031D76E18C00C5462F /* ViewController.swift */,
+				9A6483051D76E18C00C5462F /* Main.storyboard */,
+				9A6483081D76E18C00C5462F /* Assets.xcassets */,
+				9A64830A1D76E18C00C5462F /* LaunchScreen.storyboard */,
+				9A64830D1D76E18C00C5462F /* Info.plist */,
+			);
+			path = Lens;
+			sourceTree = "<group>";
+		};
+		9A6483151D76E18C00C5462F /* LensTests */ = {
+			isa = PBXGroup;
+			children = (
+				9A6483161D76E18C00C5462F /* LensTests.swift */,
+				9A6483181D76E18C00C5462F /* Info.plist */,
+			);
+			path = LensTests;
+			sourceTree = "<group>";
+		};
+		9A6483201D76E18C00C5462F /* LensUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9A6483211D76E18C00C5462F /* LensUITests.swift */,
+				9A6483231D76E18C00C5462F /* Info.plist */,
+			);
+			path = LensUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9A6482FD1D76E18C00C5462F /* Lens */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A6483261D76E18C00C5462F /* Build configuration list for PBXNativeTarget "Lens" */;
+			buildPhases = (
+				9A6482FA1D76E18C00C5462F /* Sources */,
+				9A6482FB1D76E18C00C5462F /* Frameworks */,
+				9A6482FC1D76E18C00C5462F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Lens;
+			productName = Lens;
+			productReference = 9A6482FE1D76E18C00C5462F /* Lens.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9A6483111D76E18C00C5462F /* LensTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A6483291D76E18C00C5462F /* Build configuration list for PBXNativeTarget "LensTests" */;
+			buildPhases = (
+				9A64830E1D76E18C00C5462F /* Sources */,
+				9A64830F1D76E18C00C5462F /* Frameworks */,
+				9A6483101D76E18C00C5462F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A6483141D76E18C00C5462F /* PBXTargetDependency */,
+			);
+			name = LensTests;
+			productName = LensTests;
+			productReference = 9A6483121D76E18C00C5462F /* LensTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9A64831C1D76E18C00C5462F /* LensUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A64832C1D76E18C00C5462F /* Build configuration list for PBXNativeTarget "LensUITests" */;
+			buildPhases = (
+				9A6483191D76E18C00C5462F /* Sources */,
+				9A64831A1D76E18C00C5462F /* Frameworks */,
+				9A64831B1D76E18C00C5462F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A64831F1D76E18C00C5462F /* PBXTargetDependency */,
+			);
+			name = LensUITests;
+			productName = LensUITests;
+			productReference = 9A64831D1D76E18C00C5462F /* LensUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9A6482F61D76E18C00C5462F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Mac;
+				TargetAttributes = {
+					9A6482FD1D76E18C00C5462F = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					9A6483111D76E18C00C5462F = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 9A6482FD1D76E18C00C5462F;
+					};
+					9A64831C1D76E18C00C5462F = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 9A6482FD1D76E18C00C5462F;
+					};
+				};
+			};
+			buildConfigurationList = 9A6482F91D76E18C00C5462F /* Build configuration list for PBXProject "Lens" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9A6482F51D76E18C00C5462F;
+			productRefGroup = 9A6482FF1D76E18C00C5462F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9A6482FD1D76E18C00C5462F /* Lens */,
+				9A6483111D76E18C00C5462F /* LensTests */,
+				9A64831C1D76E18C00C5462F /* LensUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9A6482FC1D76E18C00C5462F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A64830C1D76E18C00C5462F /* LaunchScreen.storyboard in Resources */,
+				9A6483091D76E18C00C5462F /* Assets.xcassets in Resources */,
+				9A6483071D76E18C00C5462F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A6483101D76E18C00C5462F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A64831B1D76E18C00C5462F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9A6482FA1D76E18C00C5462F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A6483041D76E18C00C5462F /* ViewController.swift in Sources */,
+				9A6483021D76E18C00C5462F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A64830E1D76E18C00C5462F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A6483171D76E18C00C5462F /* LensTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A6483191D76E18C00C5462F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A6483221D76E18C00C5462F /* LensUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9A6483141D76E18C00C5462F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A6482FD1D76E18C00C5462F /* Lens */;
+			targetProxy = 9A6483131D76E18C00C5462F /* PBXContainerItemProxy */;
+		};
+		9A64831F1D76E18C00C5462F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A6482FD1D76E18C00C5462F /* Lens */;
+			targetProxy = 9A64831E1D76E18C00C5462F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9A6483051D76E18C00C5462F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A6483061D76E18C00C5462F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9A64830A1D76E18C00C5462F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9A64830B1D76E18C00C5462F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9A6483241D76E18C00C5462F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9A6483251D76E18C00C5462F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9A6483271D76E18C00C5462F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Lens/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mozy.Lens;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9A6483281D76E18C00C5462F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Lens/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mozy.Lens;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9A64832A1D76E18C00C5462F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LensTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mozy.LensTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lens.app/Lens";
+			};
+			name = Debug;
+		};
+		9A64832B1D76E18C00C5462F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LensTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mozy.LensTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lens.app/Lens";
+			};
+			name = Release;
+		};
+		9A64832D1D76E18C00C5462F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = LensUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mozy.LensUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Lens;
+			};
+			name = Debug;
+		};
+		9A64832E1D76E18C00C5462F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = LensUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mozy.LensUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Lens;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9A6482F91D76E18C00C5462F /* Build configuration list for PBXProject "Lens" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A6483241D76E18C00C5462F /* Debug */,
+				9A6483251D76E18C00C5462F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A6483261D76E18C00C5462F /* Build configuration list for PBXNativeTarget "Lens" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A6483271D76E18C00C5462F /* Debug */,
+				9A6483281D76E18C00C5462F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9A6483291D76E18C00C5462F /* Build configuration list for PBXNativeTarget "LensTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A64832A1D76E18C00C5462F /* Debug */,
+				9A64832B1D76E18C00C5462F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9A64832C1D76E18C00C5462F /* Build configuration list for PBXNativeTarget "LensUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A64832D1D76E18C00C5462F /* Debug */,
+				9A64832E1D76E18C00C5462F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9A6482F61D76E18C00C5462F /* Project object */;
+}
