@@ -10,6 +10,7 @@ import Foundation
 import RealmSwift
 
 class HelperPask{
+    var arrayDates: [NSDate] = []
     static func addToDataBase(obj: Pask) {
         try! Realm().write() {
             try! Realm().add(obj)
@@ -45,14 +46,48 @@ class HelperPask{
             try! Realm().add(obj, update: true)
         }
     }
-//    static func dateOfBuy(arrayOfPasks: Results<Pask>) -> NSDate {
-//    
-//        
-//    }
+    func arrayOfDates(arrayOfPasks: Results<Pask>) -> [NSDate] {
+        var array: [NSDate] = []
+        for pask in arrayOfPasks {
+           let last = self.arrayDates.last
+           let numberOfLenses = pask.numberOfLens
+           let days = pask.lenses[0].termOfUsing
+           let buy = arrayDates.count > 1 ? last : pask.dateBuy
+           array = self.datesForOnePask(numberOfLenses, numberOfDeys: days, dateOfBuy: buy!)
+        }
+        return array
+    }
+    
+    func datesForOnePask(numberOfLenses: Int, numberOfDeys: Int, dateOfBuy: NSDate) -> [NSDate] {
+        if arrayDates.count == 0 {
+            self.arrayDates.append(dateOfBuy)
+        }
+        if numberOfLenses % 2 == 0 {
+            if numberOfLenses > 0 {
+                let newNumberOfDay = numberOfDeys
+                let dateFormatter = NSDateFormatter()
+                dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
+                let gmtTimeZone = NSTimeZone(abbreviation: "GMT")
+                dateFormatter.timeZone = gmtTimeZone
+                dateFormatter.dateFormat = "dd-MM-YYYY"
+                var date = NSDate()
+                let calendar = NSCalendar.currentCalendar()
+                let dayAfterComponent = NSDateComponents()
+                dayAfterComponent.day = numberOfDeys
+                date = calendar.dateByAddingComponents(dayAfterComponent, toDate: date, options: NSCalendarOptions.MatchFirst)!
+                self.arrayDates.append(date)
+                let newNumberOfLenses = numberOfLenses - 2
+                print("\(newNumberOfLenses)")
+                datesForOnePask(newNumberOfLenses, numberOfDeys: newNumberOfDay, dateOfBuy: date)
+            }
+        }
+        return arrayDates
+    }
+    
     static func validation(obj: Pask, minDatePicker: NSDate) -> Bool{
         let now = NSDate()
         if obj.dateBuy == minDatePicker || obj.name == "" || obj.numberOfLens == 0 || obj.lenses[0].termOfUsing == 0 || obj.lenses[0].opticalPower == 0 || now.compare(obj.dateBuy) == NSComparisonResult.OrderedAscending {
-        return false
+            return false
         }
         return true
     }

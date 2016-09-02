@@ -11,6 +11,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBAction func buttonClick(sender: AnyObject) {
+       let pasks = HelperPask.getAllPask()
+       let arrayDates = HelperPask().arrayOfDates(pasks)
+        print("\(arrayDates)")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
