@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Sbq-e8-cuc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Sbq-e8-cuc">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -34,14 +34,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msw-u0-Ke8">
-                                <rect key="frame" x="225" y="137" width="46" height="30"/>
+                                <rect key="frame" x="492" y="493" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="buttonClick:" destination="9dL-4u-KmX" eventType="touchUpInside" id="MfN-ic-EVl"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VAm-SK-vOM" customClass="JTAppleCalendarView" customModule="JTAppleCalendar">
+                                <rect key="frame" x="0.0" y="64" width="600" height="373"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="373" id="dhl-PL-0rw"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VAm-SK-vOM" firstAttribute="leading" secondItem="MJZ-8W-yLi" secondAttribute="leading" id="J1q-9k-iLp"/>
+                            <constraint firstItem="VAm-SK-vOM" firstAttribute="top" secondItem="dRS-R3-ZcC" secondAttribute="bottom" id="K1w-uq-0Ta"/>
+                            <constraint firstAttribute="trailing" secondItem="VAm-SK-vOM" secondAttribute="trailing" id="hqL-0w-y5M"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qM7-yz-DW8">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="du0-a3-wop">
@@ -50,6 +61,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="calendarView" destination="VAm-SK-vOM" id="2wh-Kn-rKi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GA8-en-YsY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

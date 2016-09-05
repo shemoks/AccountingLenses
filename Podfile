@@ -4,4 +4,5 @@
 use_frameworks!
 target 'Lens' do
  pod 'RealmSwift', '~> 1.0.2'
+ pod 'JTAppleCalendar'
 end

@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>JTAppleCalendar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Lens.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>B8C287714AEF3F800289E5BECE0C8CDD</key>
+		<key>05D2E5626FD9568BB54C3CD67D4753DF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C35A3B118FEA75C8E132CD1DC867693D</key>
+		<key>0EEA6FAED572CE68A67134FE4CE8FD98</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E81633D2F0124252EAE66EF7C0DA1D13</key>
+		<key>2E2ED75B03CF4A2D0719664A48C0B27E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>76F6A8223C4899392629C53FAF6DE6C9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

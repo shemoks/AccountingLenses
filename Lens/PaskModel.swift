@@ -12,7 +12,7 @@ import RealmSwift
 class Pask: Object {
     dynamic var number: Int = 0
     dynamic var name: String = ""
-    dynamic var dateBuy = NSDate(timeIntervalSince1970: 1)
+    dynamic var dateBuy = NSDate()
     dynamic var numberOfLens: Int = 0
     var lenses = List<Lens>()
     override static func primaryKey() -> String? {

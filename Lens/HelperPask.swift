@@ -48,11 +48,13 @@ class HelperPask{
     }
     func arrayOfDates(arrayOfPasks: Results<Pask>) -> [NSDate] {
         var array: [NSDate] = []
+        
         for pask in arrayOfPasks {
            let last = self.arrayDates.last
            let numberOfLenses = pask.numberOfLens
            let days = pask.lenses[0].termOfUsing
-           let buy = arrayDates.count > 1 ? last : pask.dateBuy
+           let dayBuy = pask.dateBuy
+           let buy = arrayDates.count > 1 ? last : dayBuy
            array = self.datesForOnePask(numberOfLenses, numberOfDeys: days, dateOfBuy: buy!)
         }
         return array
@@ -62,24 +64,21 @@ class HelperPask{
         if arrayDates.count == 0 {
             self.arrayDates.append(dateOfBuy)
         }
-        if numberOfLenses % 2 == 0 {
-            if numberOfLenses > 0 {
+                if numberOfLenses > 1 {
                 let newNumberOfDay = numberOfDeys
-                let dateFormatter = NSDateFormatter()
-                dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
-                let gmtTimeZone = NSTimeZone(abbreviation: "GMT")
-                dateFormatter.timeZone = gmtTimeZone
-                dateFormatter.dateFormat = "dd-MM-YYYY"
-                var date = NSDate()
-                let calendar = NSCalendar.currentCalendar()
-                let dayAfterComponent = NSDateComponents()
-                dayAfterComponent.day = numberOfDeys
-                date = calendar.dateByAddingComponents(dayAfterComponent, toDate: date, options: NSCalendarOptions.MatchFirst)!
-                self.arrayDates.append(date)
+                let date = dateOfBuy
+                let dayCalendarUnit: NSCalendarUnit = [.Day]
+                let tomorrow = NSCalendar.currentCalendar()
+                    .dateByAddingUnit(
+                        dayCalendarUnit,
+                        value: numberOfDeys,
+                        toDate: date,
+                        options: []
+                )
+                self.arrayDates.append(tomorrow!)
                 let newNumberOfLenses = numberOfLenses - 2
-                print("\(newNumberOfLenses)")
-                datesForOnePask(newNumberOfLenses, numberOfDeys: newNumberOfDay, dateOfBuy: date)
-            }
+                datesForOnePask(newNumberOfLenses, numberOfDeys: newNumberOfDay, dateOfBuy: tomorrow!)
+
         }
         return arrayDates
     }

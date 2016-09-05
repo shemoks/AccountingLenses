@@ -25,7 +25,7 @@ enum Term: Int {
 }
 
 class Lens: Object {
-    var termOfUsing: Int = 0
+    dynamic var termOfUsing: Int = 0
     dynamic var opticalPower: Double = 0.0
-    dynamic var owner: Pask?
+    var number: Pask?
 }
