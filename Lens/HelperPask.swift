@@ -46,6 +46,7 @@ class HelperPask{
             try! Realm().add(obj, update: true)
         }
     }
+    
     func arrayOfDates(arrayOfPasks: Results<Pask>) -> [NSDate] {
         var array: [NSDate] = []
         
