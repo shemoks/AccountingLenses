@@ -11,6 +11,7 @@ import RealmSwift
 
 class HelperPask{
     var arrayDates: [NSDate] = []
+    
     static func addToDataBase(obj: Pask) {
         try! Realm().write() {
             try! Realm().add(obj)
@@ -51,12 +52,12 @@ class HelperPask{
         var array: [NSDate] = []
         
         for pask in arrayOfPasks {
-           let last = self.arrayDates.last
-           let numberOfLenses = pask.numberOfLens
-           let days = pask.lenses[0].termOfUsing
-           let dayBuy = pask.dateBuy
-           let buy = arrayDates.count > 1 ? last : dayBuy
-           array = self.datesForOnePask(numberOfLenses, numberOfDeys: days, dateOfBuy: buy!)
+            let last = self.arrayDates.last
+            let numberOfLenses = pask.numberOfLens
+            let days = pask.lenses[0].termOfUsing
+            let dayBuy = pask.dateBuy
+            let buy = arrayDates.count > 1 ? last : dayBuy
+            array = self.datesForOnePask(numberOfLenses, numberOfDeys: days, dateOfBuy: buy!)
         }
         return array
     }
@@ -65,23 +66,43 @@ class HelperPask{
         if arrayDates.count == 0 {
             self.arrayDates.append(dateOfBuy)
         }
-                if numberOfLenses > 1 {
-                let newNumberOfDay = numberOfDeys
-                let date = dateOfBuy
+        if numberOfLenses > 1 {
+            let newNumberOfDay = numberOfDeys
+            let date = dateOfBuy
+            let dayCalendarUnit: NSCalendarUnit = [.Day]
+            let tomorrow = NSCalendar.currentCalendar()
+                .dateByAddingUnit(
+                    dayCalendarUnit,
+                    value: numberOfDeys,
+                    toDate: date,
+                    options: []
+            )
+            self.arrayDates.append(tomorrow!)
+            let newNumberOfLenses = numberOfLenses - 2
+            datesForOnePask(newNumberOfLenses, numberOfDeys: newNumberOfDay, dateOfBuy: tomorrow!)
+            
+        }
+        return arrayDates
+    }
+    
+    func addValueToDate(value: Int, pasks: Results<Pask>) {
+        if !pasks.isEmpty {
+            try! Realm().write() {
+            for pask in pasks {
+                let day = pask.dateBuy
                 let dayCalendarUnit: NSCalendarUnit = [.Day]
                 let tomorrow = NSCalendar.currentCalendar()
                     .dateByAddingUnit(
                         dayCalendarUnit,
-                        value: numberOfDeys,
-                        toDate: date,
+                        value: value,
+                        toDate: day,
                         options: []
                 )
-                self.arrayDates.append(tomorrow!)
-                let newNumberOfLenses = numberOfLenses - 2
-                datesForOnePask(newNumberOfLenses, numberOfDeys: newNumberOfDay, dateOfBuy: tomorrow!)
-
+                pask.dateBuy = tomorrow!
+                try! Realm().add(pask, update: true)
+                }
+            }
         }
-        return arrayDates
     }
     
     static func validation(obj: Pask, minDatePicker: NSDate) -> Bool{

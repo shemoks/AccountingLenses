@@ -5,11 +5,28 @@ import RealmSwift
 class ViewController: UIViewController {
     
     
+    @IBOutlet weak var appleLabel: UILabel!
+    
     @IBOutlet weak var menuView: CVCalendarMenuView!
+    
+    @IBAction func okClick(sender: AnyObject) {
+        addValue {
+            self.getArrayOfDates { object in
+                self.menuView.commitMenuViewUpdate()
+                self.calendarView.commitCalendarViewUpdate()
+            }
+        }
+    }
     
     @IBOutlet weak var daysOutSwitch: UISwitch!
     
+    @IBOutlet weak var sliderValue: UISlider!
+    @IBOutlet weak var sliderLabel: UILabel!
     @IBOutlet weak var calendarView: CVCalendarView!
+    @IBAction func slider(sender: AnyObject) {
+        let value = Int(sliderValue.value)
+        sliderLabel.text = "‹  " + String(value) + "  ›"
+    }
     var arrayOfPasks: Results<Pask>!
     var arrayOfDates: [NSDate] = []
     var last = 0
@@ -32,10 +49,33 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         monthLabel.text = CVDate(date: NSDate()).globalDescription
+        getArrayOfDates { object in
+            var endPeriod = true
+            if !object.isEmpty {
+                let lastDate = object.last
+                let calendar = NSCalendar.currentCalendar()
+                var components = calendar.components([.Day , .Month , .Year], fromDate: lastDate!)
+                let year =  components.year
+                let month = components.month
+                let day = components.day
+                components = calendar.components([.Day , .Month , .Year], fromDate: NSDate())
+                let yearNow =  components.year
+                let monthNow = components.month
+                let dayNow = components.day
+                if dayNow + 10 >= day && yearNow == year && monthNow == month {
+                    endPeriod = false
+                }
+            }
+            if endPeriod {
+                self.appleLabel.text = ""
+            } else {
+                self.appleLabel.text = ""
+            }
+        }
         
     }
     override func viewWillAppear(animated: Bool) {
-        //      self.calendarView.reloadInputViews()
+        
         
     }
     func getArray(obj: (Results<Pask>) -> ()){
@@ -54,9 +94,34 @@ class ViewController: UIViewController {
         })
         
     }
+    func addValue(object: () -> ()) {
+        HelperPask().addValueToDate(Int(sliderValue.value), pasks: self.arrayOfPasks)
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         getArrayOfDates { object in
+            var endPeriod = false
+            if !object.isEmpty {
+                let lastDate = object.last
+                let calendar = NSCalendar.currentCalendar()
+                var components = calendar.components([.Day , .Month , .Year], fromDate: lastDate!)
+                let year =  components.year
+                let month = components.month
+                let day = components.day
+                components = calendar.components([.Day , .Month , .Year], fromDate: NSDate())
+                let yearNow =  components.year
+                let monthNow = components.month
+                let dayNow = components.day
+                if dayNow + 10 >= day && yearNow == year && monthNow == month {
+                    endPeriod = true
+                }
+            }
+            if endPeriod {
+                self.appleLabel.text = ""
+            } else {
+                self.appleLabel.text = ""
+            }
             self.menuView.commitMenuViewUpdate()
             self.calendarView.commitCalendarViewUpdate()
         }
@@ -254,18 +319,24 @@ extension ViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
         var k = 0
         for obj in arrayOfDates {
             k += 1
-            let calendar = NSCalendar.currentCalendar()
-            let components = calendar.components([.Day , .Month , .Year], fromDate: obj)
-            let year =  components.year
-            let month = components.month
-            let day = components.day
-            if k == arrayOfDates.count {
-                last = 1
+            if k>1 {
+                let calendar = NSCalendar.currentCalendar()
+                var components = calendar.components([.Day , .Month , .Year], fromDate: obj)
+                let year =  components.year
+                let month = components.month
+                let day = components.day
+                components = calendar.components([.Day , .Month , .Year], fromDate: NSDate())
+                let yearNow =  components.year
+                let monthNow = components.month
+                let dayNow = components.day
+                if k == arrayOfDates.count {
+                    last = 1
+                }
+                if (day >= dayNow || year > yearNow || month > monthNow) && dayView.date != nil && day == dayView.date.day && month == dayView.date.month && year == dayView.date.year {
+                    return true
+                }
+                
             }
-            if dayView.date != nil && day == dayView.date.day && month == dayView.date.month && year == dayView.date.year {
-                return true
-            }
-            
         }
         return false
     }
