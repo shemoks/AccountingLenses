@@ -12,7 +12,7 @@ import RealmSwift
 class PaskController: UIViewController {
     var lastSelectedIndexPath: NSIndexPath? = nil
     var periodForBase: Int = 0
-  
+    
     @IBOutlet weak var numbersEdit: UITextField!
     @IBOutlet weak var opticalEdit: UITextField!
     @IBOutlet weak var nameEdit: UITextField!
@@ -20,12 +20,12 @@ class PaskController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBAction func datePicker(sender: AnyObject) {
-    let dateFormatter = NSDateFormatter()
-    dateFormatter.dateFormat = "dd-MM-yyyy"
-    let strDate = dateFormatter.stringFromDate(datePicker.date)
-    dateEdit.text = String(strDate)
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        let strDate = dateFormatter.stringFromDate(datePicker.date)
+        dateEdit.text = String(strDate)
     }
-
+    
     @IBAction func saveClick(sender: AnyObject) {
         let minDate = self.datePicker.minimumDate
         let pask = Pask()
@@ -34,18 +34,29 @@ class PaskController: UIViewController {
         if let optical = Double(opticalEdit.text!) {
             lens.opticalPower = optical
         }
-        lens.termOfUsing = self.periodForBase
+        let period = self.periodForBase
+        lens.termOfUsing = period
         if let name = self.nameEdit.text {
             pask.name = name
         }
         let expression = NSDateFormatter()
         expression.dateFormat = "dd-MM-yyyy"
         if let dateBuy = expression.dateFromString(self.dateEdit.text!) {
-            pask.dateBuy = dateBuy
+            if let numbers = Int(numbersEdit.text!) {
+                pask.numberOfLens = numbers
+                pask.dateBuy = dateBuy
+                let dayCalendarUnit: NSCalendarUnit = [.Day]
+                let tomorrow = NSCalendar.currentCalendar()
+                    .dateByAddingUnit(
+                        dayCalendarUnit,
+                        value: period * Int(numbers/2),
+                        toDate: dateBuy,
+                        options: []
+                )
+                pask.dateFinish = tomorrow!
+            }
         }
-        if let numbers = Int(numbersEdit.text!) {
-            pask.numberOfLens = numbers
-        }
+        
         pask.number = HelperPask.getNumberPask()
         arrayLens.append(lens)
         pask.lenses = arrayLens
@@ -58,7 +69,7 @@ class PaskController: UIViewController {
             }
             alertController.addAction(okButton)
             self.presentViewController(alertController, animated: true, completion: nil)
-
+            
         }
     }
     

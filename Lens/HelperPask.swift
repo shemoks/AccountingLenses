@@ -23,11 +23,35 @@ class HelperPask{
         }()
         return objs
     }
-    static func removePasc(obj: Pask) {
+    
+    static func removePasc() ->  Results<Pask> {
+        let objs: Results<Pask> = {
+            try! Realm().objects(Pask).filter("isActive = true")
+        }()
         try! Realm().write() {
-            try! Realm().delete(obj)
+            for obj in objs {
+                let calendar = NSCalendar.currentCalendar()
+                var components = calendar.components([.Day , .Month , .Year], fromDate: obj.dateFinish)
+                let year =  components.year
+                let month = components.month
+                let day = components.day
+                components = calendar.components([.Day , .Month , .Year], fromDate: NSDate())
+                let yearNow =  components.year
+                let monthNow = components.month
+                let dayNow = components.day
+                if year == yearNow && day < dayNow && month == monthNow {
+                    obj.isActive = false
+                    try! Realm().add(obj, update: true)
+                    
+                }
+            }
         }
+        let obj: Results<Pask> = {
+            try! Realm().objects(Pask).filter("isActive = true")
+        }()
+        return obj
     }
+    
     static func getNumberPask() -> Int{
         let realm = try! Realm()
         let RetNext: NSArray = Array(realm.objects(Pask).sorted("number"))
@@ -39,14 +63,14 @@ class HelperPask{
             return 1
         }
     }
-    static func removeLens(obj: Pask){
-        var numberOfLens = obj.numberOfLens
-        numberOfLens -= 1
-        obj.numberOfLens = numberOfLens
-        try! Realm().write() {
-            try! Realm().add(obj, update: true)
-        }
-    }
+    //    static func removeLens(obj: Pask){
+    //        var numberOfLens = obj.numberOfLens
+    //        numberOfLens -= 1
+    //        obj.numberOfLens = numberOfLens
+    //        try! Realm().write() {
+    //            try! Realm().add(obj, update: true)
+    //        }
+    //    }
     
     func arrayOfDates(arrayOfPasks: Results<Pask>) -> [NSDate] {
         var array: [NSDate] = []
@@ -88,18 +112,18 @@ class HelperPask{
     func addValueToDate(value: Int, pasks: Results<Pask>) {
         if !pasks.isEmpty {
             try! Realm().write() {
-            for pask in pasks {
-                let day = pask.dateBuy
-                let dayCalendarUnit: NSCalendarUnit = [.Day]
-                let tomorrow = NSCalendar.currentCalendar()
-                    .dateByAddingUnit(
-                        dayCalendarUnit,
-                        value: value,
-                        toDate: day,
-                        options: []
-                )
-                pask.dateBuy = tomorrow!
-                try! Realm().add(pask, update: true)
+                for pask in pasks {
+                    let day = pask.dateBuy
+                    let dayCalendarUnit: NSCalendarUnit = [.Day]
+                    let tomorrow = NSCalendar.currentCalendar()
+                        .dateByAddingUnit(
+                            dayCalendarUnit,
+                            value: value,
+                            toDate: day,
+                            options: []
+                    )
+                    pask.dateBuy = tomorrow!
+                    try! Realm().add(pask, update: true)
                 }
             }
         }

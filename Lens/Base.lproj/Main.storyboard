@@ -21,7 +21,7 @@
             </objects>
             <point key="canvasLocation" x="-459" y="439"/>
         </scene>
-        <!--Calendar Appearance Delegate-->
+        <!--Animator Delegate-->
         <scene sceneID="QXs-dq-Y5y">
             <objects>
                 <viewController id="9dL-4u-KmX" customClass="ViewController" customModule="Lens" customModuleProvider="target" sceneMemberID="viewController">
@@ -40,7 +40,7 @@
                                     <constraint firstAttribute="height" constant="50" id="xcy-gh-fyJ"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="menuViewDelegate" destination="9dL-4u-KmX" id="uvV-fo-DgR"/>
+                                    <outlet property="menuViewDelegate" destination="9dL-4u-KmX" id="EQC-nq-3NS"/>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Uo-S2-gbG" customClass="CVCalendarView" customModule="CVCalendar">
@@ -49,8 +49,9 @@
                                     <constraint firstAttribute="height" constant="297" id="yjL-ti-aL6"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="calendarAppearanceDelegate" destination="9dL-4u-KmX" id="E5e-tq-SkB"/>
-                                    <outlet property="calendarDelegate" destination="9dL-4u-KmX" id="RpW-1h-kzM"/>
+                                    <outlet property="animatorDelegate" destination="9dL-4u-KmX" id="2LN-ge-RNQ"/>
+                                    <outlet property="calendarAppearanceDelegate" destination="9dL-4u-KmX" id="Yh1-Ti-aCz"/>
+                                    <outlet property="calendarDelegate" destination="9dL-4u-KmX" id="gNs-NB-vtk"/>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1uX-u8-0iy">
@@ -169,7 +170,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="appleLabel" destination="Ux7-cU-Rgl" id="Pfr-dS-G7j"/>
-                        <outlet property="calendarView" destination="7Uo-S2-gbG" id="dW8-qx-Okd"/>
+                        <outlet property="calendarView" destination="7Uo-S2-gbG" id="eJM-cF-lXc"/>
                         <outlet property="menuView" destination="waD-WP-moM" id="lkj-1g-2SB"/>
                         <outlet property="monthLabel" destination="rVT-b1-Lvh" id="eKl-Ta-XZn"/>
                         <outlet property="sliderLabel" destination="kDV-2m-6q2" id="deQ-qC-FsC"/>
@@ -271,7 +272,7 @@
                                         </constraints>
                                     </tableView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.90980392156862744" green="0.92156862745098034" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="XRw-WR-40M" firstAttribute="centerX" secondItem="j1S-Ns-K3P" secondAttribute="centerX" id="8DX-Ss-iaz"/>
                                     <constraint firstItem="HgP-hn-gzd" firstAttribute="top" secondItem="j1S-Ns-K3P" secondAttribute="top" constant="15" id="E6q-y0-E7c"/>

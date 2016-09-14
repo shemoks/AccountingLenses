@@ -2,6 +2,11 @@ import UIKit
 import CVCalendar
 import RealmSwift
 
+public struct InfoForNotification {
+   var fireDate: NSDate
+   let alertBody: String
+}
+
 class ViewController: UIViewController {
     
     
@@ -12,8 +17,7 @@ class ViewController: UIViewController {
     @IBAction func okClick(sender: AnyObject) {
         addValue {
             self.getArrayOfDates { object in
-                self.menuView.commitMenuViewUpdate()
-                self.calendarView.commitCalendarViewUpdate()
+
             }
         }
     }
@@ -30,6 +34,8 @@ class ViewController: UIViewController {
     var arrayOfPasks: Results<Pask>!
     var arrayOfDates: [NSDate] = []
     var last = 0
+   // var arrayOfFinishDates: [NSDate] = []
+    var arrayInfoNotification: [InfoForNotification] = []
     
     @IBOutlet weak var monthLabel: UILabel!
     struct Color {
@@ -48,8 +54,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert , .Badge, .Sound], categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
         monthLabel.text = CVDate(date: NSDate()).globalDescription
         getArrayOfDates { object in
+            var info = InfoForNotification(fireDate: NSDate(), alertBody: "finish pasks! You must buy a new pask!")
+            self.arrayInfoNotification = []
             var endPeriod = true
             if !object.isEmpty {
                 let lastDate = object.last
@@ -64,7 +74,12 @@ class ViewController: UIViewController {
                 let dayNow = components.day
                 if dayNow + 10 >= day && yearNow == year && monthNow == month {
                     endPeriod = false
+                    for obj in object {
+                        info.fireDate = obj
+                        self.arrayInfoNotification.append(info)
+                    }
                 }
+                self.sendNotification()
             }
             if endPeriod {
                 self.appleLabel.text = ""
@@ -75,7 +90,8 @@ class ViewController: UIViewController {
         
     }
     override func viewWillAppear(animated: Bool) {
-        
+        super.viewWillAppear(true)
+        calendarView.toggleCurrentDayView()
         
     }
     func getArray(obj: (Results<Pask>) -> ()){
@@ -84,22 +100,49 @@ class ViewController: UIViewController {
             obj(self.arrayOfPasks)
         })
     }
+    
+//    func getInfoForNotification (resultForNotification: ([NSDate]) -> ()){
+//        getArray {object in
+//            for obj in object {
+//            self.arrayOfFinishDates.append(obj.dateFinish)
+//            }
+//            dispatch_async(dispatch_get_main_queue(), {
+//                resultForNotification(self.arrayOfFinishDates)
+//            })
+//        }
+//    }
+    
     func getArrayOfDates(obj: ([NSDate]) -> ()){
         getArray {object in
-            let mass = object
-            self.arrayOfDates = HelperPask().arrayOfDates(mass)
+            if !object.isEmpty {
+                self.removeDates {objects in
+            self.arrayOfDates = HelperPask().arrayOfDates(objects)
         }
+        }
+            dispatch_async(dispatch_get_main_queue(), {
+                obj(self.arrayOfDates)
+            })
+        }
+    }
+    func removeDates(obj: (Results<Pask>) -> ()){
+        arrayOfPasks = HelperPask.removePasc()
         dispatch_async(dispatch_get_main_queue(), {
-            obj(self.arrayOfDates)
+            obj(self.arrayOfPasks)
         })
-        
     }
     func addValue(object: () -> ()) {
         HelperPask().addValueToDate(Int(sliderValue.value), pasks: self.arrayOfPasks)
     }
     
+
+    
+    func sendNotification() {
+       let info = self.arrayInfoNotification
+       Notification(atributiesOfNotifications: info).getNotification()
+    }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
         getArrayOfDates { object in
             var endPeriod = false
             if !object.isEmpty {
@@ -122,6 +165,8 @@ class ViewController: UIViewController {
             } else {
                 self.appleLabel.text = ""
             }
+            
+            self.calendarView.contentController.refreshPresentedMonth()
             self.menuView.commitMenuViewUpdate()
             self.calendarView.commitCalendarViewUpdate()
         }
@@ -160,10 +205,10 @@ extension ViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
     //        return arc4random_uniform(33) == 0 ? true : false
     //    }
     //
-    func didSelectDayView(dayView: CVCalendarDayView, animationDidFinish: Bool) {
-        print("\(dayView.date.commonDescription) is selected!")
-        selectedDay = dayView
-    }
+//    func didSelectDayView(dayView: CVCalendarDayView, animationDidFinish: Bool) {
+//        print("\(dayView.date.commonDescription) is selected!")
+//        selectedDay = dayView
+//    }
     
     func presentedDateUpdated(date: CVDate) {
         if monthLabel.text != date.globalDescription && self.animationFinished {
@@ -200,6 +245,7 @@ extension ViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
             }
             
             self.view.insertSubview(updatedMonthLabel, aboveSubview: self.monthLabel)
+       
         }
     }
     
@@ -253,22 +299,22 @@ extension ViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
     //        return { UIBezierPath(rect: CGRectMake(0, 0, $0.width, $0.height)) }
     //    }
     
-    //    func shouldShowCustomSingleSelection() -> Bool {
-    //        return false
-    //    }
+//        func shouldShowCustomSingleSelection() -> Bool {
+//            return true
+//        }
     //
-    //    func preliminaryView(viewOnDayView dayView: DayView) -> UIView {
-    //        let circleView = CVAuxiliaryView(dayView: dayView, rect: dayView.bounds, shape: CVShape.Circle)
-    //        circleView.fillColor = .colorFromCode(0xCCCCCC)
-    //        return circleView
-    //    }
-    //
-    //    func preliminaryView(shouldDisplayOnDayView dayView: DayView) -> Bool {
-    //        if (dayView.isCurrentDay) {
-    //            return true
-    //        }
-    //        return false
-    //    }
+//        func preliminaryView(viewOnDayView dayView: DayView) -> UIView {
+//            let circleView = CVAuxiliaryView(dayView: dayView, rect: dayView.bounds, shape: CVShape.Circle)
+//            circleView.fillColor = .colorFromCode(0xCCCCCC)
+//            return circleView
+//        }
+////
+//        func preliminaryView(shouldDisplayOnDayView dayView: DayView) -> Bool {
+//            if (dayView.isCurrentDay) {
+//                return true
+//            }
+//            return false
+//        }
     
     func supplementaryView(viewOnDayView dayView: DayView) -> UIView {
         let π = M_PI
@@ -389,15 +435,15 @@ extension ViewController: CVCalendarViewAppearanceDelegate {
 // MARK: - IB Actions
 
 extension ViewController {
-    @IBAction func switchChanged(sender: UISwitch) {
-        if sender.on {
-            calendarView.changeDaysOutShowingState(false)
-            shouldShowDaysOut = true
-        } else {
-            calendarView.changeDaysOutShowingState(true)
-            shouldShowDaysOut = false
-        }
-    }
+//    @IBAction func switchChanged(sender: UISwitch) {
+//        if sender.on {
+//            calendarView.changeDaysOutShowingState(false)
+//            shouldShowDaysOut = true
+//        } else {
+//            calendarView.changeDaysOutShowingState(true)
+//            shouldShowDaysOut = false
+//        }
+//    }
     
     @IBAction func todayMonthView() {
         calendarView.toggleCurrentDayView()
