@@ -20,7 +20,7 @@ class Notification {
             localNotification.alertBody = info.alertBody
             localNotification.timeZone = NSTimeZone.defaultTimeZone()
             localNotification.alertTitle = "congretulation!"
-          localNotification.applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber + 1
+//          localNotification.applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber + 1
             UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
         }
     

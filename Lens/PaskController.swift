@@ -9,10 +9,15 @@
 import UIKit
 import RealmSwift
 
+public struct InfoForNotification {
+    var fireDate: NSDate
+    let alertBody: String
+}
+
 class PaskController: UIViewController {
     var lastSelectedIndexPath: NSIndexPath? = nil
     var periodForBase: Int = 0
-    
+    var arrayInfoNotification: [InfoForNotification] = []
     @IBOutlet weak var numbersEdit: UITextField!
     @IBOutlet weak var opticalEdit: UITextField!
     @IBOutlet weak var nameEdit: UITextField!
@@ -62,6 +67,9 @@ class PaskController: UIViewController {
         pask.lenses = arrayLens
         if  HelperPask.validation(pask, minDatePicker: minDate!) {
             HelperPask.addToDataBase(pask)
+            let info = InfoForNotification(fireDate: pask.dateFinish, alertBody: "You must buy pask of lenses")
+            self.arrayInfoNotification.append(info)
+            self.sendNotification()
         } else {
             let alertController = UIAlertController(title: "Error", message:
                 "Complite all fields and select period!", preferredStyle: UIAlertControllerStyle.Alert)
@@ -71,6 +79,11 @@ class PaskController: UIViewController {
             self.presentViewController(alertController, animated: true, completion: nil)
             
         }
+    }
+    
+    func sendNotification() {
+        let info = self.arrayInfoNotification
+        Notification(atributiesOfNotifications: info).getNotification()
     }
     
     override func viewDidLoad() {
