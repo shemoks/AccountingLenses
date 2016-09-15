@@ -15,9 +15,9 @@ enum Term: Int {
     case month = 30
     func nameOfNumber() -> String {
         switch self {
-        case .twoWeeks: return "два тижні"
-        case .week: return "тиждень"
-        case .month: return "місяць"
+        case .twoWeeks: return "Two weeks"
+        case .week: return "Week"
+        case .month: return "Month"
         }
     }
     static let arrayEnum = [week, twoWeeks, month]
