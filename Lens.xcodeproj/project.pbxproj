@@ -11,6 +11,7 @@
 		84A7B5A01D8AD7960040C701 /* InputDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A7B59C1D8AD7960040C701 /* InputDataTableViewCell.xib */; };
 		84A7B5A11D8AD7960040C701 /* PeriodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7B59D1D8AD7960040C701 /* PeriodTableViewCell.swift */; };
 		84A7B5A21D8AD7960040C701 /* PeriodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A7B59E1D8AD7960040C701 /* PeriodTableViewCell.xib */; };
+		84A7B5A51D8ADF900040C701 /* NewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7B5A41D8ADF900040C701 /* NewViewModel.swift */; };
 		84C1F5AF1D8AD5D6006E6137 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1F5AE1D8AD5D6006E6137 /* NewViewController.swift */; };
 		9A6483021D76E18C00C5462F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6483011D76E18C00C5462F /* AppDelegate.swift */; };
 		9A6483041D76E18C00C5462F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6483031D76E18C00C5462F /* ViewController.swift */; };
@@ -51,6 +52,7 @@
 		84A7B59C1D8AD7960040C701 /* InputDataTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputDataTableViewCell.xib; sourceTree = "<group>"; };
 		84A7B59D1D8AD7960040C701 /* PeriodTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeriodTableViewCell.swift; sourceTree = "<group>"; };
 		84A7B59E1D8AD7960040C701 /* PeriodTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PeriodTableViewCell.xib; sourceTree = "<group>"; };
+		84A7B5A41D8ADF900040C701 /* NewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewViewModel.swift; sourceTree = "<group>"; };
 		84C1F5AE1D8AD5D6006E6137 /* NewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
 		9A6482FE1D76E18C00C5462F /* Lens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lens.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A6483011D76E18C00C5462F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,9 +113,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		84A7B5A31D8ADF820040C701 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84A7B5A41D8ADF900040C701 /* NewViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
 		84C1F5B01D8AD63B006E6137 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				84A7B5A31D8ADF820040C701 /* ViewModel */,
 				84C1F5B11D8AD63F006E6137 /* TableViewCell */,
 			);
 			name = View;
@@ -444,6 +455,7 @@
 				9A6483021D76E18C00C5462F /* AppDelegate.swift in Sources */,
 				9A6483301D76F12D00C5462F /* PaskModel.swift in Sources */,
 				9A6483721D770AE900C5462F /* HelperPask.swift in Sources */,
+				84A7B5A51D8ADF900040C701 /* NewViewModel.swift in Sources */,
 				9AE613BF1D7E973C0016277B /* AnimationClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

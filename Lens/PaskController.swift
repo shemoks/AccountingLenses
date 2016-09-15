@@ -16,14 +16,16 @@ public struct InfoForNotification {
 
 class PaskController: UIViewController {
     var lastSelectedIndexPath: NSIndexPath? = nil
-    var periodForBase: Int = 0
-    var arrayInfoNotification: [InfoForNotification] = []
+    var periodForBase = 0
+    var arrayInfoNotification = [InfoForNotification]()
+    
     @IBOutlet weak var numbersEdit: UITextField!
     @IBOutlet weak var opticalEdit: UITextField!
     @IBOutlet weak var nameEdit: UITextField!
     @IBOutlet weak var dateEdit: UITextField!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var datePicker: UIDatePicker!
+    
     @IBAction func datePicker(sender: AnyObject) {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
@@ -36,16 +38,21 @@ class PaskController: UIViewController {
         let pask = Pask()
         let lens = Lens()
         let arrayLens = List<Lens>()
+        
         if let optical = Double(opticalEdit.text!) {
             lens.opticalPower = optical
         }
+        
         let period = self.periodForBase
         lens.termOfUsing = period
+        
         if let name = self.nameEdit.text {
             pask.name = name
         }
+        
         let expression = NSDateFormatter()
         expression.dateFormat = "dd-MM-yyyy"
+        
         if let dateBuy = expression.dateFromString(self.dateEdit.text!) {
             if let numbers = Int(numbersEdit.text!) {
                 pask.numberOfLens = numbers
@@ -65,19 +72,21 @@ class PaskController: UIViewController {
         pask.number = HelperPask.getNumberPask()
         arrayLens.append(lens)
         pask.lenses = arrayLens
-        if  HelperPask.validation(pask, minDatePicker: minDate!) {
+        
+        switch HelperPask.validation(pask, minDatePicker: minDate!) {
+        case true:
             HelperPask.addToDataBase(pask)
             let info = InfoForNotification(fireDate: pask.dateFinish, alertBody: "You must buy pask of lenses")
             self.arrayInfoNotification.append(info)
             self.sendNotification()
-        } else {
+        case false:
             let alertController = UIAlertController(title: "Error", message:
                 "Complite all fields and select period!", preferredStyle: UIAlertControllerStyle.Alert)
-            let okButton = UIAlertAction(title: "Ok", style: .Default) { action -> Void in
-            }
-            alertController.addAction(okButton)
-            self.presentViewController(alertController, animated: true, completion: nil)
+            let okButton = UIAlertAction(title: "Ok", style: .Default, handler: nil)
             
+            alertController.addAction(okButton)
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
         }
     }
     
@@ -106,16 +115,12 @@ class PaskController: UIViewController {
 extension PaskController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let count = Term.count
-        return count
+        return Term.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let arrayEnum = Term.arrayEnum
         let cell: UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
-        let row: Term = arrayEnum[indexPath.row]
-        let stringForCell = row.nameOfNumber()
-        cell.textLabel!.text = stringForCell
+        cell.textLabel!.text = Term.arrayEnum[indexPath.row].nameOfNumber()
         //     cell.accessoryType = (lastSelectedIndexPath?.row == indexPath.row) ? .Checkmark : .None
         return cell
     }

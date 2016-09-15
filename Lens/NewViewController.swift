@@ -13,20 +13,14 @@ class NewViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var arrayNameTitle = ["Title","Optical Power","Numbers of lens","Purchase date"]
-    var arrayPlaceholder = ["NameCompany","Power lins","Count","Date"]
+    var viewModel = NewViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupTableView(tableView)
         // Do any additional setup after loading the view.
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+ 
 }
 
 extension NewViewController:UITableViewDataSource {
@@ -34,7 +28,7 @@ extension NewViewController:UITableViewDataSource {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return arrayNameTitle.count
+            return self.viewModel.arrayNameTitle.count
         case 1:
             return Term.arrayEnum.count
         case 2:
@@ -52,8 +46,9 @@ extension NewViewController:UITableViewDataSource {
         switch indexPath.section {
         case 0:
             let aCell = tableView.dequeueReusableCellWithIdentifier("Cell") as! InputDataTableViewCell
-            aCell.titleLabel.text = arrayNameTitle[indexPath.row]
-            aCell.textField.placeholder = arrayPlaceholder[indexPath.row]
+            aCell.titleLabel.text = self.viewModel.arrayNameTitle[indexPath.row]
+            aCell.textField.placeholder = self.viewModel.arrayPlaceholder[indexPath.row]
+            aCell.selectionStyle = .None
             cell = aCell
         case 1:
             let aCell = tableView.dequeueReusableCellWithIdentifier("Period") as! PeriodTableViewCell
@@ -61,6 +56,8 @@ extension NewViewController:UITableViewDataSource {
             cell = aCell
         case 2:
             let aCell = tableView.dequeueReusableCellWithIdentifier("Cell") as! InputDataTableViewCell
+            aCell.selectionStyle = .None
+            aCell.titleLabel.text = "Date"
             cell = aCell
         default:
             cell = nil
@@ -85,6 +82,23 @@ extension NewViewController:UITableViewDataSource {
             print("Error")
         }
         return "Error"
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        if indexPath.row != self.viewModel.lastSelectedIndexPath?.row {
+            if let lastSelectedIndexPath = self.viewModel.lastSelectedIndexPath {
+                let oldCell = tableView.cellForRowAtIndexPath(lastSelectedIndexPath)
+                oldCell?.accessoryType = .None
+            }
+            
+            let newCell = tableView.cellForRowAtIndexPath(indexPath)
+            newCell?.accessoryType = .Checkmark
+            let period = Term.arrayEnum[indexPath.row]
+            //self.periodForBase = period.rawValue
+            self.viewModel.lastSelectedIndexPath = indexPath
+        }
     }
 }
 
