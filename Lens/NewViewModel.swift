@@ -17,5 +17,6 @@ class NewViewModel {
     
     var lastSelectedIndexPath: NSIndexPath? = nil
     
+    var date:String!
     
 }

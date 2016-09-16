@@ -14,18 +14,18 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="NameCompany" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X8w-8g-d8F">
-                        <rect key="frame" x="10" y="32" width="300" height="30"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
-                        <textInputTraits key="textInputTraits" autocorrectionType="yes"/>
-                    </textField>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w7u-sv-vXp">
                         <rect key="frame" x="10" y="5" width="260" height="22"/>
                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="NameCompany" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X8w-8g-d8F">
+                        <rect key="frame" x="10" y="32" width="300" height="30"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                        <textInputTraits key="textInputTraits" autocorrectionType="yes"/>
+                    </textField>
                 </subviews>
                 <constraints>
                     <constraint firstItem="w7u-sv-vXp" firstAttribute="top" secondItem="X0L-1f-tlj" secondAttribute="top" constant="5" id="4Q4-dS-Y2H"/>

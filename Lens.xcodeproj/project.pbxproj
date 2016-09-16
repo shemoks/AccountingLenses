@@ -12,6 +12,9 @@
 		84A7B5A11D8AD7960040C701 /* PeriodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7B59D1D8AD7960040C701 /* PeriodTableViewCell.swift */; };
 		84A7B5A21D8AD7960040C701 /* PeriodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A7B59E1D8AD7960040C701 /* PeriodTableViewCell.xib */; };
 		84A7B5A51D8ADF900040C701 /* NewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7B5A41D8ADF900040C701 /* NewViewModel.swift */; };
+		84B3F1911D8BDF9600883677 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B3F1901D8BDF9600883677 /* CustomTextField.swift */; };
+		84B3F1951D8C056A00883677 /* DateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B3F1941D8C056A00883677 /* DateTableViewCell.xib */; };
+		84B3F1971D8C061800883677 /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B3F1961D8C061800883677 /* DateTableViewCell.swift */; };
 		84C1F5AF1D8AD5D6006E6137 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1F5AE1D8AD5D6006E6137 /* NewViewController.swift */; };
 		84CDFE741D8BBE77001020C3 /* DatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CDFE731D8BBE77001020C3 /* DatePicker.xib */; };
 		84CDFE761D8BBFD0001020C3 /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CDFE751D8BBFD0001020C3 /* DatePicker.swift */; };
@@ -56,6 +59,9 @@
 		84A7B59D1D8AD7960040C701 /* PeriodTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeriodTableViewCell.swift; sourceTree = "<group>"; };
 		84A7B59E1D8AD7960040C701 /* PeriodTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PeriodTableViewCell.xib; sourceTree = "<group>"; };
 		84A7B5A41D8ADF900040C701 /* NewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewViewModel.swift; sourceTree = "<group>"; };
+		84B3F1901D8BDF9600883677 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		84B3F1941D8C056A00883677 /* DateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateTableViewCell.xib; sourceTree = "<group>"; };
+		84B3F1961D8C061800883677 /* DateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
 		84C1F5AE1D8AD5D6006E6137 /* NewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
 		84CDFE731D8BBE77001020C3 /* DatePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePicker.xib; sourceTree = "<group>"; };
 		84CDFE751D8BBFD0001020C3 /* DatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
@@ -123,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				84A7B5A41D8ADF900040C701 /* NewViewModel.swift */,
+				84B3F1901D8BDF9600883677 /* CustomTextField.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -145,6 +152,8 @@
 				84A7B59E1D8AD7960040C701 /* PeriodTableViewCell.xib */,
 				84CDFE751D8BBFD0001020C3 /* DatePicker.swift */,
 				84CDFE731D8BBE77001020C3 /* DatePicker.xib */,
+				84B3F1961D8C061800883677 /* DateTableViewCell.swift */,
+				84B3F1941D8C056A00883677 /* DateTableViewCell.xib */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -362,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84A7B5A21D8AD7960040C701 /* PeriodTableViewCell.xib in Resources */,
+				84B3F1951D8C056A00883677 /* DateTableViewCell.xib in Resources */,
 				84CDFE741D8BBE77001020C3 /* DatePicker.xib in Resources */,
 				84A7B5A01D8AD7960040C701 /* InputDataTableViewCell.xib in Resources */,
 				9A64830C1D76E18C00C5462F /* LaunchScreen.storyboard in Resources */,
@@ -456,8 +466,10 @@
 			files = (
 				9A6483751D784C7A00C5462F /* PaskController.swift in Sources */,
 				84CDFE761D8BBFD0001020C3 /* DatePicker.swift in Sources */,
+				84B3F1971D8C061800883677 /* DateTableViewCell.swift in Sources */,
 				9A6483771D785B6300C5462F /* CalendarView.swift in Sources */,
 				84A7B59F1D8AD7960040C701 /* InputDataTableViewCell.swift in Sources */,
+				84B3F1911D8BDF9600883677 /* CustomTextField.swift in Sources */,
 				84C1F5AF1D8AD5D6006E6137 /* NewViewController.swift in Sources */,
 				9AE093831D88523800F115F8 /* Notification.swift in Sources */,
 				9A6483041D76E18C00C5462F /* ViewController.swift in Sources */,

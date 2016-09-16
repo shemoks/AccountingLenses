@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Bond.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>CVCalendar.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,17 +32,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>57259442B8AEDFCE69870CB0A1DA7C53</key>
+		<key>23B2DFFA3FB9808FB7A51D3ED5290121</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>73F6FF0234CA503533446597909C54A3</key>
+		<key>57109FEC4E04474778567773DB299B95</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>767E5CA10AE0F7C5D709B3FD8A95A898</key>
+		<key>80076C510C29F960587E43C0597ECBD5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8DBF1E9F142B9723041EF78FE5953C44</key>
 		<dict>
 			<key>primary</key>
 			<true/>

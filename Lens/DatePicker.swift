@@ -12,18 +12,14 @@ class DatePicker: UIView {
 
     @IBOutlet weak var datePicker: UIDatePicker!
     
-    
     var didSelectDate:((NSDate) -> Void)?
     var doneButtonTapped:((DatePicker) -> Void)?
-    
-    
+  
     override func awakeFromNib() {
         super.awakeFromNib()
         datePicker.minimumDate = NSDate()
-        
     }
 
-    
     @IBAction func doneRightButtonAction(sender: AnyObject) {
         self.doneButtonTapped?(self)
     }
@@ -31,6 +27,9 @@ class DatePicker: UIView {
     @IBAction func datePickerChanges(sender: AnyObject) {
         self.didSelectDate?(self.datePicker.date)
     }
+
     
+   
     
 }
+

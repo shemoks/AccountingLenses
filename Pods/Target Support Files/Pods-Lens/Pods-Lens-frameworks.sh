@@ -84,11 +84,13 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-Lens/Bond.framework"
   install_framework "Pods-Lens/CVCalendar.framework"
   install_framework "Pods-Lens/Realm.framework"
   install_framework "Pods-Lens/RealmSwift.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-Lens/Bond.framework"
   install_framework "Pods-Lens/CVCalendar.framework"
   install_framework "Pods-Lens/Realm.framework"
   install_framework "Pods-Lens/RealmSwift.framework"

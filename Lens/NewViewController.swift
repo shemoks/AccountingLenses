@@ -17,6 +17,7 @@ class NewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Add new Lens"
         self.setupTableView(tableView)
     
     }
@@ -29,7 +30,7 @@ extension NewViewController:UITableViewDataSource {
         case 0:
             return self.viewModel.arrayNameTitle.count
         case 1:
-            return Term.arrayEnum.count
+            return Term.count
         case 2:
             return 1
         default:
@@ -54,12 +55,10 @@ extension NewViewController:UITableViewDataSource {
             aCell.labelForPeriod.text = Term.arrayEnum[indexPath.row].nameOfNumber()
             cell = aCell
         case 2:
-            let aCell = tableView.dequeueReusableCellWithIdentifier("Cell") as! InputDataTableViewCell
+            let aCell = tableView.dequeueReusableCellWithIdentifier("Date") as! DateTableViewCell
             aCell.selectionStyle = .None
             aCell.titleLabel.text = "Date"
             aCell.textField.placeholder = "Please set up date"
-            aCell.textField.inputView = DatePicker.fromNib()
-            aCell.delegate = self
             cell = aCell
         default:
             cell = nil
@@ -131,16 +130,10 @@ extension NewViewController:UITableViewDelegate {
     
 }
 
-extension NewViewController: SwipeToUp {
-    func swipetoUp(cell: InputDataTableViewCell) {
-        print("Fucking")
-    }
-}
-
-
 private extension NewViewController {
     func setupTableView(tableView:UITableView) {
         tableView.registerNib(UINib(nibName:"InputDataTableViewCell",bundle: nil), forCellReuseIdentifier:"Cell")
         tableView.registerNib(UINib(nibName:"PeriodTableViewCell",bundle: nil), forCellReuseIdentifier: "Period")
+        tableView.registerNib(UINib(nibName: "DateTableViewCell",bundle: nil), forCellReuseIdentifier: "Date")
     }
 }
