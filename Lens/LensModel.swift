@@ -10,6 +10,7 @@ import Foundation
 import RealmSwift
 
 enum Term: Int {
+    
     case week = 7
     case twoWeeks = 14
     case month = 30
@@ -22,8 +23,6 @@ enum Term: Int {
             return "Week"
         case .month:
             return "Month"
-        default:
-            print("")
         }
     }
     

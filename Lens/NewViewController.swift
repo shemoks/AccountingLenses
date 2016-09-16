@@ -30,6 +30,7 @@ class NewViewController: UIViewController {
 extension NewViewController:UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         switch section {
         case 0:
             return self.viewModel.arrayNameTitle.count
@@ -41,6 +42,7 @@ extension NewViewController:UITableViewDataSource {
             print("Error")
             return 0
         }
+        
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -135,6 +137,7 @@ extension NewViewController:UITableViewDelegate {
 }
 
 private extension NewViewController {
+    
     func setupTableView(tableView:UITableView) {
         tableView.registerNib(UINib(nibName:"InputDataTableViewCell",bundle: nil), forCellReuseIdentifier:"Cell")
         tableView.registerNib(UINib(nibName:"PeriodTableViewCell",bundle: nil), forCellReuseIdentifier: "Period")

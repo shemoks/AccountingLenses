@@ -15,6 +15,7 @@
 		84B3F1911D8BDF9600883677 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B3F1901D8BDF9600883677 /* CustomTextField.swift */; };
 		84B3F1951D8C056A00883677 /* DateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B3F1941D8C056A00883677 /* DateTableViewCell.xib */; };
 		84B3F1971D8C061800883677 /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B3F1961D8C061800883677 /* DateTableViewCell.swift */; };
+		84B3F19B1D8C2F8500883677 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B3F19A1D8C2F8500883677 /* IQKeyboardManagerSwift.framework */; };
 		84C1F5AF1D8AD5D6006E6137 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1F5AE1D8AD5D6006E6137 /* NewViewController.swift */; };
 		84CDFE741D8BBE77001020C3 /* DatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CDFE731D8BBE77001020C3 /* DatePicker.xib */; };
 		84CDFE761D8BBFD0001020C3 /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CDFE751D8BBFD0001020C3 /* DatePicker.swift */; };
@@ -62,6 +63,7 @@
 		84B3F1901D8BDF9600883677 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		84B3F1941D8C056A00883677 /* DateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateTableViewCell.xib; sourceTree = "<group>"; };
 		84B3F1961D8C061800883677 /* DateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
+		84B3F19A1D8C2F8500883677 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = "../../Library/Developer/Xcode/DerivedData/Lens-acqrvfkddpieduefykzndtighvrd/Build/Products/Debug-iphonesimulator/IQKeyboardManagerSwift.framework"; sourceTree = "<group>"; };
 		84C1F5AE1D8AD5D6006E6137 /* NewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
 		84CDFE731D8BBE77001020C3 /* DatePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePicker.xib; sourceTree = "<group>"; };
 		84CDFE751D8BBFD0001020C3 /* DatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B3F19B1D8C2F8500883677 /* IQKeyboardManagerSwift.framework in Frameworks */,
 				BCD5D488F6AA3E10A0F31523 /* Pods_Lens.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,6 +123,7 @@
 		0C5465D58D8B6F234D1887C9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84B3F19A1D8C2F8500883677 /* IQKeyboardManagerSwift.framework */,
 				AA99B47DAC0BA0B1B7C1131C /* Pods_Lens.framework */,
 			);
 			name = Frameworks;

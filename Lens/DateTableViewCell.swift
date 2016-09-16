@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DateTableViewCell: UITableViewCell,UITextFieldDelegate {
+class DateTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var textField: CustomTextField!
@@ -26,6 +26,7 @@ class DateTableViewCell: UITableViewCell,UITextFieldDelegate {
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+    
 }
 
 
