@@ -23,23 +23,24 @@ class HelperPask{
         }()
         return objs
     }
-    
+    static func getActivePask() ->  Results<Pask> {
+        let objs: Results<Pask> = {
+            try! Realm().objects(Pask).filter("isActive = true")
+        }()
+        return objs
+    }
     static func removePasc() ->  Results<Pask> {
         let objs: Results<Pask> = {
             try! Realm().objects(Pask).filter("isActive = true")
         }()
         try! Realm().write() {
             for obj in objs {
-                let calendar = NSCalendar.currentCalendar()
-                var components = calendar.components([.Day , .Month , .Year], fromDate: obj.dateFinish)
-                let year =  components.year
-                let month = components.month
-                let day = components.day
-                components = calendar.components([.Day , .Month , .Year], fromDate: NSDate())
-                let yearNow =  components.year
-                let monthNow = components.month
-                let dayNow = components.day
-                if year == yearNow && day < dayNow && month == monthNow {
+                var lastDateStructure = dateStruct(day: 0, month: 0, year: 0)
+                var nowDateStructure = dateStruct(day: 0, month: 0, year: 0)
+                let lastDate = obj.dateFinish
+                lastDateStructure = HelperDates.getDateAsStruct(lastDate)
+                nowDateStructure = HelperDates.getDateAsStruct(NSDate())
+                if lastDateStructure.year == nowDateStructure.year && lastDateStructure.day < nowDateStructure.day && lastDateStructure.month == nowDateStructure.month {
                     obj.isActive = false
                     try! Realm().add(obj, update: true)
                     
@@ -93,17 +94,10 @@ class HelperPask{
         if numberOfLenses > 1 {
             let newNumberOfDay = numberOfDeys
             let date = dateOfBuy
-            let dayCalendarUnit: NSCalendarUnit = [.Day]
-            let tomorrow = NSCalendar.currentCalendar()
-                .dateByAddingUnit(
-                    dayCalendarUnit,
-                    value: numberOfDeys,
-                    toDate: date,
-                    options: []
-            )
-            self.arrayDates.append(tomorrow!)
+            let tomorrow =  HelperDates.addValueToDate(date, value: newNumberOfDay)
+            self.arrayDates.append(tomorrow)
             let newNumberOfLenses = numberOfLenses - 2
-            datesForOnePask(newNumberOfLenses, numberOfDeys: newNumberOfDay, dateOfBuy: tomorrow!)
+            datesForOnePask(newNumberOfLenses, numberOfDeys: newNumberOfDay, dateOfBuy: tomorrow)
             
         }
         return arrayDates
@@ -114,15 +108,8 @@ class HelperPask{
             try! Realm().write() {
                 for pask in pasks {
                     let day = pask.dateBuy
-                    let dayCalendarUnit: NSCalendarUnit = [.Day]
-                    let tomorrow = NSCalendar.currentCalendar()
-                        .dateByAddingUnit(
-                            dayCalendarUnit,
-                            value: value,
-                            toDate: day,
-                            options: []
-                    )
-                    pask.dateBuy = tomorrow!
+                    let tomorrow = HelperDates.addValueToDate(day, value: value)
+                    pask.dateBuy = tomorrow
                     try! Realm().add(pask, update: true)
                 }
             }
@@ -130,8 +117,9 @@ class HelperPask{
     }
     
     static func validation(obj: Pask, minDatePicker: NSDate) -> Bool{
-        let now = NSDate()
-        if obj.dateBuy == minDatePicker || obj.name == "" || obj.numberOfLens == 0 || obj.lenses[0].termOfUsing == 0 || obj.lenses[0].opticalPower == 0 || now.compare(obj.dateBuy) == NSComparisonResult.OrderedAscending {
+      //  let now = NSDate()
+        if obj.dateBuy == minDatePicker || obj.name == "" || obj.numberOfLens == 0 || obj.lenses[0].termOfUsing == 0 || obj.lenses[0].opticalPower == 0 {
+            //|| now.compare(obj.dateBuy) == NSComparisonResult.OrderedAscending
             return false
         }
         return true

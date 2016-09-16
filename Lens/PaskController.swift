@@ -18,6 +18,8 @@ class PaskController: UIViewController {
     var lastSelectedIndexPath: NSIndexPath? = nil
     var periodForBase: Int = 0
     var arrayInfoNotification: [InfoForNotification] = []
+    var arrayPasks: Results<Pask>!
+    
     @IBOutlet weak var numbersEdit: UITextField!
     @IBOutlet weak var opticalEdit: UITextField!
     @IBOutlet weak var nameEdit: UITextField!
@@ -36,7 +38,8 @@ class PaskController: UIViewController {
         let pask = Pask()
         let lens = Lens()
         let arrayLens = List<Lens>()
-        if let optical = Double(opticalEdit.text!) {
+        let arrayDays = List<Dates>()
+        if let optical = Double(self.opticalEdit.text!) {
             lens.opticalPower = optical
         }
         let period = self.periodForBase
@@ -47,29 +50,43 @@ class PaskController: UIViewController {
         let expression = NSDateFormatter()
         expression.dateFormat = "dd-MM-yyyy"
         if let dateBuy = expression.dateFromString(self.dateEdit.text!) {
-            if let numbers = Int(numbersEdit.text!) {
+            if let numbers = Int(self.numbersEdit.text!) {
                 pask.numberOfLens = numbers
-                pask.dateBuy = dateBuy
-                let dayCalendarUnit: NSCalendarUnit = [.Day]
-                let tomorrow = NSCalendar.currentCalendar()
-                    .dateByAddingUnit(
-                        dayCalendarUnit,
-                        value: period * Int(numbers/2),
-                        toDate: dateBuy,
-                        options: []
-                )
-                pask.dateFinish = tomorrow!
+                if self.arrayPasks.count > 0 {
+                    let lastValue = self.arrayPasks.last?.dateFinish
+                    pask.dateBuy = lastValue!
+                } else {
+                    pask.dateBuy = dateBuy
+                }
+                let tomorrow = HelperDates.addValueToDate(pask.dateBuy, value: period * Int(numbers/2))
+                pask.dateFinish = tomorrow
+                let dates = HelperPask().datesForOnePask(numbers, numberOfDeys: period, dateOfBuy: pask.dateBuy)
+                for date in dates {
+                    let event = Dates()
+                    event.dateChange = date
+                    if date != dates.last {
+                        event.message = "change lenses"
+                    } else {
+                        event.message = "change pask"
+                    }
+                    arrayDays.append(event)
+                }
+                pask.dates = arrayDays
             }
         }
-        
         pask.number = HelperPask.getNumberPask()
         arrayLens.append(lens)
         pask.lenses = arrayLens
         if  HelperPask.validation(pask, minDatePicker: minDate!) {
+            self.arrayInfoNotification = []
             HelperPask.addToDataBase(pask)
-            let info = InfoForNotification(fireDate: pask.dateFinish, alertBody: "You must buy pask of lenses")
-            self.arrayInfoNotification.append(info)
-            self.sendNotification()
+            for events in pask.dates {
+                let message = events.message
+                let date = events.dateChange
+                let info = InfoForNotification(fireDate: date, alertBody: message)
+                self.arrayInfoNotification.append(info)
+                self.sendNotification()
+            }
         } else {
             let alertController = UIAlertController(title: "Error", message:
                 "Complite all fields and select period!", preferredStyle: UIAlertControllerStyle.Alert)
@@ -85,24 +102,32 @@ class PaskController: UIViewController {
         let info = self.arrayInfoNotification
         Notification(atributiesOfNotifications: info).getNotification()
     }
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        dateEdit.enabled = false
+        getArray { object in
+        self.dateEdit.enabled = false
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.reloadData()
-        
-        
-        // Do any additional setup after loading the view.
+    }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func getArray(obj: (Results<Pask>) -> ()){
+           self.arrayPasks = HelperPask.getActivePask()
+            dispatch_async(dispatch_get_main_queue(), {
+                obj(self.arrayPasks)
+            })
+    }
 }
+
+
 extension PaskController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -116,7 +141,6 @@ extension PaskController: UITableViewDataSource, UITableViewDelegate {
         let row: Term = arrayEnum[indexPath.row]
         let stringForCell = row.nameOfNumber()
         cell.textLabel!.text = stringForCell
-        //     cell.accessoryType = (lastSelectedIndexPath?.row == indexPath.row) ? .Checkmark : .None
         return cell
     }
     
@@ -128,7 +152,6 @@ extension PaskController: UITableViewDataSource, UITableViewDelegate {
                 let oldCell = tableView.cellForRowAtIndexPath(lastSelectedIndexPath)
                 oldCell?.accessoryType = .None
             }
-            
             let newCell = tableView.cellForRowAtIndexPath(indexPath)
             newCell?.accessoryType = .Checkmark
             let arrayEnum = Term.arrayEnum

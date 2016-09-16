@@ -20,6 +20,12 @@
 		9A6483751D784C7A00C5462F /* PaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6483741D784C7A00C5462F /* PaskController.swift */; };
 		9A6483771D785B6300C5462F /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6483761D785B6300C5462F /* CalendarView.swift */; };
 		9AE093831D88523800F115F8 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE093821D88523800F115F8 /* Notification.swift */; };
+		9AE093871D8AC6B700F115F8 /* DatesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE093861D8AC6B700F115F8 /* DatesModel.swift */; };
+		9AE093891D8ADBA600F115F8 /* EventsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AE093881D8ADBA600F115F8 /* EventsStoryboard.storyboard */; };
+		9AE0938B1D8ADCE500F115F8 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE0938A1D8ADCE500F115F8 /* TableViewController.swift */; };
+		9AE0938E1D8AE00C00F115F8 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AE0938D1D8AE00C00F115F8 /* EventCell.xib */; };
+		9AE093901D8AE39A00F115F8 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE0938F1D8AE39A00F115F8 /* TableViewCell.swift */; };
+		9AE093941D8BD56300F115F8 /* HelperDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE093931D8BD56300F115F8 /* HelperDates.swift */; };
 		9AE613BF1D7E973C0016277B /* AnimationClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE613BE1D7E973C0016277B /* AnimationClass.swift */; };
 		BCD5D488F6AA3E10A0F31523 /* Pods_Lens.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA99B47DAC0BA0B1B7C1131C /* Pods_Lens.framework */; };
 /* End PBXBuildFile section */
@@ -61,6 +67,12 @@
 		9A6483741D784C7A00C5462F /* PaskController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaskController.swift; sourceTree = "<group>"; };
 		9A6483761D785B6300C5462F /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		9AE093821D88523800F115F8 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		9AE093861D8AC6B700F115F8 /* DatesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatesModel.swift; sourceTree = "<group>"; };
+		9AE093881D8ADBA600F115F8 /* EventsStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = EventsStoryboard.storyboard; path = ../EventsStoryboard.storyboard; sourceTree = "<group>"; };
+		9AE0938A1D8ADCE500F115F8 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		9AE0938D1D8AE00C00F115F8 /* EventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
+		9AE0938F1D8AE39A00F115F8 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		9AE093931D8BD56300F115F8 /* HelperDates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperDates.swift; sourceTree = "<group>"; };
 		9AE613BE1D7E973C0016277B /* AnimationClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationClass.swift; sourceTree = "<group>"; };
 		9B2175FD117D234515F85BBF /* Pods-Lens.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lens.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lens/Pods-Lens.debug.xcconfig"; sourceTree = "<group>"; };
 		A7F05A11AE828905D3FC954E /* Pods-Lens.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lens.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lens/Pods-Lens.release.xcconfig"; sourceTree = "<group>"; };
@@ -126,12 +138,14 @@
 		9A6483001D76E18C00C5462F /* Lens */ = {
 			isa = PBXGroup;
 			children = (
+				9AE0938C1D8ADFC900F115F8 /* Widgets */,
 				9AE093811D8851B400F115F8 /* Components */,
 				9A6483731D784C0000C5462F /* Controllers */,
 				9A6483701D770ACF00C5462F /* Helpers */,
 				9A64836B1D77002E00C5462F /* Models */,
 				9A6483011D76E18C00C5462F /* AppDelegate.swift */,
 				9A6483051D76E18C00C5462F /* Main.storyboard */,
+				9AE093881D8ADBA600F115F8 /* EventsStoryboard.storyboard */,
 				9A6483081D76E18C00C5462F /* Assets.xcassets */,
 				9A64830A1D76E18C00C5462F /* LaunchScreen.storyboard */,
 				9A64830D1D76E18C00C5462F /* Info.plist */,
@@ -164,6 +178,7 @@
 				9A64832F1D76F12D00C5462F /* PaskModel.swift */,
 				9A64836E1D77007900C5462F /* LensModel.swift */,
 				9A6483761D785B6300C5462F /* CalendarView.swift */,
+				9AE093861D8AC6B700F115F8 /* DatesModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -172,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				9A6483711D770AE900C5462F /* HelperPask.swift */,
+				9AE093931D8BD56300F115F8 /* HelperDates.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -181,6 +197,7 @@
 			children = (
 				9A6483741D784C7A00C5462F /* PaskController.swift */,
 				9A6483031D76E18C00C5462F /* ViewController.swift */,
+				9AE0938A1D8ADCE500F115F8 /* TableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -191,6 +208,15 @@
 				9AE093821D88523800F115F8 /* Notification.swift */,
 			);
 			name = Components;
+			sourceTree = "<group>";
+		};
+		9AE0938C1D8ADFC900F115F8 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				9AE0938D1D8AE00C00F115F8 /* EventCell.xib */,
+				9AE0938F1D8AE39A00F115F8 /* TableViewCell.swift */,
+			);
+			name = Widgets;
 			sourceTree = "<group>";
 		};
 		AF5E69DFB7953CD9EF5A2678 /* Pods */ = {
@@ -309,8 +335,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AE093891D8ADBA600F115F8 /* EventsStoryboard.storyboard in Resources */,
 				9A64830C1D76E18C00C5462F /* LaunchScreen.storyboard in Resources */,
 				9A6483091D76E18C00C5462F /* Assets.xcassets in Resources */,
+				9AE0938E1D8AE00C00F115F8 /* EventCell.xib in Resources */,
 				9A6483071D76E18C00C5462F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,8 +417,12 @@
 				9AE093831D88523800F115F8 /* Notification.swift in Sources */,
 				9A6483041D76E18C00C5462F /* ViewController.swift in Sources */,
 				9A64836F1D77007900C5462F /* LensModel.swift in Sources */,
+				9AE093871D8AC6B700F115F8 /* DatesModel.swift in Sources */,
+				9AE0938B1D8ADCE500F115F8 /* TableViewController.swift in Sources */,
 				9A6483021D76E18C00C5462F /* AppDelegate.swift in Sources */,
 				9A6483301D76F12D00C5462F /* PaskModel.swift in Sources */,
+				9AE093941D8BD56300F115F8 /* HelperDates.swift in Sources */,
+				9AE093901D8AE39A00F115F8 /* TableViewCell.swift in Sources */,
 				9A6483721D770AE900C5462F /* HelperPask.swift in Sources */,
 				9AE613BF1D7E973C0016277B /* AnimationClass.swift in Sources */,
 			);
