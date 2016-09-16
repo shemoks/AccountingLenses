@@ -12,16 +12,18 @@ import RealmSwift
 
 
 class TableViewController: UITableViewController {
+    
     var arrayOfPasks: Results<Pask>!
     var number: Int = 0
     var paskFirst = List<Dates>()
+    
     override func viewDidLoad(){
         super.viewDidLoad()
         self.getArray { objects in
-            if !objects.isEmpty{
+            if !objects.isEmpty {
                 self.tableView.registerNib(UINib(nibName: "EventCell", bundle: nil), forCellReuseIdentifier: "EventCell")
                 for object in objects {
-                let dates = object.dates
+                    let dates = object.dates
                     for date in dates {
                         self.paskFirst.append(date)
                     }
@@ -58,13 +60,14 @@ class TableViewController: UITableViewController {
             obj(self.arrayOfPasks)
         })
     }
-
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("EventCell", forIndexPath: indexPath) as? TableViewCell
         cell?.dateLabel.text = returnDate(paskFirst[indexPath.row].dateChange)
         cell?.messageLabel.text = paskFirst[indexPath.row].message
         return cell!
     }
+    
     func returnDate (date: NSDate) -> String {
         let calendar = NSCalendar.currentCalendar()
         let components = calendar.components([.Day , .Month , .Year], fromDate: date)
@@ -87,7 +90,7 @@ class TableViewController: UITableViewController {
         case 12: result = "Desember"
         default: result = ""
         }
-        result = String(day) + "-" + result + "-" + String(year)
+        result = String(day) + " " + result + " " + String(year)
         return result
     }
     

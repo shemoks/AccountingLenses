@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     var animationFinished = true
     
     var selectedDay:DayView!
-
+    
     @IBAction func okClick(sender: AnyObject) {
         addValue {
             self.getArrayOfDates { object in

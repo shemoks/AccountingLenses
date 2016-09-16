@@ -17,18 +17,21 @@ class HelperPask{
             try! Realm().add(obj)
         }
     }
+    
     static func getAllPask() ->  Results<Pask> {
         let objs: Results<Pask> = {
             try! Realm().objects(Pask)
         }()
         return objs
     }
+    
     static func getActivePask() ->  Results<Pask> {
         let objs: Results<Pask> = {
             try! Realm().objects(Pask).filter("isActive = true")
         }()
         return objs
     }
+    
     static func removePasc() ->  Results<Pask> {
         let objs: Results<Pask> = {
             try! Realm().objects(Pask).filter("isActive = true")
@@ -105,11 +108,20 @@ class HelperPask{
     
     func addValueToDate(value: Int, pasks: Results<Pask>) {
         if !pasks.isEmpty {
+            let listDates = List<Dates>()
             try! Realm().write() {
                 for pask in pasks {
                     let day = pask.dateBuy
+                    let dayFinish = pask.dateFinish
                     let tomorrow = HelperDates.addValueToDate(day, value: value)
+                    let tomorrowFinish = HelperDates.addValueToDate(dayFinish, value: value)
                     pask.dateBuy = tomorrow
+                    pask.dateFinish = tomorrowFinish
+                    for dates in pask.dates {
+                        dates.dateChange = HelperDates.addValueToDate(dates.dateChange, value: value)
+                        listDates.append(dates)
+                    }
+                    pask.dates = listDates
                     try! Realm().add(pask, update: true)
                 }
             }
@@ -117,7 +129,7 @@ class HelperPask{
     }
     
     static func validation(obj: Pask, minDatePicker: NSDate) -> Bool{
-      //  let now = NSDate()
+        //  let now = NSDate()
         if obj.dateBuy == minDatePicker || obj.name == "" || obj.numberOfLens == 0 || obj.lenses[0].termOfUsing == 0 || obj.lenses[0].opticalPower == 0 {
             //|| now.compare(obj.dateBuy) == NSComparisonResult.OrderedAscending
             return false

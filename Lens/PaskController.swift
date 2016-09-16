@@ -102,16 +102,16 @@ class PaskController: UIViewController {
         let info = self.arrayInfoNotification
         Notification(atributiesOfNotifications: info).getNotification()
     }
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getArray { object in
-        self.dateEdit.enabled = false
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
-        self.tableView.reloadData()
-    }
+            self.dateEdit.enabled = false
+            self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+            self.tableView.dataSource = self
+            self.tableView.delegate = self
+            self.tableView.reloadData()
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -120,10 +120,10 @@ class PaskController: UIViewController {
     }
     
     func getArray(obj: (Results<Pask>) -> ()){
-           self.arrayPasks = HelperPask.getActivePask()
-            dispatch_async(dispatch_get_main_queue(), {
-                obj(self.arrayPasks)
-            })
+        self.arrayPasks = HelperPask.getActivePask()
+        dispatch_async(dispatch_get_main_queue(), {
+            obj(self.arrayPasks)
+        })
     }
 }
 
