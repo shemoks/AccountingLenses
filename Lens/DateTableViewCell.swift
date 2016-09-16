@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DateTableViewCell: UITableViewCell {
+class DateTableViewCell: UITableViewCell,UITextFieldDelegate {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var textField: CustomTextField!
@@ -16,6 +16,7 @@ class DateTableViewCell: UITableViewCell {
     @IBAction func textFieldAction(sender: CustomTextField) {
         
     }
+    var tableView:UITableView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,10 +25,7 @@ class DateTableViewCell: UITableViewCell {
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-
 }
 
 

@@ -24,7 +24,6 @@ class CustomTextField: UITextField,UITextFieldDelegate {
         return dateFormatter
     }
     
-    
     var viewModel = DatePicker()
     var date: NSDate?
  
@@ -39,9 +38,7 @@ class CustomTextField: UITextField,UITextFieldDelegate {
             self.text = self.dateFormatter.stringFromDate(date)
         }
     }
-    
 }
-
 
 private extension CustomTextField {
     

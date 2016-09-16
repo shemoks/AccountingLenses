@@ -27,9 +27,5 @@ class DatePicker: UIView {
     @IBAction func datePickerChanges(sender: AnyObject) {
         self.didSelectDate?(self.datePicker.date)
     }
-
-    
-   
-    
 }
 

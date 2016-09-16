@@ -19,7 +19,11 @@ class NewViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Add new Lens"
         self.setupTableView(tableView)
+    }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        print("Some")
     }
 }
 
@@ -134,6 +138,6 @@ private extension NewViewController {
     func setupTableView(tableView:UITableView) {
         tableView.registerNib(UINib(nibName:"InputDataTableViewCell",bundle: nil), forCellReuseIdentifier:"Cell")
         tableView.registerNib(UINib(nibName:"PeriodTableViewCell",bundle: nil), forCellReuseIdentifier: "Period")
-        tableView.registerNib(UINib(nibName: "DateTableViewCell",bundle: nil), forCellReuseIdentifier: "Date")
+        tableView.registerNib(UINib(nibName:"DateTableViewCell",bundle: nil), forCellReuseIdentifier: "Date")
     }
 }
