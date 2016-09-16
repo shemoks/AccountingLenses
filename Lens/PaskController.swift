@@ -18,7 +18,6 @@ class PaskController: UIViewController {
     var lastSelectedIndexPath: NSIndexPath? = nil
     var periodForBase = 0
     var arrayInfoNotification = [InfoForNotification]()
-    
     @IBOutlet weak var numbersEdit: UITextField!
     @IBOutlet weak var opticalEdit: UITextField!
     @IBOutlet weak var nameEdit: UITextField!
@@ -38,7 +37,7 @@ class PaskController: UIViewController {
         let pask = Pask()
         let lens = Lens()
         let arrayLens = List<Lens>()
-        
+    
         if let optical = Double(opticalEdit.text!) {
             lens.opticalPower = optical
         }
@@ -72,7 +71,7 @@ class PaskController: UIViewController {
         pask.number = HelperPask.getNumberPask()
         arrayLens.append(lens)
         pask.lenses = arrayLens
-        
+       
         switch HelperPask.validation(pask, minDatePicker: minDate!) {
         case true:
             HelperPask.addToDataBase(pask)
@@ -83,9 +82,7 @@ class PaskController: UIViewController {
             let alertController = UIAlertController(title: "Error", message:
                 "Complite all fields and select period!", preferredStyle: UIAlertControllerStyle.Alert)
             let okButton = UIAlertAction(title: "Ok", style: .Default, handler: nil)
-            
             alertController.addAction(okButton)
-            
             self.presentViewController(alertController, animated: true, completion: nil)
         }
     }
@@ -102,8 +99,6 @@ class PaskController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.reloadData()
-        
-        
         // Do any additional setup after loading the view.
     }
     

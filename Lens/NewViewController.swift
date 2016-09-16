@@ -18,9 +18,8 @@ class NewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupTableView(tableView)
-        // Do any additional setup after loading the view.
+    
     }
- 
 }
 
 extension NewViewController:UITableViewDataSource {
@@ -58,6 +57,9 @@ extension NewViewController:UITableViewDataSource {
             let aCell = tableView.dequeueReusableCellWithIdentifier("Cell") as! InputDataTableViewCell
             aCell.selectionStyle = .None
             aCell.titleLabel.text = "Date"
+            aCell.textField.placeholder = "Please set up date"
+            aCell.textField.inputView = DatePicker.fromNib()
+            aCell.delegate = self
             cell = aCell
         default:
             cell = nil
@@ -85,20 +87,27 @@ extension NewViewController:UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        if indexPath.row != self.viewModel.lastSelectedIndexPath?.row {
-            if let lastSelectedIndexPath = self.viewModel.lastSelectedIndexPath {
-                let oldCell = tableView.cellForRowAtIndexPath(lastSelectedIndexPath)
-                oldCell?.accessoryType = .None
-            }
+        switch indexPath.section {
+        case 1:
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
             
-            let newCell = tableView.cellForRowAtIndexPath(indexPath)
-            newCell?.accessoryType = .Checkmark
-            let period = Term.arrayEnum[indexPath.row]
-            //self.periodForBase = period.rawValue
-            self.viewModel.lastSelectedIndexPath = indexPath
+            if indexPath.row != self.viewModel.lastSelectedIndexPath?.row {
+                if let lastSelectedIndexPath = self.viewModel.lastSelectedIndexPath {
+                    let oldCell = tableView.cellForRowAtIndexPath(lastSelectedIndexPath)
+                    oldCell?.accessoryType = .None
+                }
+                
+                let newCell = tableView.cellForRowAtIndexPath(indexPath)
+                newCell?.accessoryType = .Checkmark
+                let period = Term.arrayEnum[indexPath.row]
+                //self.periodForBase = period.rawValue
+                self.viewModel.lastSelectedIndexPath = indexPath
+            }
+        default:
+            print("Error")
         }
+        
     }
 }
 
@@ -119,7 +128,15 @@ extension NewViewController:UITableViewDelegate {
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 30
     }
+    
 }
+
+extension NewViewController: SwipeToUp {
+    func swipetoUp(cell: InputDataTableViewCell) {
+        print("Fucking")
+    }
+}
+
 
 private extension NewViewController {
     func setupTableView(tableView:UITableView) {
