@@ -5,15 +5,20 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="View" customModule="Lens" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="View" customModule="Lens" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="Vy6-HW-VZx" id="1RH-QY-ULn"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="600" height="226"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Vy6-HW-VZx">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="v55-kx-Urt">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="226"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="v55-kx-Urt">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -23,12 +28,13 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="Vy6-HW-VZx" secondAttribute="bottom" id="JMA-WT-hlI"/>
-                <constraint firstAttribute="trailing" secondItem="Vy6-HW-VZx" secondAttribute="trailing" id="fM0-VL-45s"/>
-                <constraint firstItem="Vy6-HW-VZx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fXv-VK-6Z4"/>
-                <constraint firstItem="Vy6-HW-VZx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="qyY-we-A1n"/>
+                <constraint firstItem="Vy6-HW-VZx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="71G-wq-2jw"/>
+                <constraint firstItem="Vy6-HW-VZx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="G7B-Wg-Uoe"/>
+                <constraint firstAttribute="bottom" secondItem="Vy6-HW-VZx" secondAttribute="bottom" id="SB2-SA-fbf"/>
+                <constraint firstAttribute="trailing" secondItem="Vy6-HW-VZx" secondAttribute="trailing" id="Sp1-pR-gEv"/>
             </constraints>
-            <point key="canvasLocation" x="-1105" y="-2249"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-996" y="-2631"/>
         </view>
     </objects>
 </document>
