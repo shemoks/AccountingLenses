@@ -148,7 +148,7 @@
                     <navigationItem key="navigationItem" id="ywn-ms-J7w">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="8b0-6f-jGL">
                             <connections>
-                                <segue destination="dWk-r4-IuP" kind="show" id="sZc-zx-tGE"/>
+                                <segue destination="dWk-r4-IuP" kind="show" id="z6g-DX-IBA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

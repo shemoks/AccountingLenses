@@ -27,6 +27,9 @@
                     <date key="date" timeIntervalSinceReferenceDate="495697556.85454297">
                         <!--2016-09-16 05:45:56 +0000-->
                     </date>
+                    <date key="minimumDate" timeIntervalSinceReferenceDate="473342400">
+                        <!--2016-01-01 12:00:00 +0000-->
+                    </date>
                     <connections>
                         <action selector="datePickerChanges:" destination="NgI-h8-3s4" eventType="valueChanged" id="ICM-TI-qKf"/>
                     </connections>
