@@ -219,11 +219,8 @@
 		9A6483001D76E18C00C5462F /* Lens */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				84C1F5B01D8AD63B006E6137 /* View */,
-=======
 				9AE0938C1D8ADFC900F115F8 /* Widgets */,
->>>>>>> 5857320a274964f2773ae36dcbcd01275f2eb61e
 				9AE093811D8851B400F115F8 /* Components */,
 				9A6483731D784C0000C5462F /* Controllers */,
 				9A6483701D770ACF00C5462F /* Helpers */,
@@ -273,11 +270,8 @@
 			isa = PBXGroup;
 			children = (
 				9A6483711D770AE900C5462F /* HelperPask.swift */,
-<<<<<<< HEAD
 				84CDFE771D8BC387001020C3 /* UIView+Extenstions.swift */,
-=======
 				9AE093931D8BD56300F115F8 /* HelperDates.swift */,
->>>>>>> 5857320a274964f2773ae36dcbcd01275f2eb61e
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -287,11 +281,8 @@
 			children = (
 				9A6483741D784C7A00C5462F /* PaskController.swift */,
 				9A6483031D76E18C00C5462F /* ViewController.swift */,
-<<<<<<< HEAD
 				84C1F5AE1D8AD5D6006E6137 /* NewViewController.swift */,
-=======
 				9AE0938A1D8ADCE500F115F8 /* TableViewController.swift */,
->>>>>>> 5857320a274964f2773ae36dcbcd01275f2eb61e
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -452,15 +443,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
 				84BB1DCA1D8FC36900E8C751 /* SaveTableViewCell.xib in Resources */,
 				84A7B5A21D8AD7960040C701 /* PeriodTableViewCell.xib in Resources */,
 				84B3F1951D8C056A00883677 /* DateTableViewCell.xib in Resources */,
 				84CDFE741D8BBE77001020C3 /* DatePicker.xib in Resources */,
 				84A7B5A01D8AD7960040C701 /* InputDataTableViewCell.xib in Resources */,
-=======
 				9AE093891D8ADBA600F115F8 /* EventsStoryboard.storyboard in Resources */,
->>>>>>> 5857320a274964f2773ae36dcbcd01275f2eb61e
 				9A64830C1D76E18C00C5462F /* LaunchScreen.storyboard in Resources */,
 				9AE093981D8C332900F115F8 /* CollectionViewCell.xib in Resources */,
 				9A6483091D76E18C00C5462F /* Assets.xcassets in Resources */,
@@ -565,12 +553,9 @@
 				84C1F5AF1D8AD5D6006E6137 /* NewViewController.swift in Sources */,
 				9AE093831D88523800F115F8 /* Notification.swift in Sources */,
 				9A6483041D76E18C00C5462F /* ViewController.swift in Sources */,
-<<<<<<< HEAD
 				84CDFE781D8BC387001020C3 /* UIView+Extenstions.swift in Sources */,
 				84A7B5A11D8AD7960040C701 /* PeriodTableViewCell.swift in Sources */,
-=======
 				9AE093A61D8FD1CC00F115F8 /* View.swift in Sources */,
->>>>>>> 5857320a274964f2773ae36dcbcd01275f2eb61e
 				9A64836F1D77007900C5462F /* LensModel.swift in Sources */,
 				9AE093871D8AC6B700F115F8 /* DatesModel.swift in Sources */,
 				9AE0938B1D8ADCE500F115F8 /* TableViewController.swift in Sources */,
