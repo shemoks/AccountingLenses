@@ -12,16 +12,7 @@ class CustomTextField: UITextField {
     
     var dateFormatter: NSDateFormatter {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = .MediumStyle
-        dateFormatter.timeStyle = .ShortStyle
-        dateFormatter.doesRelativeDateFormatting = true
-        return dateFormatter
-        
-    }
-    
-    var yearDateFormatter: NSDateFormatter {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy"
+        dateFormatter.dateFormat = "dd-MM-yyyy"
         return dateFormatter
     }
     

@@ -8,15 +8,28 @@
 
 import Foundation
 
-
 class NewViewModel {
     
+    var arrayInfoNotification = [InfoForNotification]()
     var arrayNameTitle = ["Title","Optical Power","Numbers of lens"]
     var arrayPlaceholder = ["NameCompany","Power lins","Count","Date"]
-    
+    var dateArray = [String]()
     
     var lastSelectedIndexPath: NSIndexPath? = nil
     
     var date:String!
+    let pask = Pask()
+    let lens = Lens()
     
+    func sendNotification() {
+        let info = self.arrayInfoNotification
+        Notification(atributiesOfNotifications: info).getNotification()
+    }
+    
+    func saveInDataBase(){
+        for i in 0..<dateArray.count{
+            lens.opticalPower = Double(dateArray[1])!
+        }
+    }
+
 }

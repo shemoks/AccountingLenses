@@ -21,10 +21,6 @@ class NewViewController: UIViewController {
         self.setupTableView(tableView)
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(true)
-        print("Some")
-    }
 }
 
 extension NewViewController:UITableViewDataSource {
@@ -37,6 +33,8 @@ extension NewViewController:UITableViewDataSource {
         case 1:
             return Term.count
         case 2:
+            return 1
+        case 3:
             return 1
         default:
             print("Error")
@@ -55,6 +53,9 @@ extension NewViewController:UITableViewDataSource {
             aCell.titleLabel.text = self.viewModel.arrayNameTitle[indexPath.row]
             aCell.textField.placeholder = self.viewModel.arrayPlaceholder[indexPath.row]
             aCell.selectionStyle = .None
+            if aCell.textField.text != "" {
+                self.viewModel.dateArray.append(aCell.textField.text!)
+            }
             cell = aCell
         case 1:
             let aCell = tableView.dequeueReusableCellWithIdentifier("Period") as! PeriodTableViewCell
@@ -65,16 +66,24 @@ extension NewViewController:UITableViewDataSource {
             aCell.selectionStyle = .None
             aCell.titleLabel.text = "Date"
             aCell.textField.placeholder = "Please set up date"
+            if aCell.textField.text != "" {
+                self.viewModel.dateArray.append(aCell.textField.text!)
+            }
+            cell = aCell
+        case 3:
+            let aCell = tableView.dequeueReusableCellWithIdentifier("Save") as! SaveTableViewCell
+            aCell.delegate = self
             cell = aCell
         default:
             cell = nil
             print("Error")
         }
+        
         return cell
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 3
+        return 4
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -85,6 +94,8 @@ extension NewViewController:UITableViewDataSource {
             return "Period of using"
         case 2:
             return "Date"
+        case 3:
+            return nil
         default:
             print("Error")
         }
@@ -105,7 +116,7 @@ extension NewViewController:UITableViewDataSource {
                 
                 let newCell = tableView.cellForRowAtIndexPath(indexPath)
                 newCell?.accessoryType = .Checkmark
-                let period = Term.arrayEnum[indexPath.row]
+                //let period = Term.arrayEnum[indexPath.row]
                 //self.periodForBase = period.rawValue
                 self.viewModel.lastSelectedIndexPath = indexPath
             }
@@ -117,6 +128,7 @@ extension NewViewController:UITableViewDataSource {
 }
 
 extension NewViewController:UITableViewDelegate {
+    
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
@@ -125,15 +137,21 @@ extension NewViewController:UITableViewDelegate {
             return 40
         case 2:
             return 70
+        case 3:
+            return 40
         default:
             print("Error")
             return 0
         }
     }
+   
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        if section == 3{
+            return 10
+        }
         return 30
     }
-    
 }
 
 private extension NewViewController {
@@ -142,5 +160,14 @@ private extension NewViewController {
         tableView.registerNib(UINib(nibName:"InputDataTableViewCell",bundle: nil), forCellReuseIdentifier:"Cell")
         tableView.registerNib(UINib(nibName:"PeriodTableViewCell",bundle: nil), forCellReuseIdentifier: "Period")
         tableView.registerNib(UINib(nibName:"DateTableViewCell",bundle: nil), forCellReuseIdentifier: "Date")
+        tableView.registerNib(UINib(nibName:"SaveTableViewCell",bundle: nil), forCellReuseIdentifier: "Save")
+    }
+}
+
+extension NewViewController:SaveButtonTapp {
+    
+    func saveButtonTapp(cell: SaveTableViewCell) {
+        self.tableView.reloadData()
+       
     }
 }

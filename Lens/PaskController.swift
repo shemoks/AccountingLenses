@@ -18,6 +18,7 @@ class PaskController: UIViewController {
     var lastSelectedIndexPath: NSIndexPath? = nil
     var periodForBase = 0
     var arrayInfoNotification = [InfoForNotification]()
+    
     @IBOutlet weak var numbersEdit: UITextField!
     @IBOutlet weak var opticalEdit: UITextField!
     @IBOutlet weak var nameEdit: UITextField!

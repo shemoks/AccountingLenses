@@ -11,16 +11,6 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Xpu-eg-TOh">
-                    <rect key="frame" x="0.0" y="34" width="375" height="216"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <date key="date" timeIntervalSinceReferenceDate="495697556.85454297">
-                        <!--2016-09-16 05:45:56 +0000-->
-                    </date>
-                    <connections>
-                        <action selector="datePickerChanges:" destination="NgI-h8-3s4" eventType="valueChanged" id="ICM-TI-qKf"/>
-                    </connections>
-                </datePicker>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bhu-vR-Pr3">
                     <rect key="frame" x="326" y="4" width="39" height="33"/>
                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
@@ -31,6 +21,16 @@
                         <action selector="doneRightButtonAction:" destination="NgI-h8-3s4" eventType="touchUpInside" id="prd-lt-uCa"/>
                     </connections>
                 </button>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Xpu-eg-TOh">
+                    <rect key="frame" x="0.0" y="34" width="375" height="216"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <date key="date" timeIntervalSinceReferenceDate="495697556.85454297">
+                        <!--2016-09-16 05:45:56 +0000-->
+                    </date>
+                    <connections>
+                        <action selector="datePickerChanges:" destination="NgI-h8-3s4" eventType="valueChanged" id="ICM-TI-qKf"/>
+                    </connections>
+                </datePicker>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>

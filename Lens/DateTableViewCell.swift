@@ -16,7 +16,6 @@ class DateTableViewCell: UITableViewCell {
     @IBAction func textFieldAction(sender: CustomTextField) {
         
     }
-    var tableView:UITableView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
