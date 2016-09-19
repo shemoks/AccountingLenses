@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84A7B59F1D8AD7960040C701 /* InputDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7B59B1D8AD7960040C701 /* InputDataTableViewCell.swift */; };
+		84A7B5A01D8AD7960040C701 /* InputDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A7B59C1D8AD7960040C701 /* InputDataTableViewCell.xib */; };
+		84A7B5A11D8AD7960040C701 /* PeriodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7B59D1D8AD7960040C701 /* PeriodTableViewCell.swift */; };
+		84A7B5A21D8AD7960040C701 /* PeriodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A7B59E1D8AD7960040C701 /* PeriodTableViewCell.xib */; };
+		84A7B5A51D8ADF900040C701 /* NewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7B5A41D8ADF900040C701 /* NewViewModel.swift */; };
+		84B3F1911D8BDF9600883677 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B3F1901D8BDF9600883677 /* CustomTextField.swift */; };
+		84B3F1951D8C056A00883677 /* DateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B3F1941D8C056A00883677 /* DateTableViewCell.xib */; };
+		84B3F1971D8C061800883677 /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B3F1961D8C061800883677 /* DateTableViewCell.swift */; };
+		84B3F19B1D8C2F8500883677 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B3F19A1D8C2F8500883677 /* IQKeyboardManagerSwift.framework */; };
+		84BB1DCA1D8FC36900E8C751 /* SaveTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84BB1DC91D8FC36900E8C751 /* SaveTableViewCell.xib */; };
+		84BB1DCC1D8FC44D00E8C751 /* SaveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BB1DCB1D8FC44D00E8C751 /* SaveTableViewCell.swift */; };
+		84C1F5AF1D8AD5D6006E6137 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1F5AE1D8AD5D6006E6137 /* NewViewController.swift */; };
+		84CDFE741D8BBE77001020C3 /* DatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CDFE731D8BBE77001020C3 /* DatePicker.xib */; };
+		84CDFE761D8BBFD0001020C3 /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CDFE751D8BBFD0001020C3 /* DatePicker.swift */; };
+		84CDFE781D8BC387001020C3 /* UIView+Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CDFE771D8BC387001020C3 /* UIView+Extenstions.swift */; };
 		9A6483021D76E18C00C5462F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6483011D76E18C00C5462F /* AppDelegate.swift */; };
 		9A6483041D76E18C00C5462F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6483031D76E18C00C5462F /* ViewController.swift */; };
 		9A6483071D76E18C00C5462F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A6483051D76E18C00C5462F /* Main.storyboard */; };
@@ -55,6 +70,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		84A7B59B1D8AD7960040C701 /* InputDataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputDataTableViewCell.swift; sourceTree = "<group>"; };
+		84A7B59C1D8AD7960040C701 /* InputDataTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputDataTableViewCell.xib; sourceTree = "<group>"; };
+		84A7B59D1D8AD7960040C701 /* PeriodTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeriodTableViewCell.swift; sourceTree = "<group>"; };
+		84A7B59E1D8AD7960040C701 /* PeriodTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PeriodTableViewCell.xib; sourceTree = "<group>"; };
+		84A7B5A41D8ADF900040C701 /* NewViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewViewModel.swift; sourceTree = "<group>"; };
+		84B3F1901D8BDF9600883677 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		84B3F1941D8C056A00883677 /* DateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateTableViewCell.xib; sourceTree = "<group>"; };
+		84B3F1961D8C061800883677 /* DateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
+		84B3F19A1D8C2F8500883677 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = "../../Library/Developer/Xcode/DerivedData/Lens-acqrvfkddpieduefykzndtighvrd/Build/Products/Debug-iphonesimulator/IQKeyboardManagerSwift.framework"; sourceTree = "<group>"; };
+		84BB1DC91D8FC36900E8C751 /* SaveTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SaveTableViewCell.xib; sourceTree = "<group>"; };
+		84BB1DCB1D8FC44D00E8C751 /* SaveTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveTableViewCell.swift; sourceTree = "<group>"; };
+		84C1F5AE1D8AD5D6006E6137 /* NewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
+		84CDFE731D8BBE77001020C3 /* DatePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePicker.xib; sourceTree = "<group>"; };
+		84CDFE751D8BBFD0001020C3 /* DatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
+		84CDFE771D8BC387001020C3 /* UIView+Extenstions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extenstions.swift"; sourceTree = "<group>"; };
 		9A6482FE1D76E18C00C5462F /* Lens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lens.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A6483011D76E18C00C5462F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A6483031D76E18C00C5462F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B3F19B1D8C2F8500883677 /* IQKeyboardManagerSwift.framework in Frameworks */,
 				BCD5D488F6AA3E10A0F31523 /* Pods_Lens.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -122,9 +153,45 @@
 		0C5465D58D8B6F234D1887C9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84B3F19A1D8C2F8500883677 /* IQKeyboardManagerSwift.framework */,
 				AA99B47DAC0BA0B1B7C1131C /* Pods_Lens.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84A7B5A31D8ADF820040C701 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84A7B5A41D8ADF900040C701 /* NewViewModel.swift */,
+				84B3F1901D8BDF9600883677 /* CustomTextField.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		84C1F5B01D8AD63B006E6137 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				84A7B5A31D8ADF820040C701 /* ViewModel */,
+				84C1F5B11D8AD63F006E6137 /* TableViewCell */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		84C1F5B11D8AD63F006E6137 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				84A7B59B1D8AD7960040C701 /* InputDataTableViewCell.swift */,
+				84A7B59C1D8AD7960040C701 /* InputDataTableViewCell.xib */,
+				84A7B59D1D8AD7960040C701 /* PeriodTableViewCell.swift */,
+				84A7B59E1D8AD7960040C701 /* PeriodTableViewCell.xib */,
+				84CDFE751D8BBFD0001020C3 /* DatePicker.swift */,
+				84CDFE731D8BBE77001020C3 /* DatePicker.xib */,
+				84B3F1961D8C061800883677 /* DateTableViewCell.swift */,
+				84B3F1941D8C056A00883677 /* DateTableViewCell.xib */,
+				84BB1DCB1D8FC44D00E8C751 /* SaveTableViewCell.swift */,
+				84BB1DC91D8FC36900E8C751 /* SaveTableViewCell.xib */,
+			);
+			name = TableViewCell;
 			sourceTree = "<group>";
 		};
 		9A6482F51D76E18C00C5462F = {
@@ -152,6 +219,7 @@
 		9A6483001D76E18C00C5462F /* Lens */ = {
 			isa = PBXGroup;
 			children = (
+				84C1F5B01D8AD63B006E6137 /* View */,
 				9AE0938C1D8ADFC900F115F8 /* Widgets */,
 				9AE093811D8851B400F115F8 /* Components */,
 				9A6483731D784C0000C5462F /* Controllers */,
@@ -202,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				9A6483711D770AE900C5462F /* HelperPask.swift */,
+				84CDFE771D8BC387001020C3 /* UIView+Extenstions.swift */,
 				9AE093931D8BD56300F115F8 /* HelperDates.swift */,
 			);
 			name = Helpers;
@@ -212,6 +281,7 @@
 			children = (
 				9A6483741D784C7A00C5462F /* PaskController.swift */,
 				9A6483031D76E18C00C5462F /* ViewController.swift */,
+				84C1F5AE1D8AD5D6006E6137 /* NewViewController.swift */,
 				9AE0938A1D8ADCE500F115F8 /* TableViewController.swift */,
 			);
 			name = Controllers;
@@ -278,6 +348,7 @@
 				9A6482FC1D76E18C00C5462F /* Resources */,
 				42E03BF81916EA50EDC577C7 /* [CP] Embed Pods Frameworks */,
 				DDD876913ED96D2FB402EBFC /* [CP] Copy Pods Resources */,
+				DCBCA98F63E5CF33E92E1CE0 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -372,6 +443,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84BB1DCA1D8FC36900E8C751 /* SaveTableViewCell.xib in Resources */,
+				84A7B5A21D8AD7960040C701 /* PeriodTableViewCell.xib in Resources */,
+				84B3F1951D8C056A00883677 /* DateTableViewCell.xib in Resources */,
+				84CDFE741D8BBE77001020C3 /* DatePicker.xib in Resources */,
+				84A7B5A01D8AD7960040C701 /* InputDataTableViewCell.xib in Resources */,
 				9AE093891D8ADBA600F115F8 /* EventsStoryboard.storyboard in Resources */,
 				9A64830C1D76E18C00C5462F /* LaunchScreen.storyboard in Resources */,
 				9AE093981D8C332900F115F8 /* CollectionViewCell.xib in Resources */,
@@ -430,6 +506,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		DCBCA98F63E5CF33E92E1CE0 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Lens/Pods-Lens-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		DDD876913ED96D2FB402EBFC /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -452,10 +543,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84BB1DCC1D8FC44D00E8C751 /* SaveTableViewCell.swift in Sources */,
 				9A6483751D784C7A00C5462F /* PaskController.swift in Sources */,
+				84CDFE761D8BBFD0001020C3 /* DatePicker.swift in Sources */,
+				84B3F1971D8C061800883677 /* DateTableViewCell.swift in Sources */,
 				9A6483771D785B6300C5462F /* CalendarView.swift in Sources */,
+				84A7B59F1D8AD7960040C701 /* InputDataTableViewCell.swift in Sources */,
+				84B3F1911D8BDF9600883677 /* CustomTextField.swift in Sources */,
+				84C1F5AF1D8AD5D6006E6137 /* NewViewController.swift in Sources */,
 				9AE093831D88523800F115F8 /* Notification.swift in Sources */,
 				9A6483041D76E18C00C5462F /* ViewController.swift in Sources */,
+				84CDFE781D8BC387001020C3 /* UIView+Extenstions.swift in Sources */,
+				84A7B5A11D8AD7960040C701 /* PeriodTableViewCell.swift in Sources */,
 				9AE093A61D8FD1CC00F115F8 /* View.swift in Sources */,
 				9A64836F1D77007900C5462F /* LensModel.swift in Sources */,
 				9AE093871D8AC6B700F115F8 /* DatesModel.swift in Sources */,
@@ -466,6 +565,7 @@
 				9AE0939A1D8C351300F115F8 /* CollectionViewCell.swift in Sources */,
 				9AE093901D8AE39A00F115F8 /* TableViewCell.swift in Sources */,
 				9A6483721D770AE900C5462F /* HelperPask.swift in Sources */,
+				84A7B5A51D8ADF900040C701 /* NewViewModel.swift in Sources */,
 				9AE613BF1D7E973C0016277B /* AnimationClass.swift in Sources */,
 				9AE0939C1D8C363A00F115F8 /* CollectionModel.swift in Sources */,
 				9AE093A21D8C39C500F115F8 /* LastCollection.swift in Sources */,

@@ -39,9 +39,11 @@ class PaskController: UIViewController {
         let lens = Lens()
         let arrayLens = List<Lens>()
         let arrayDays = List<Dates>()
+        
         if let optical = Double(self.opticalEdit.text!) {
             lens.opticalPower = optical
         }
+        
         let period = self.periodForBase
         lens.termOfUsing = period
         if let name = self.nameEdit.text {

@@ -10,22 +10,28 @@ import Foundation
 import RealmSwift
 
 enum Term: Int {
+    
     case week = 7
     case twoWeeks = 14
     case month = 30
+    
     func nameOfNumber() -> String {
         switch self {
-        case .twoWeeks: return "два тижні"
-        case .week: return "тиждень"
-        case .month: return "місяць"
+        case .twoWeeks:
+            return "Two weeks"
+        case .week:
+            return "Week"
+        case .month:
+            return "Month"
         }
     }
+    
     static let arrayEnum = [week, twoWeeks, month]
-    static let count: Int = arrayEnum.count
+    static let count = arrayEnum.count
 }
 
 class Lens: Object {
-    dynamic var termOfUsing: Int = 0
+    dynamic var termOfUsing = 0
     dynamic var opticalPower: Double = 0.0
     var number: Pask?
 }

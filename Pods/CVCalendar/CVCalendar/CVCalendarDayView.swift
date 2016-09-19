@@ -83,7 +83,6 @@ public final class CVCalendarDayView: UIView {
         labelSetup()
         setupDotMarker()
         topMarkerSetup()
-        
 
         if frame.width > 0 {
             preliminarySetup()
