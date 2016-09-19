@@ -96,16 +96,16 @@ class NewViewModel {
                         self.arrayInfoNotification.append(info)
                         self.sendNotification()
                     }
-                } else {
-                    let alertController = UIAlertController(title: "Error", message:
-                        "Complite all fields and select period!", preferredStyle: UIAlertControllerStyle.Alert)
-                    let okButton = UIAlertAction(title: "Ok", style: .Default) { action -> Void in
-                    }
-                    alertController.addAction(okButton)
-                   viewController.presentViewController(alertController, animated: true, completion: nil)
-                
                 }
+                viewController.navigationController?.popViewControllerAnimated(true)
             }
+        }else{
+            let alertController = UIAlertController(title: "Error", message:
+                "Complite all fields and select period!", preferredStyle: UIAlertControllerStyle.Alert)
+            let okButton = UIAlertAction(title: "Ok", style: .Default) { action -> Void in
+            }
+            alertController.addAction(okButton)
+            viewController.presentViewController(alertController, animated: true, completion: nil)
         }
     }
     
