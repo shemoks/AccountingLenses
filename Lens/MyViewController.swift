@@ -86,7 +86,7 @@ class MyViewController: UIViewController, UICollectionViewDelegateFlowLayout, UI
     }
    
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.item == arrayForCollection.count - 1 {
+        if indexPath.item == arrayForCollection.count  {
     
          performSegueWithIdentifier("tableView", sender: self)
         }
