@@ -28,7 +28,7 @@ class NewViewModel {
     
     func saveInDataBase(){
         for i in 0..<dateArray.count{
-            lens.opticalPower = Double(dateArray[1])!
+            print(dateArray[i])
         }
     }
 

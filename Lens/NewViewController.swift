@@ -168,6 +168,7 @@ extension NewViewController:SaveButtonTapp {
     
     func saveButtonTapp(cell: SaveTableViewCell) {
         self.tableView.reloadData()
+        self.viewModel.saveInDataBase()
        
     }
 }
