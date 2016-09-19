@@ -18,14 +18,15 @@ class ViewController: UIViewController {
     var last = 0
     var shouldShowDaysOut = true
     var animationFinished = true
+    var indexDate: NSDate = NSDate()
     
     var selectedDay:DayView!
     
     @IBAction func okClick(sender: AnyObject) {
-        addValue {
-            self.getArrayOfDates { object in
-            }
-        }
+//        addValue {
+//            self.getArrayOfDates { object in
+//            }
+//        }
     }
     
     @IBAction func slider(sender: AnyObject) {
@@ -114,9 +115,9 @@ class ViewController: UIViewController {
         })
     }
     
-    func addValue(object: () -> ()) {
-        HelperPask().addValueToDate(Int(sliderValue.value), pasks: self.arrayOfPasks)
-    }
+//    func addValue(object: () -> ()) {
+//        HelperPask().addValueToDate(indexDate, value: Int(sliderValue.value), pasks: self.arrayOfPasks)
+//    }
 }
 
 extension ViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
@@ -149,10 +150,18 @@ extension ViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
     //        return arc4random_uniform(33) == 0 ? true : false
     //    }
     //
-    //    func didSelectDayView(dayView: CVCalendarDayView, animationDidFinish: Bool) {
-    //        print("\(dayView.date.commonDescription) is selected!")
-    //        selectedDay = dayView
-    //    }
+//        func didSelectDayView(dayView: CVCalendarDayView, animationDidFinish: Bool) {
+//            let strDate = dayView.date.commonDescription// "2015-10-06T15:42:34Z"
+//            let dateFormatter = NSDateFormatter()
+//            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+//            indexDate = dateFormatter.dateFromString(strDate)!
+//            //виклик вікна з бігунком 
+//            //
+//            //
+//            //
+//            //
+//            selectedDay = dayView
+//        }
     
     func presentedDateUpdated(date: CVDate) {
         if monthLabel.text != date.globalDescription && self.animationFinished {
@@ -302,6 +311,7 @@ extension ViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
                     last = 1
                 }
                 if (lastDateStructure.day >= nowDateStructure.day || lastDateStructure.year > nowDateStructure.year || lastDateStructure.month > nowDateStructure.month) && dayView.date != nil && lastDateStructure.day == dayView.date.day && lastDateStructure.month == dayView.date.month && lastDateStructure.year == dayView.date.year {
+                    
                     return true
                 }
             }

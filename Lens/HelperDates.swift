@@ -25,6 +25,7 @@ class HelperDates {
                 toDate: dateValue,
                 options: []
         )
+        
         return tomorrow!
     }
     
@@ -35,8 +36,22 @@ class HelperDates {
         structValue.year =  components.year
         structValue.month = components.month
         structValue.day = components.day
+        
         return structValue
     }
     
+    static func subtructDates(dateValue: NSDate) -> Int {
+        let dateBegin = getDateAsStruct(dateValue)
+        let dateNow = getDateAsStruct(NSDate())
+        
+        return dateNow.day - dateBegin.day
+    }
+    
+    static func compareDates(firstDate: NSDate, secondDate: NSDate) -> Bool {
+        if firstDate.compare(secondDate) == NSComparisonResult.OrderedAscending{
+        return true
+        }
+        return false
+    }
     
 }

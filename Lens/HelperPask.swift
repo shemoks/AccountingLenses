@@ -106,20 +106,18 @@ class HelperPask{
         return arrayDates
     }
     
-    func addValueToDate(value: Int, pasks: Results<Pask>) {
+    func addValueToDate(dateValue: NSDate, value: Int, pasks: Results<Pask>) {
         if !pasks.isEmpty {
+            var k = 0
             let listDates = List<Dates>()
             try! Realm().write() {
                 for pask in pasks {
-                    let day = pask.dateBuy
-                    let dayFinish = pask.dateFinish
-                    let tomorrow = HelperDates.addValueToDate(day, value: value)
-                    let tomorrowFinish = HelperDates.addValueToDate(dayFinish, value: value)
-                    pask.dateBuy = tomorrow
-                    pask.dateFinish = tomorrowFinish
                     for dates in pask.dates {
-                        dates.dateChange = HelperDates.addValueToDate(dates.dateChange, value: value)
-                        listDates.append(dates)
+                        if dates == dateValue || k > 0 {
+                            k += 1
+                            dates.dateChange = HelperDates.addValueToDate(dates.dateChange, value: value)
+                            listDates.append(dates)
+                        }
                     }
                     pask.dates = listDates
                     try! Realm().add(pask, update: true)
@@ -135,5 +133,22 @@ class HelperPask{
             return false
         }
         return true
+    }
+    
+    static func numberOfLenses(pasks: Results<Pask>) -> [Collection] {
+        var numberOfLensesNow: [Collection] = []
+        for pask in pasks {
+            let collection = Collection()
+            let dateBuy = pask.dateBuy
+            let numberOfLenses = HelperDates.subtructDates(dateBuy)
+            if numberOfLenses > 0 {
+                collection.number = numberOfLenses
+            } else {
+                collection.number = pask.numberOfLens
+            }
+            collection.name = pask.name
+            numberOfLensesNow.append(collection)
+        }
+        return numberOfLensesNow
     }
 }
