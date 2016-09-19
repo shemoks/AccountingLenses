@@ -2,36 +2,38 @@ import UIKit
 import CVCalendar
 import RealmSwift
 
-
 class ViewController: UIViewController {
     
     
     @IBOutlet weak var appleLabel: UILabel!
-    
     @IBOutlet weak var menuView: CVCalendarMenuView!
-    
-    @IBAction func okClick(sender: AnyObject) {
-        addValue {
-            self.getArrayOfDates { object in
-                
-            }
-        }
-    }
-    
     @IBOutlet weak var daysOutSwitch: UISwitch!
-    
     @IBOutlet weak var sliderValue: UISlider!
     @IBOutlet weak var sliderLabel: UILabel!
     @IBOutlet weak var calendarView: CVCalendarView!
+    @IBOutlet weak var monthLabel: UILabel!
+    
+    var arrayOfPasks: Results<Pask>!
+    var arrayOfDates: [NSDate] = []
+    var last = 0
+    var shouldShowDaysOut = true
+    var animationFinished = true
+    var indexDate: NSDate = NSDate()
+    
+    var selectedDay:DayView!
+    
+    @IBAction func okClick(sender: AnyObject) {
+//        addValue {
+//            self.getArrayOfDates { object in
+//            }
+//        }
+    }
+    
     @IBAction func slider(sender: AnyObject) {
         let value = Int(sliderValue.value)
         sliderLabel.text = "‹  " + String(value) + "  ›"
     }
-    var arrayOfPasks: Results<Pask>!
-    var arrayOfDates: [NSDate] = []
-    var last = 0
     
-    @IBOutlet weak var monthLabel: UILabel!
     struct Color {
         static let selectedText = UIColor.whiteColor()
         static let text = UIColor.blackColor()
@@ -41,10 +43,6 @@ class ViewController: UIViewController {
         static let sundayTextDisabled = UIColor(red: 1.0, green: 0.6, blue: 0.6, alpha: 1.0)
         static let sundaySelectionBackground = sundayText
     }
-    var shouldShowDaysOut = true
-    var animationFinished = true
-    
-    var selectedDay:DayView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,41 +50,51 @@ class ViewController: UIViewController {
         UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
         monthLabel.text = CVDate(date: NSDate()).globalDescription
         getArrayOfDates { object in
-            var endPeriod = true
-            if !object.isEmpty {
-                let lastDate = object.last
-                let calendar = NSCalendar.currentCalendar()
-                var components = calendar.components([.Day , .Month , .Year], fromDate: lastDate!)
-                let year =  components.year
-                let month = components.month
-                let day = components.day
-                components = calendar.components([.Day , .Month , .Year], fromDate: NSDate())
-                let yearNow =  components.year
-                let monthNow = components.month
-                let dayNow = components.day
-                if dayNow + 10 >= day && yearNow == year && monthNow == month {
-                    endPeriod = false
-                }
-            }
-            if endPeriod {
-                self.appleLabel.text = ""
-            } else {
-                self.appleLabel.text = ""
-            }
+            self.compareDates(object)
         }
-        
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        getArrayOfDates { object in
+            self.compareDates(object)
+            self.calendarView.contentController.refreshPresentedMonth()
+            self.menuView.commitMenuViewUpdate()
+            self.calendarView.commitCalendarViewUpdate()
+        }
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         calendarView.toggleCurrentDayView()
     }
+    
     func getArray(obj: (Results<Pask>) -> ()){
         arrayOfPasks = HelperPask.getAllPask()
         dispatch_async(dispatch_get_main_queue(), {
             obj(self.arrayOfPasks)
         })
     }
-
+    
+    func compareDates(object: [NSDate]) {
+        var endPeriod = true
+        if !object.isEmpty {
+            var lastDateStructure = dateStruct(day: 0, month: 0, year: 0)
+            var nowDateStructure = dateStruct(day: 0, month: 0, year: 0)
+            let lastDate = object.last
+            lastDateStructure = HelperDates.getDateAsStruct(lastDate!)
+            nowDateStructure = HelperDates.getDateAsStruct(NSDate())
+            if nowDateStructure.day + 10 >= lastDateStructure.day && nowDateStructure.year == lastDateStructure.year && nowDateStructure.month == lastDateStructure.month {
+                endPeriod = false
+            }
+        }
+        if endPeriod {
+            self.appleLabel.text = ""
+        } else {
+            self.appleLabel.text = ""
+        }
+    }
+    
     func getArrayOfDates(obj: ([NSDate]) -> ()){
         getArray {object in
             if !object.isEmpty {
@@ -99,49 +107,18 @@ class ViewController: UIViewController {
             })
         }
     }
+    
     func removeDates(obj: (Results<Pask>) -> ()){
         arrayOfPasks = HelperPask.removePasc()
         dispatch_async(dispatch_get_main_queue(), {
             obj(self.arrayOfPasks)
         })
     }
-    func addValue(object: () -> ()) {
-        HelperPask().addValueToDate(Int(sliderValue.value), pasks: self.arrayOfPasks)
-    }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        getArrayOfDates { object in
-            var endPeriod = false
-            if !object.isEmpty {
-                let lastDate = object.last
-                let calendar = NSCalendar.currentCalendar()
-                var components = calendar.components([.Day , .Month , .Year], fromDate: lastDate!)
-                let year =  components.year
-                let month = components.month
-                let day = components.day
-                components = calendar.components([.Day , .Month , .Year], fromDate: NSDate())
-                let yearNow =  components.year
-                let monthNow = components.month
-                let dayNow = components.day
-                if dayNow + 10 >= day && yearNow == year && monthNow == month {
-                    endPeriod = true
-                }
-            }
-            if endPeriod {
-                self.appleLabel.text = ""
-            } else {
-                self.appleLabel.text = ""
-            }
-            self.calendarView.contentController.refreshPresentedMonth()
-            self.menuView.commitMenuViewUpdate()
-            self.calendarView.commitCalendarViewUpdate()
-        }
-    }
-    
+//    func addValue(object: () -> ()) {
+//        HelperPask().addValueToDate(indexDate, value: Int(sliderValue.value), pasks: self.arrayOfPasks)
+//    }
 }
-
 
 extension ViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
     
@@ -173,10 +150,18 @@ extension ViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
     //        return arc4random_uniform(33) == 0 ? true : false
     //    }
     //
-    //    func didSelectDayView(dayView: CVCalendarDayView, animationDidFinish: Bool) {
-    //        print("\(dayView.date.commonDescription) is selected!")
-    //        selectedDay = dayView
-    //    }
+//        func didSelectDayView(dayView: CVCalendarDayView, animationDidFinish: Bool) {
+//            let strDate = dayView.date.commonDescription// "2015-10-06T15:42:34Z"
+//            let dateFormatter = NSDateFormatter()
+//            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+//            indexDate = dateFormatter.dateFromString(strDate)!
+//            //виклик вікна з бігунком 
+//            //
+//            //
+//            //
+//            //
+//            selectedDay = dayView
+//        }
     
     func presentedDateUpdated(date: CVDate) {
         if monthLabel.text != date.globalDescription && self.animationFinished {
@@ -188,22 +173,17 @@ extension ViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
             updatedMonthLabel.sizeToFit()
             updatedMonthLabel.alpha = 0
             updatedMonthLabel.center = self.monthLabel.center
-            
             let offset = CGFloat(48)
             updatedMonthLabel.transform = CGAffineTransformMakeTranslation(0, offset)
             updatedMonthLabel.transform = CGAffineTransformMakeScale(1, 0.1)
-            
             UIView.animateWithDuration(0.35, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
                 self.animationFinished = false
                 self.monthLabel.transform = CGAffineTransformMakeTranslation(0, -offset)
                 self.monthLabel.transform = CGAffineTransformMakeScale(1, 0.1)
                 self.monthLabel.alpha = 0
-                
                 updatedMonthLabel.alpha = 1
                 updatedMonthLabel.transform = CGAffineTransformIdentity
-                
             }) { _ in
-                
                 self.animationFinished = true
                 self.monthLabel.frame = updatedMonthLabel.frame
                 self.monthLabel.text = updatedMonthLabel.text
@@ -211,9 +191,7 @@ extension ViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
                 self.monthLabel.alpha = 1
                 updatedMonthLabel.removeFromSuperview()
             }
-            
             self.view.insertSubview(updatedMonthLabel, aboveSubview: self.monthLabel)
-            
         }
     }
     
@@ -286,7 +264,6 @@ extension ViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
     
     func supplementaryView(viewOnDayView dayView: DayView) -> UIView {
         let π = M_PI
-        
         let ringSpacing: CGFloat = 3.0
         let ringInsetWidth: CGFloat = 1.0
         let ringVerticalOffset: CGFloat = 1.0
@@ -294,17 +271,12 @@ extension ViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
         let ringLineWidth: CGFloat = 4.0
         let ringLineColour: UIColor = .blueColor()
         let ringLastLineColour: UIColor = .redColor()
-        
         let newView = UIView(frame: dayView.bounds)
-        
         let diameter: CGFloat = (newView.bounds.width) - ringSpacing - 10
         let radius: CGFloat = diameter / 2.0
-        
         let rect = CGRectMake(newView.frame.midX-radius, newView.frame.midY-radius-ringVerticalOffset, diameter, diameter)
-        
         ringLayer = CAShapeLayer()
         newView.layer.addSublayer(ringLayer)
-        
         ringLayer.fillColor = nil
         ringLayer.lineWidth = ringLineWidth
         if last == 0 {
@@ -312,17 +284,14 @@ extension ViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
         } else {
             ringLayer.strokeColor = ringLastLineColour.CGColor
         }
-        
         let ringLineWidthInset: CGFloat = CGFloat(ringLineWidth/2.0) + ringInsetWidth
         let ringRect: CGRect = CGRectInset(rect, ringLineWidthInset, ringLineWidthInset)
         let centrePoint: CGPoint = CGPointMake(ringRect.midX, ringRect.midY)
         let startAngle: CGFloat = CGFloat(-π/2.0)
         let endAngle: CGFloat = CGFloat(π * 2.0) + startAngle
         let ringPath: UIBezierPath = UIBezierPath(arcCenter: centrePoint, radius: ringRect.width/2.0, startAngle: startAngle, endAngle: endAngle, clockwise: true)
-        
         ringLayer.path = ringPath.CGPath
         ringLayer.frame = newView.layer.bounds
-        
         return newView
     }
     
@@ -334,26 +303,22 @@ extension ViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
         for obj in arrayOfDates {
             k += 1
             if k>1 {
-                let calendar = NSCalendar.currentCalendar()
-                var components = calendar.components([.Day , .Month , .Year], fromDate: obj)
-                let year =  components.year
-                let month = components.month
-                let day = components.day
-                components = calendar.components([.Day , .Month , .Year], fromDate: NSDate())
-                let yearNow =  components.year
-                let monthNow = components.month
-                let dayNow = components.day
+                var lastDateStructure = dateStruct(day: 0, month: 0, year: 0)
+                var nowDateStructure = dateStruct(day: 0, month: 0, year: 0)
+                lastDateStructure = HelperDates.getDateAsStruct(obj)
+                nowDateStructure = HelperDates.getDateAsStruct(NSDate())
                 if k == arrayOfDates.count {
                     last = 1
                 }
-                if (day >= dayNow || year > yearNow || month > monthNow) && dayView.date != nil && day == dayView.date.day && month == dayView.date.month && year == dayView.date.year {
+                if (lastDateStructure.day >= nowDateStructure.day || lastDateStructure.year > nowDateStructure.year || lastDateStructure.month > nowDateStructure.month) && dayView.date != nil && lastDateStructure.day == dayView.date.day && lastDateStructure.month == dayView.date.month && lastDateStructure.year == dayView.date.year {
+                    
                     return true
                 }
-                
             }
         }
         return false
     }
+    
     func dayOfWeekTextColor() -> UIColor {
         return UIColor.whiteColor()
     }
@@ -367,6 +332,7 @@ extension ViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
 // MARK: - CVCalendarViewAppearanceDelegate
 
 extension ViewController: CVCalendarViewAppearanceDelegate {
+    
     func dayLabelPresentWeekdayInitallyBold() -> Bool {
         return false
     }
@@ -395,12 +361,6 @@ extension ViewController: CVCalendarViewAppearanceDelegate {
         }
     }
 }
-
-
-// MARK: - CVCalendarViewAppearanceDelegate
-
-
-// MARK: - IB Actions
 
 extension ViewController {
     //    @IBAction func switchChanged(sender: UISwitch) {
@@ -431,7 +391,6 @@ extension ViewController {
         calendarView.loadPreviousView()
     }
     
-    
     @IBAction func loadNext(sender: AnyObject) {
         calendarView.loadNextView()
     }
@@ -440,35 +399,22 @@ extension ViewController {
 // MARK: - Convenience API Demo
 
 extension ViewController {
+    
     func toggleMonthViewWithMonthOffset(offset: Int) {
         let calendar = NSCalendar.currentCalendar()
-        //        let calendarManager = calendarView.manager
-        let components = Manager.componentsForDate(NSDate()) // from today
-        
+        let components = Manager.componentsForDate(NSDate())
         components.month += offset
-        
         let resultDate = calendar.dateFromComponents(components)!
-        
         self.calendarView.toggleViewWithDate(resultDate)
     }
     
-    func didShowNextMonthView(date: NSDate)
-    {
-        //        let calendar = NSCalendar.currentCalendar()
-        //        let calendarManager = calendarView.manager
-        let components = Manager.componentsForDate(date) // from today
-        
+    func didShowNextMonthView(date: NSDate) {
+        let components = Manager.componentsForDate(date)
         print("Showing Month: \(components.month)")
     }
     
-    
-    func didShowPreviousMonthView(date: NSDate)
-    {
-        //        let calendar = NSCalendar.currentCalendar()
-        //        let calendarManager = calendarView.manager
-        let components = Manager.componentsForDate(date) // from today
-        
+    func didShowPreviousMonthView(date: NSDate) {
+        let components = Manager.componentsForDate(date)
         print("Showing Month: \(components.month)")
     }
-    
 }

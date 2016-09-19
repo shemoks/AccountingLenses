@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="CollectionViewCell" id="8tR-sg-bOw" customClass="CollectionViewCell" customModule="Lens" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="162" height="108"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="162" height="108"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Wvm-7l-Hf8">
+                        <rect key="frame" x="8" y="8" width="146" height="92"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kyj-cO-Bxb">
+                                <rect key="frame" x="0.0" y="0.0" width="146" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wb4-Bb-Hon">
+                                <rect key="frame" x="0.0" y="46" width="146" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="wb4-Bb-Hon" firstAttribute="height" secondItem="Kyj-cO-Bxb" secondAttribute="height" id="kHc-nv-Oj8"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="Wvm-7l-Hf8" firstAttribute="top" secondItem="8tR-sg-bOw" secondAttribute="top" constant="8" id="485-UE-quR"/>
+                <constraint firstAttribute="bottom" secondItem="Wvm-7l-Hf8" secondAttribute="bottom" constant="8" id="7RP-dI-vfa"/>
+                <constraint firstItem="Wvm-7l-Hf8" firstAttribute="leading" secondItem="8tR-sg-bOw" secondAttribute="leading" constant="8" id="FFB-OB-cpa"/>
+                <constraint firstItem="Wvm-7l-Hf8" firstAttribute="centerY" secondItem="8tR-sg-bOw" secondAttribute="centerY" id="Jn6-7p-hom"/>
+                <constraint firstItem="Wvm-7l-Hf8" firstAttribute="centerX" secondItem="8tR-sg-bOw" secondAttribute="centerX" id="WID-SE-cJl"/>
+                <constraint firstAttribute="trailing" secondItem="Wvm-7l-Hf8" secondAttribute="trailing" constant="8" id="omo-1K-eyF"/>
+            </constraints>
+            <size key="customSize" width="162" height="108"/>
+            <connections>
+                <outlet property="nameLabel" destination="Kyj-cO-Bxb" id="EfW-3f-Bef"/>
+                <outlet property="numberLabel" destination="wb4-Bb-Hon" id="o60-lq-9Pl"/>
+            </connections>
+            <point key="canvasLocation" x="227" y="123"/>
+        </collectionViewCell>
+    </objects>
+</document>

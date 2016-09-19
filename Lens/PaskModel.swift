@@ -16,6 +16,7 @@ class Pask: Object {
     dynamic var numberOfLens: Int = 0
     dynamic var dateFinish = NSDate()
     dynamic var isActive = true
+    var dates = List<Dates>()
     var lenses = List<Lens>()
     override static func primaryKey() -> String? {
         return "number"
