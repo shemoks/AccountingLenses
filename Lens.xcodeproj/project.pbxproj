@@ -50,7 +50,6 @@
 		9AE093A41D8FCE5E00F115F8 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AE093A31D8FCE5E00F115F8 /* View.xib */; };
 		9AE093A61D8FD1CC00F115F8 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE093A51D8FD1CC00F115F8 /* View.swift */; };
 		9AE093A81D90059D00F115F8 /* CollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE093A71D90059D00F115F8 /* CollectionController.swift */; };
-		9AE093AC1D90175E00F115F8 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE093AB1D90175E00F115F8 /* MyViewController.swift */; };
 		9AE613BF1D7E973C0016277B /* AnimationClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE613BE1D7E973C0016277B /* AnimationClass.swift */; };
 /* End PBXBuildFile section */
 
@@ -120,7 +119,6 @@
 		9AE093A31D8FCE5E00F115F8 /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		9AE093A51D8FD1CC00F115F8 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		9AE093A71D90059D00F115F8 /* CollectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionController.swift; sourceTree = "<group>"; };
-		9AE093AB1D90175E00F115F8 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		9AE613BE1D7E973C0016277B /* AnimationClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationClass.swift; sourceTree = "<group>"; };
 		F6AAFBE4FF585B0D67D80982 /* Pods-Lens.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lens.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lens/Pods-Lens.release.xcconfig"; sourceTree = "<group>"; };
 		F905D9904B4606844F293A8A /* Pods_Lens.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lens.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -296,7 +294,6 @@
 				9A6483031D76E18C00C5462F /* ViewController.swift */,
 				84C1F5AE1D8AD5D6006E6137 /* NewViewController.swift */,
 				9AE0938A1D8ADCE500F115F8 /* TableViewController.swift */,
-				9AE093AB1D90175E00F115F8 /* MyViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -543,7 +540,6 @@
 				84C1F5AF1D8AD5D6006E6137 /* NewViewController.swift in Sources */,
 				9AE093831D88523800F115F8 /* Notification.swift in Sources */,
 				9A6483041D76E18C00C5462F /* ViewController.swift in Sources */,
-				9AE093AC1D90175E00F115F8 /* MyViewController.swift in Sources */,
 				84CDFE781D8BC387001020C3 /* UIView+Extenstions.swift in Sources */,
 				84A7B5A11D8AD7960040C701 /* PeriodTableViewCell.swift in Sources */,
 				9AE093A61D8FD1CC00F115F8 /* View.swift in Sources */,
