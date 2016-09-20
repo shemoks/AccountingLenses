@@ -7,3 +7,8 @@
 //
 
 import Foundation
+import RealmSwift
+
+class NameModel:Object  {
+    dynamic var name = ""
+}

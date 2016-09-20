@@ -9,7 +9,7 @@
 import UIKit
 
 class NameCompanyViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     var viewModel = NameCompanyViewModel()
     
@@ -18,9 +18,10 @@ class NameCompanyViewController: UIViewController {
         self.title = "Name Company"
         self.setupTableView(tableView)
         self.viewModel.parseLocalJSON()
+        self.viewModel.getDataBase()
         // Do any additional setup after loading the view.
     }
-
+    
 }
 
 extension NameCompanyViewController {
@@ -30,6 +31,20 @@ extension NameCompanyViewController {
         tableView.registerNib(UINib(nibName: "CustomNameCompanyTableViewCell",bundle: nil), forCellReuseIdentifier: "CustomCell")
     }
     
+    func showAlert(){
+        let alert = UIAlertController(title: "Enter Input", message: "Please enter data", preferredStyle: .Alert)
+        alert.addTextFieldWithConfigurationHandler{(textField) -> Void in }
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Done", style: .Default, handler: {(action) -> Void in
+            let text = alert.textFields![0] as UITextField
+            self.viewModel.textForCustomName = text.text!
+            self.tableView.reloadData()
+            self.viewModel.saveInDB(self.viewModel.textForCustomName)
+            self.viewModel.getDataBase()
+            self.tableView.reloadData()
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
 }
 
 extension NameCompanyViewController: UITableViewDataSource {
@@ -39,7 +54,7 @@ extension NameCompanyViewController: UITableViewDataSource {
         case 0:
             return 1
         case 1:
-            return 1
+            return self.viewModel.nameCompany.count
         case 2:
             return self.viewModel.arrayCompanies.count
         default:
@@ -58,7 +73,7 @@ extension NameCompanyViewController: UITableViewDataSource {
             cell = aCell
         case 1:
             let aCell = tableView.dequeueReusableCellWithIdentifier("NameCompany") as! NameCompanyTableViewCell
-            aCell.nameCompanyLabel.text = "Data From Data Base" 
+            aCell.nameCompanyLabel.text = self.viewModel.nameCompany.sorted("name")[indexPath.row].name
             cell = aCell
         case 2:
             let aCell = tableView.dequeueReusableCellWithIdentifier("NameCompany") as! NameCompanyTableViewCell
@@ -74,6 +89,7 @@ extension NameCompanyViewController: UITableViewDataSource {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 3
     }
+    
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
@@ -87,14 +103,32 @@ extension NameCompanyViewController: UITableViewDataSource {
         }
         return nil
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        switch indexPath.section {
+        case 0:
+            self.showAlert()
+            print("Tapp 1")
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        case 1:
+            print("Tapp 2")
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        case 2:
+            print("Tapp 3")
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        default:
+            print("Error")
+        }
+    }
+
 }
 
-
 extension NameCompanyViewController: UITableViewDelegate {
-
+    
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 45
     }
+    
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch section {
         case 0:
