@@ -22,6 +22,13 @@
 		84CDFE741D8BBE77001020C3 /* DatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CDFE731D8BBE77001020C3 /* DatePicker.xib */; };
 		84CDFE761D8BBFD0001020C3 /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CDFE751D8BBFD0001020C3 /* DatePicker.swift */; };
 		84CDFE781D8BC387001020C3 /* UIView+Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CDFE771D8BC387001020C3 /* UIView+Extenstions.swift */; };
+		84F9CE681D91192600C3F053 /* NameCompanyStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F9CE671D91192600C3F053 /* NameCompanyStoryboard.storyboard */; };
+		84F9CE6A1D91198500C3F053 /* NameCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9CE691D91198500C3F053 /* NameCompanyViewController.swift */; };
+		84F9CE6D1D911BFC00C3F053 /* NameCompanyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F9CE6C1D911BFC00C3F053 /* NameCompanyTableViewCell.xib */; };
+		84F9CE6F1D911D3500C3F053 /* NameCompanyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9CE6E1D911D3500C3F053 /* NameCompanyTableViewCell.swift */; };
+		84F9CE711D9123A000C3F053 /* NameCompanyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9CE701D9123A000C3F053 /* NameCompanyViewModel.swift */; };
+		84F9CE751D91270400C3F053 /* NameCompanyJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 84F9CE741D91270400C3F053 /* NameCompanyJSON.json */; };
+		84F9CE771D91281A00C3F053 /* NameCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9CE761D91281A00C3F053 /* NameCompany.swift */; };
 		9A6483021D76E18C00C5462F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6483011D76E18C00C5462F /* AppDelegate.swift */; };
 		9A6483041D76E18C00C5462F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6483031D76E18C00C5462F /* ViewController.swift */; };
 		9A6483071D76E18C00C5462F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A6483051D76E18C00C5462F /* Main.storyboard */; };
@@ -85,6 +92,13 @@
 		84CDFE731D8BBE77001020C3 /* DatePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePicker.xib; sourceTree = "<group>"; };
 		84CDFE751D8BBFD0001020C3 /* DatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 		84CDFE771D8BC387001020C3 /* UIView+Extenstions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extenstions.swift"; sourceTree = "<group>"; };
+		84F9CE671D91192600C3F053 /* NameCompanyStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NameCompanyStoryboard.storyboard; sourceTree = "<group>"; };
+		84F9CE691D91198500C3F053 /* NameCompanyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameCompanyViewController.swift; sourceTree = "<group>"; };
+		84F9CE6C1D911BFC00C3F053 /* NameCompanyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NameCompanyTableViewCell.xib; sourceTree = "<group>"; };
+		84F9CE6E1D911D3500C3F053 /* NameCompanyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameCompanyTableViewCell.swift; sourceTree = "<group>"; };
+		84F9CE701D9123A000C3F053 /* NameCompanyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameCompanyViewModel.swift; sourceTree = "<group>"; };
+		84F9CE741D91270400C3F053 /* NameCompanyJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NameCompanyJSON.json; sourceTree = "<group>"; };
+		84F9CE761D91281A00C3F053 /* NameCompany.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameCompany.swift; sourceTree = "<group>"; };
 		9A6482FE1D76E18C00C5462F /* Lens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lens.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A6483011D76E18C00C5462F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A6483031D76E18C00C5462F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +178,7 @@
 			children = (
 				84A7B5A41D8ADF900040C701 /* NewViewModel.swift */,
 				84B3F1901D8BDF9600883677 /* CustomTextField.swift */,
+				84F9CE701D9123A000C3F053 /* NameCompanyViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -190,6 +205,8 @@
 				84B3F1941D8C056A00883677 /* DateTableViewCell.xib */,
 				84BB1DCB1D8FC44D00E8C751 /* SaveTableViewCell.swift */,
 				84BB1DC91D8FC36900E8C751 /* SaveTableViewCell.xib */,
+				84F9CE6E1D911D3500C3F053 /* NameCompanyTableViewCell.swift */,
+				84F9CE6C1D911BFC00C3F053 /* NameCompanyTableViewCell.xib */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -231,7 +248,9 @@
 				9A6483081D76E18C00C5462F /* Assets.xcassets */,
 				9A64830A1D76E18C00C5462F /* LaunchScreen.storyboard */,
 				9A64830D1D76E18C00C5462F /* Info.plist */,
+				84F9CE741D91270400C3F053 /* NameCompanyJSON.json */,
 				9AE613BE1D7E973C0016277B /* AnimationClass.swift */,
+				84F9CE671D91192600C3F053 /* NameCompanyStoryboard.storyboard */,
 			);
 			path = Lens;
 			sourceTree = "<group>";
@@ -262,6 +281,7 @@
 				9A6483761D785B6300C5462F /* CalendarView.swift */,
 				9AE093861D8AC6B700F115F8 /* DatesModel.swift */,
 				9AE0939B1D8C363A00F115F8 /* CollectionModel.swift */,
+				84F9CE761D91281A00C3F053 /* NameCompany.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -283,6 +303,7 @@
 				9A6483031D76E18C00C5462F /* ViewController.swift */,
 				84C1F5AE1D8AD5D6006E6137 /* NewViewController.swift */,
 				9AE0938A1D8ADCE500F115F8 /* TableViewController.swift */,
+				84F9CE691D91198500C3F053 /* NameCompanyViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -443,6 +464,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F9CE681D91192600C3F053 /* NameCompanyStoryboard.storyboard in Resources */,
 				84BB1DCA1D8FC36900E8C751 /* SaveTableViewCell.xib in Resources */,
 				84A7B5A21D8AD7960040C701 /* PeriodTableViewCell.xib in Resources */,
 				84B3F1951D8C056A00883677 /* DateTableViewCell.xib in Resources */,
@@ -456,6 +478,8 @@
 				9AE0938E1D8AE00C00F115F8 /* EventCell.xib in Resources */,
 				9A6483071D76E18C00C5462F /* Main.storyboard in Resources */,
 				9AE093A01D8C38C600F115F8 /* LastCollection.xib in Resources */,
+				84F9CE751D91270400C3F053 /* NameCompanyJSON.json in Resources */,
+				84F9CE6D1D911BFC00C3F053 /* NameCompanyTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,9 +567,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F9CE6A1D91198500C3F053 /* NameCompanyViewController.swift in Sources */,
 				84BB1DCC1D8FC44D00E8C751 /* SaveTableViewCell.swift in Sources */,
 				9A6483751D784C7A00C5462F /* PaskController.swift in Sources */,
 				84CDFE761D8BBFD0001020C3 /* DatePicker.swift in Sources */,
+				84F9CE771D91281A00C3F053 /* NameCompany.swift in Sources */,
 				84B3F1971D8C061800883677 /* DateTableViewCell.swift in Sources */,
 				9A6483771D785B6300C5462F /* CalendarView.swift in Sources */,
 				84A7B59F1D8AD7960040C701 /* InputDataTableViewCell.swift in Sources */,
@@ -562,10 +588,12 @@
 				9A6483021D76E18C00C5462F /* AppDelegate.swift in Sources */,
 				9A6483301D76F12D00C5462F /* PaskModel.swift in Sources */,
 				9AE093941D8BD56300F115F8 /* HelperDates.swift in Sources */,
+				84F9CE711D9123A000C3F053 /* NameCompanyViewModel.swift in Sources */,
 				9AE0939A1D8C351300F115F8 /* CollectionViewCell.swift in Sources */,
 				9AE093901D8AE39A00F115F8 /* TableViewCell.swift in Sources */,
 				9A6483721D770AE900C5462F /* HelperPask.swift in Sources */,
 				84A7B5A51D8ADF900040C701 /* NewViewModel.swift in Sources */,
+				84F9CE6F1D911D3500C3F053 /* NameCompanyTableViewCell.swift in Sources */,
 				9AE613BF1D7E973C0016277B /* AnimationClass.swift in Sources */,
 				9AE0939C1D8C363A00F115F8 /* CollectionModel.swift in Sources */,
 				9AE093A21D8C39C500F115F8 /* LastCollection.swift in Sources */,
