@@ -6,6 +6,5 @@ use_frameworks!
 target 'Lens' do
  pod 'RealmSwift', '~> 1.0.2'
  pod 'CVCalendar', '~> 1.3.0'
- pod 'Bond', '~> 4.3'
- pod 'IQKeyboardManagerSwift'
+ pod 'IQKeyboardManagerSwift’, ‘4.0.5’ 
 end

@@ -17,10 +17,12 @@ class NewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.viewModel.getArray{object in
+        
+        }
         self.title = "Add new Lens"
         self.setupTableView(tableView)
     }
-    
 }
 
 extension NewViewController:UITableViewDataSource {
@@ -116,8 +118,8 @@ extension NewViewController:UITableViewDataSource {
                 
                 let newCell = tableView.cellForRowAtIndexPath(indexPath)
                 newCell?.accessoryType = .Checkmark
-                //let period = Term.arrayEnum[indexPath.row]
-                //self.periodForBase = period.rawValue
+                self.viewModel.dateArray = []
+                self.viewModel.dateArray.append("\(Term.arrayEnum[indexPath.row].rawValue)")
                 self.viewModel.lastSelectedIndexPath = indexPath
             }
         default:
@@ -167,8 +169,7 @@ private extension NewViewController {
 extension NewViewController:SaveButtonTapp {
     
     func saveButtonTapp(cell: SaveTableViewCell) {
-        self.tableView.reloadData()
-        self.viewModel.saveInDataBase()
-       
+        tableView.reloadData()
+        self.viewModel.saveInDataBase(self)
     }
 }
