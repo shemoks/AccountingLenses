@@ -38,10 +38,6 @@ private extension CustomTextField {
         self.picker.didSelectDate = { [weak self] date in
             self?.date = date
         }
-        
-        self.picker.doneButtonTapped = { [weak self] datePicker in
-            self?.resignFirstResponder()
-        }
     }
     
     func setupTextField() {
