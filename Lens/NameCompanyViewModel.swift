@@ -14,6 +14,8 @@ class NameCompanyViewModel {
     
     var nameCompany: Results<NameModel>!
     
+    let realm = try! Realm()
+    
     var arrayCompanies = [NameCompany]()
     var textForCustomName = "Tapp on me"
     
@@ -40,22 +42,17 @@ class NameCompanyViewModel {
         let nameCompany = NameModel()
         nameCompany.name = name
         
-        let realm = try! Realm()
-        
         try! realm.write{
             realm.add(nameCompany)
         }
     }
     
     func getDataBase() {
-        let realm = try! Realm()
         nameCompany = realm.objects(NameModel)
         nameCompany.sorted("name")
-        print(nameCompany.sorted("name"))
     }
     
     func deleteFromDataBase(indexPath:Int) {
-        let realm = try! Realm()
         let some = realm.objects(NameModel.self)
         let item = some[indexPath]
         
@@ -64,4 +61,18 @@ class NameCompanyViewModel {
         }
     }
     
+    func showAlert(viewController:UIViewController,tableView:UITableView) {
+        
+        let alert = UIAlertController(title: "Enter Input", message: "Please enter data", preferredStyle: .Alert)
+        alert.addTextFieldWithConfigurationHandler{(textField) -> Void in }
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Done", style: .Default, handler: {(action) -> Void in
+            let text = alert.textFields![0] as UITextField
+            self.textForCustomName = text.text!
+            self.saveInDB(self.textForCustomName)
+            self.getDataBase()
+            tableView.reloadData()
+        }))
+        viewController.presentViewController(alert, animated: true, completion: nil)
+    }
 }

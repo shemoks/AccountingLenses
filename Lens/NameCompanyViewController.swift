@@ -31,20 +31,6 @@ extension NameCompanyViewController {
         tableView.registerNib(UINib(nibName: "CustomNameCompanyTableViewCell",bundle: nil), forCellReuseIdentifier: "CustomCell")
     }
     
-    func showAlert(){
-        let alert = UIAlertController(title: "Enter Input", message: "Please enter data", preferredStyle: .Alert)
-        alert.addTextFieldWithConfigurationHandler{(textField) -> Void in }
-        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "Done", style: .Default, handler: {(action) -> Void in
-            let text = alert.textFields![0] as UITextField
-            self.viewModel.textForCustomName = text.text!
-            self.tableView.reloadData()
-            self.viewModel.saveInDB(self.viewModel.textForCustomName)
-            self.viewModel.getDataBase()
-            self.tableView.reloadData()
-        }))
-        self.presentViewController(alert, animated: true, completion: nil)
-    }
 }
 
 extension NameCompanyViewController: UITableViewDataSource {
@@ -107,7 +93,7 @@ extension NameCompanyViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         switch indexPath.section {
         case 0:
-            self.showAlert()
+            self.viewModel.showAlert(self, tableView: tableView)
             print("Tapp 1")
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
         case 1:
