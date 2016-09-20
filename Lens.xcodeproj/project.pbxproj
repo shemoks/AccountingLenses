@@ -29,6 +29,8 @@
 		84F9CE711D9123A000C3F053 /* NameCompanyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9CE701D9123A000C3F053 /* NameCompanyViewModel.swift */; };
 		84F9CE751D91270400C3F053 /* NameCompanyJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 84F9CE741D91270400C3F053 /* NameCompanyJSON.json */; };
 		84F9CE771D91281A00C3F053 /* NameCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9CE761D91281A00C3F053 /* NameCompany.swift */; };
+		84F9CE791D912EED00C3F053 /* CustomNameCompanyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F9CE781D912EED00C3F053 /* CustomNameCompanyTableViewCell.xib */; };
+		84F9CE7B1D91301100C3F053 /* CustomNameCompanyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9CE7A1D91301100C3F053 /* CustomNameCompanyTableViewCell.swift */; };
 		9A6483021D76E18C00C5462F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6483011D76E18C00C5462F /* AppDelegate.swift */; };
 		9A6483041D76E18C00C5462F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6483031D76E18C00C5462F /* ViewController.swift */; };
 		9A6483071D76E18C00C5462F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A6483051D76E18C00C5462F /* Main.storyboard */; };
@@ -99,6 +101,8 @@
 		84F9CE701D9123A000C3F053 /* NameCompanyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameCompanyViewModel.swift; sourceTree = "<group>"; };
 		84F9CE741D91270400C3F053 /* NameCompanyJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NameCompanyJSON.json; sourceTree = "<group>"; };
 		84F9CE761D91281A00C3F053 /* NameCompany.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameCompany.swift; sourceTree = "<group>"; };
+		84F9CE781D912EED00C3F053 /* CustomNameCompanyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomNameCompanyTableViewCell.xib; sourceTree = "<group>"; };
+		84F9CE7A1D91301100C3F053 /* CustomNameCompanyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNameCompanyTableViewCell.swift; sourceTree = "<group>"; };
 		9A6482FE1D76E18C00C5462F /* Lens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lens.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A6483011D76E18C00C5462F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A6483031D76E18C00C5462F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -207,6 +211,8 @@
 				84BB1DC91D8FC36900E8C751 /* SaveTableViewCell.xib */,
 				84F9CE6E1D911D3500C3F053 /* NameCompanyTableViewCell.swift */,
 				84F9CE6C1D911BFC00C3F053 /* NameCompanyTableViewCell.xib */,
+				84F9CE7A1D91301100C3F053 /* CustomNameCompanyTableViewCell.swift */,
+				84F9CE781D912EED00C3F053 /* CustomNameCompanyTableViewCell.xib */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -471,6 +477,7 @@
 				84CDFE741D8BBE77001020C3 /* DatePicker.xib in Resources */,
 				84A7B5A01D8AD7960040C701 /* InputDataTableViewCell.xib in Resources */,
 				9AE093891D8ADBA600F115F8 /* EventsStoryboard.storyboard in Resources */,
+				84F9CE791D912EED00C3F053 /* CustomNameCompanyTableViewCell.xib in Resources */,
 				9A64830C1D76E18C00C5462F /* LaunchScreen.storyboard in Resources */,
 				9AE093981D8C332900F115F8 /* CollectionViewCell.xib in Resources */,
 				9A6483091D76E18C00C5462F /* Assets.xcassets in Resources */,
@@ -581,6 +588,7 @@
 				9A6483041D76E18C00C5462F /* ViewController.swift in Sources */,
 				84CDFE781D8BC387001020C3 /* UIView+Extenstions.swift in Sources */,
 				84A7B5A11D8AD7960040C701 /* PeriodTableViewCell.swift in Sources */,
+				84F9CE7B1D91301100C3F053 /* CustomNameCompanyTableViewCell.swift in Sources */,
 				9AE093A61D8FD1CC00F115F8 /* View.swift in Sources */,
 				9A64836F1D77007900C5462F /* LensModel.swift in Sources */,
 				9AE093871D8AC6B700F115F8 /* DatesModel.swift in Sources */,
