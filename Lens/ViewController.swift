@@ -5,6 +5,7 @@ import RealmSwift
 class ViewController: UIViewController {
     
     
+    @IBOutlet weak var collectionView: View!
     @IBOutlet weak var appleLabel: UILabel!
     @IBOutlet weak var menuView: CVCalendarMenuView!
     @IBOutlet weak var daysOutSwitch: UISwitch!
@@ -22,17 +23,17 @@ class ViewController: UIViewController {
     
     var selectedDay:DayView!
     
-    @IBAction func okClick(sender: AnyObject) {
-//        addValue {
-//            self.getArrayOfDates { object in
-//            }
-//        }
-    }
+    //    @IBAction func okClick(sender: AnyObject) {
+    ////        addValue {
+    ////            self.getArrayOfDates { object in
+    ////            }
+    ////        }
+    //    }
     
-    @IBAction func slider(sender: AnyObject) {
-        let value = Int(sliderValue.value)
-        sliderLabel.text = "‹  " + String(value) + "  ›"
-    }
+    //    @IBAction func slider(sender: AnyObject) {
+    //        let value = Int(sliderValue.value)
+    //        sliderLabel.text = "‹  " + String(value) + "  ›"
+    //    }
     
     struct Color {
         static let selectedText = UIColor.whiteColor()
@@ -51,6 +52,12 @@ class ViewController: UIViewController {
         monthLabel.text = CVDate(date: NSDate()).globalDescription
         getArrayOfDates { object in
             self.compareDates(object)
+            self.collectionView.arrayOfPasks = HelperPask.numberOfLenses(self.arrayOfPasks)
+            self.collectionView.onTouch = { () in
+                self.performSegueWithIdentifier("addPask", sender: self)
+            }
+            self.collectionView.collectionView.reloadData()
+            
         }
     }
     
@@ -66,7 +73,15 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-        calendarView.toggleCurrentDayView()
+        getArrayOfDates { object in
+            self.calendarView.toggleCurrentDayView()
+            self.collectionView.arrayOfPasks = HelperPask.numberOfLenses(self.arrayOfPasks)
+            self.collectionView.onTouch = { () in
+                self.performSegueWithIdentifier("addPask", sender: self)
+            }
+            self.collectionView.collectionView.reloadData()
+            
+        }
     }
     
     func getArray(obj: (Results<Pask>) -> ()){
@@ -77,21 +92,20 @@ class ViewController: UIViewController {
     }
     
     func compareDates(object: [NSDate]) {
-        var endPeriod = true
+        
         if !object.isEmpty {
-            var lastDateStructure = dateStruct(day: 0, month: 0, year: 0)
-            var nowDateStructure = dateStruct(day: 0, month: 0, year: 0)
+            var endPeriod = false
             let lastDate = object.last
-            lastDateStructure = HelperDates.getDateAsStruct(lastDate!)
-            nowDateStructure = HelperDates.getDateAsStruct(NSDate())
-            if nowDateStructure.day + 10 >= lastDateStructure.day && nowDateStructure.year == lastDateStructure.year && nowDateStructure.month == lastDateStructure.month {
-                endPeriod = false
+            let now = NSDate()
+            let dayTomorrow = HelperDates.addValueToDate(now, value: 10)
+            if HelperDates.compareDates(dayTomorrow, secondDate: lastDate!) == ">" || HelperDates.compareDates(dayTomorrow, secondDate: lastDate!) == "=" {
+                endPeriod = true
             }
-        }
-        if endPeriod {
-            self.appleLabel.text = ""
-        } else {
-            self.appleLabel.text = ""
+            if endPeriod {
+                self.appleLabel.text = ""
+            } else {
+                self.appleLabel.text = ""
+            }
         }
     }
     
@@ -115,9 +129,9 @@ class ViewController: UIViewController {
         })
     }
     
-//    func addValue(object: () -> ()) {
-//        HelperPask().addValueToDate(indexDate, value: Int(sliderValue.value), pasks: self.arrayOfPasks)
-//    }
+    //    func addValue(object: () -> ()) {
+    //        HelperPask().addValueToDate(indexDate, value: Int(sliderValue.value), pasks: self.arrayOfPasks)
+    //    }
 }
 
 extension ViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
@@ -150,18 +164,18 @@ extension ViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
     //        return arc4random_uniform(33) == 0 ? true : false
     //    }
     //
-//        func didSelectDayView(dayView: CVCalendarDayView, animationDidFinish: Bool) {
-//            let strDate = dayView.date.commonDescription// "2015-10-06T15:42:34Z"
-//            let dateFormatter = NSDateFormatter()
-//            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-//            indexDate = dateFormatter.dateFromString(strDate)!
-//            //виклик вікна з бігунком 
-//            //
-//            //
-//            //
-//            //
-//            selectedDay = dayView
-//        }
+    //        func didSelectDayView(dayView: CVCalendarDayView, animationDidFinish: Bool) {
+    //            let strDate = dayView.date.commonDescription// "2015-10-06T15:42:34Z"
+    //            let dateFormatter = NSDateFormatter()
+    //            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+    //            indexDate = dateFormatter.dateFromString(strDate)!
+    //            //виклик вікна з бігунком
+    //            //
+    //            //
+    //            //
+    //            //
+    //            selectedDay = dayView
+    //        }
     
     func presentedDateUpdated(date: CVDate) {
         if monthLabel.text != date.globalDescription && self.animationFinished {

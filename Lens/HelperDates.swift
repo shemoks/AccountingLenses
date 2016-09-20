@@ -47,11 +47,16 @@ class HelperDates {
         return dateNow.day - dateBegin.day
     }
     
-    static func compareDates(firstDate: NSDate, secondDate: NSDate) -> Bool {
-        if firstDate.compare(secondDate) == NSComparisonResult.OrderedAscending{
-        return true
+    static func compareDates(firstDate: NSDate, secondDate: NSDate) -> String {
+        if firstDate.compare(secondDate) == NSComparisonResult.OrderedSame{
+            return "="
         }
-        return false
+        if firstDate.compare(secondDate) == NSComparisonResult.OrderedDescending{
+            return ">"
+        }
+        if firstDate.compare(secondDate) == NSComparisonResult.OrderedAscending{
+            return "<"
+        }
+        return "="
     }
-    
 }

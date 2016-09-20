@@ -19,7 +19,7 @@ class View: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDataSour
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         setup()
- 
+
     }
     
     func setup() {
@@ -30,12 +30,13 @@ class View: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDataSour
         self.collectionView.registerNib(UINib(nibName: "CollectionViewCell",bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
         self.collectionView.registerNib(UINib(nibName: "LastCollection",bundle: nil), forCellWithReuseIdentifier: "LastCollection")
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
-        layout.itemSize = CGSize(width: 70, height: 150)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        layout.itemSize = CGSize(width: 70, height: 118)
+        layout.scrollDirection = .Horizontal
         self.collectionView.setCollectionViewLayout(layout, animated: false)
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
-        self.collectionView.reloadData()
+        
     }
     
     func loadViewFromNib() -> UIView {

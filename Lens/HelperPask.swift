@@ -142,7 +142,7 @@ class HelperPask{
             let collection = Collection()
             let dateBuy = pask.dateBuy
             let numberOfLenses = HelperDates.subtructDates(dateBuy) * 2
-            if HelperDates.compareDates(pask.dateBuy, secondDate: minDateBuy!)  {
+            if HelperDates.compareDates(pask.dateBuy, secondDate: minDateBuy!) == "=" {
                 collection.number = pask.numberOfLens - numberOfLenses
             } else {
                 collection.number = pask.numberOfLens

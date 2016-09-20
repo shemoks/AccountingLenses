@@ -20,12 +20,11 @@ class MyViewController: UIViewController {
         let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert , .Badge, .Sound], categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
         getArrayOfDates { object in
-          
             self.collectionView.arrayOfPasks = HelperPask.numberOfLenses(self.arrayOfPasks)
+            self.collectionView.collectionView.reloadData()
             self.collectionView.onTouch = { () in
             self.performSegueWithIdentifier("tableView", sender: self)
             }
-            self.collectionView.collectionView.reloadData()
         }
     }
     

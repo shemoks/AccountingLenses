@@ -35,9 +35,9 @@
 		9A6483721D770AE900C5462F /* HelperPask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6483711D770AE900C5462F /* HelperPask.swift */; };
 		9A6483751D784C7A00C5462F /* PaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6483741D784C7A00C5462F /* PaskController.swift */; };
 		9A6483771D785B6300C5462F /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6483761D785B6300C5462F /* CalendarView.swift */; };
+		9AC451C81D915E6700516218 /* EventsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AC451C71D915E6700516218 /* EventsStoryboard.storyboard */; };
 		9AE093831D88523800F115F8 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE093821D88523800F115F8 /* Notification.swift */; };
 		9AE093871D8AC6B700F115F8 /* DatesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE093861D8AC6B700F115F8 /* DatesModel.swift */; };
-		9AE093891D8ADBA600F115F8 /* EventsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AE093881D8ADBA600F115F8 /* EventsStoryboard.storyboard */; };
 		9AE0938B1D8ADCE500F115F8 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE0938A1D8ADCE500F115F8 /* TableViewController.swift */; };
 		9AE0938E1D8AE00C00F115F8 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AE0938D1D8AE00C00F115F8 /* EventCell.xib */; };
 		9AE093901D8AE39A00F115F8 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE0938F1D8AE39A00F115F8 /* TableViewCell.swift */; };
@@ -105,9 +105,9 @@
 		9A6483711D770AE900C5462F /* HelperPask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperPask.swift; sourceTree = "<group>"; };
 		9A6483741D784C7A00C5462F /* PaskController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaskController.swift; sourceTree = "<group>"; };
 		9A6483761D785B6300C5462F /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		9AC451C71D915E6700516218 /* EventsStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventsStoryboard.storyboard; sourceTree = "<group>"; };
 		9AE093821D88523800F115F8 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		9AE093861D8AC6B700F115F8 /* DatesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatesModel.swift; sourceTree = "<group>"; };
-		9AE093881D8ADBA600F115F8 /* EventsStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = EventsStoryboard.storyboard; path = ../EventsStoryboard.storyboard; sourceTree = "<group>"; };
 		9AE0938A1D8ADCE500F115F8 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		9AE0938D1D8AE00C00F115F8 /* EventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
 		9AE0938F1D8AE39A00F115F8 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -240,7 +240,7 @@
 				9A64836B1D77002E00C5462F /* Models */,
 				9A6483011D76E18C00C5462F /* AppDelegate.swift */,
 				9A6483051D76E18C00C5462F /* Main.storyboard */,
-				9AE093881D8ADBA600F115F8 /* EventsStoryboard.storyboard */,
+				9AC451C71D915E6700516218 /* EventsStoryboard.storyboard */,
 				9A6483081D76E18C00C5462F /* Assets.xcassets */,
 				9A64830A1D76E18C00C5462F /* LaunchScreen.storyboard */,
 				9A64830D1D76E18C00C5462F /* Info.plist */,
@@ -453,8 +453,8 @@
 				84B3F1951D8C056A00883677 /* DateTableViewCell.xib in Resources */,
 				84CDFE741D8BBE77001020C3 /* DatePicker.xib in Resources */,
 				84A7B5A01D8AD7960040C701 /* InputDataTableViewCell.xib in Resources */,
-				9AE093891D8ADBA600F115F8 /* EventsStoryboard.storyboard in Resources */,
 				9A64830C1D76E18C00C5462F /* LaunchScreen.storyboard in Resources */,
+				9AC451C81D915E6700516218 /* EventsStoryboard.storyboard in Resources */,
 				9AE093981D8C332900F115F8 /* CollectionViewCell.xib in Resources */,
 				9A6483091D76E18C00C5462F /* Assets.xcassets in Resources */,
 				9AE093A41D8FCE5E00F115F8 /* View.xib in Resources */,
