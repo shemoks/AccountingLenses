@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomTextField: UITextField {
+class CustomTextField: UITextField,UITextFieldDelegate {
     
     var dateFormatter: NSDateFormatter {
         let dateFormatter = NSDateFormatter()
