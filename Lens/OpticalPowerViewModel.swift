@@ -27,7 +27,6 @@ class OpticalPowerViewModel {
                 let lenses = json["lenses"]
                 for i in 0..<lenses.count{
                     let opticalPower = OpticalPower()
-                    print(lenses[i]["power"].doubleValue)
                     opticalPower.opticalPower = lenses[i]["power"].doubleValue
                     arrayOpticalPower.append(opticalPower)
                 }
@@ -52,11 +51,10 @@ class OpticalPowerViewModel {
     }
     
     func cellForDataBaseRow(cell:OpticalPowerTableViewCell,indexPath:NSIndexPath)   {
-        switch self.opticalPower.isEmpty {
-        case true:
+        if self.opticalPower.isEmpty {
             cell.titleLabel.text = "You don`t have any data in Data Base"
             cell.tittleForOpticalPowerLabel.text = ""
-        case false:
+        }else{
             cell.titleLabel.text = "Optical Power:"
             cell.tittleForOpticalPowerLabel.text = "\(opticalPower[indexPath.row].opticalPower)"
         }
@@ -68,10 +66,9 @@ class OpticalPowerViewModel {
     }
     
     func numberOfRow() -> Int{
-        switch self.opticalPower.isEmpty {
-        case true:
+        if self.opticalPower.isEmpty {
             return 1
-        case false:
+        }else{
             return self.opticalPower.count
         }
     }

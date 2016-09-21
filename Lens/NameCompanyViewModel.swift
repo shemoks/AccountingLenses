@@ -56,10 +56,9 @@ class NameCompanyViewModel {
     }
     
     func cellForRow(cell:NameCompanyTableViewCell,indexPath:NSIndexPath) -> NameCompanyTableViewCell{
-        switch self.nameCompany.isEmpty {
-        case true:
+        if self.nameCompany.isEmpty {
             cell.nameCompanyLabel.text = "You don`t have any data in Data Base"
-        case false:
+        }else{
             cell.nameCompanyLabel.text = nameCompany.sorted("name")[indexPath.row].name
         }
         return cell

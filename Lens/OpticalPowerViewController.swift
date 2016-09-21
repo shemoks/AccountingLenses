@@ -83,7 +83,7 @@ extension OpticalPowerViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            return "Please enter company manual"
+            return "Please enter optical power manual"
         case 1:
             return "Choose from DB"
         case 2:
