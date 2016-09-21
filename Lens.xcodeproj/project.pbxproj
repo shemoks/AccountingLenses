@@ -37,6 +37,7 @@
 		9A6483771D785B6300C5462F /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6483761D785B6300C5462F /* CalendarView.swift */; };
 		9AC451C81D915E6700516218 /* EventsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AC451C71D915E6700516218 /* EventsStoryboard.storyboard */; };
 		9AC451CB1D916CD700516218 /* SliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AC451CA1D916CD700516218 /* SliderView.xib */; };
+		9AC451CD1D9181FE00516218 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC451CC1D9181FE00516218 /* SliderView.swift */; };
 		9AE093831D88523800F115F8 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE093821D88523800F115F8 /* Notification.swift */; };
 		9AE093871D8AC6B700F115F8 /* DatesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE093861D8AC6B700F115F8 /* DatesModel.swift */; };
 		9AE0938B1D8ADCE500F115F8 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE0938A1D8ADCE500F115F8 /* TableViewController.swift */; };
@@ -107,6 +108,7 @@
 		9A6483761D785B6300C5462F /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		9AC451C71D915E6700516218 /* EventsStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventsStoryboard.storyboard; sourceTree = "<group>"; };
 		9AC451CA1D916CD700516218 /* SliderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SliderView.xib; sourceTree = "<group>"; };
+		9AC451CC1D9181FE00516218 /* SliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
 		9AE093821D88523800F115F8 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		9AE093861D8AC6B700F115F8 /* DatesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatesModel.swift; sourceTree = "<group>"; };
 		9AE0938A1D8ADCE500F115F8 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				9AC451CA1D916CD700516218 /* SliderView.xib */,
+				9AC451CC1D9181FE00516218 /* SliderView.swift */,
 			);
 			name = CollectionWithSlider;
 			sourceTree = "<group>";
@@ -555,6 +558,7 @@
 				84CDFE781D8BC387001020C3 /* UIView+Extenstions.swift in Sources */,
 				84A7B5A11D8AD7960040C701 /* PeriodTableViewCell.swift in Sources */,
 				9AE093A61D8FD1CC00F115F8 /* View.swift in Sources */,
+				9AC451CD1D9181FE00516218 /* SliderView.swift in Sources */,
 				9A64836F1D77007900C5462F /* LensModel.swift in Sources */,
 				9AE093871D8AC6B700F115F8 /* DatesModel.swift in Sources */,
 				9AE0938B1D8ADCE500F115F8 /* TableViewController.swift in Sources */,
