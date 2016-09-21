@@ -30,8 +30,6 @@ class OpticalPowerViewModel {
                     opticalPower.opticalPower = lenses[i]["power"].doubleValue
                     arrayOpticalPower.append(opticalPower)
                 }
-            }catch{
-                print("Faild Name/Path")
             }
         }
         return arrayOpticalPower
