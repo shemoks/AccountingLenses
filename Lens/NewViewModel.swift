@@ -83,7 +83,7 @@ class NewViewModel {
                 arrayLens.append(lens)
                 pask.lenses = arrayLens
                 
-                var datePikcer = UIDatePicker()
+                let datePikcer = UIDatePicker()
                 datePikcer.minimumDate = NSDate()
                 
                 if  HelperPask.validation(pask, minDatePicker: datePikcer.minimumDate!) {
