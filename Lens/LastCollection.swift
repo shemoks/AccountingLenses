@@ -10,9 +10,5 @@ import UIKit
 
 class LastCollection: UICollectionViewCell {
     
-    @IBOutlet weak var addPaskButton: UIButton!
-
-    @IBAction func addPaskClick(sender: AnyObject) {
-        
-    }
-}
+    
+   }

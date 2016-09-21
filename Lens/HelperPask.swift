@@ -137,12 +137,13 @@ class HelperPask{
     
     static func numberOfLenses(pasks: Results<Pask>) -> [Collection] {
         var numberOfLensesNow: [Collection] = []
+        let minDateBuy = pasks.filter("isActive = true").first?.dateBuy
         for pask in pasks {
             let collection = Collection()
             let dateBuy = pask.dateBuy
-            let numberOfLenses = HelperDates.subtructDates(dateBuy)
-            if numberOfLenses > 0 {
-                collection.number = numberOfLenses
+            let numberOfLenses = HelperDates.subtructDates(dateBuy) * 2
+            if HelperDates.compareDates(pask.dateBuy, secondDate: minDateBuy!) == "=" {
+                collection.number = pask.numberOfLens - numberOfLenses
             } else {
                 collection.number = pask.numberOfLens
             }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dEQ-Nf-3n0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GfZ-JT-UgM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -31,12 +31,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W7J-7x-ZwN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="422" y="421"/>
+            <point key="canvasLocation" x="1241" y="454"/>
         </scene>
-        <!--View Controller-->
+        <!--My View Controller-->
         <scene sceneID="h5M-yz-5hv">
             <objects>
-                <viewController id="GfZ-JT-UgM" sceneMemberID="viewController">
+                <viewController id="GfZ-JT-UgM" customClass="MyViewController" customModule="Lens" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FPX-ke-Yax"/>
                         <viewControllerLayoutGuide type="bottom" id="PL6-cb-vd0"/>
@@ -44,12 +44,30 @@
                     <view key="view" contentMode="scaleToFill" id="GzD-zR-983">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SU5-cx-vNP" customClass="View" customModule="Lens" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="400" width="600" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="5JR-dk-oxs"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SU5-cx-vNP" firstAttribute="leading" secondItem="GzD-zR-983" secondAttribute="leading" id="BzY-9x-sFL"/>
+                            <constraint firstAttribute="trailing" secondItem="SU5-cx-vNP" secondAttribute="trailing" id="N3I-Ls-20S"/>
+                            <constraint firstItem="PL6-cb-vd0" firstAttribute="top" secondItem="SU5-cx-vNP" secondAttribute="bottom" id="m19-nE-DMW"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="SU5-cx-vNP" id="10s-uq-qa3"/>
+                        <segue destination="dEQ-Nf-3n0" kind="show" identifier="tableView" id="1bl-IN-jWl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sqG-yP-SUp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1032" y="421"/>
+            <point key="canvasLocation" x="476" y="454"/>
         </scene>
     </scenes>
 </document>
