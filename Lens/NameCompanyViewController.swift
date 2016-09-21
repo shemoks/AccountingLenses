@@ -19,18 +19,14 @@ class NameCompanyViewController: UIViewController {
         self.setupTableView(tableView)
         self.viewModel.parseLocalJSON()
         self.viewModel.getDataBase()
-        // Do any additional setup after loading the view.
     }
-    
 }
 
 extension NameCompanyViewController {
     
     func setupTableView(tableView:UITableView) {
         tableView.registerNib(UINib(nibName: "NameCompanyTableViewCell",bundle: nil), forCellReuseIdentifier: "NameCompany")
-        tableView.registerNib(UINib(nibName: "CustomNameCompanyTableViewCell",bundle: nil), forCellReuseIdentifier: "CustomCell")
-    }
-    
+      }
 }
 
 extension NameCompanyViewController: UITableViewDataSource {
@@ -40,7 +36,7 @@ extension NameCompanyViewController: UITableViewDataSource {
         case 0:
             return 1
         case 1:
-            return self.viewModel.nameCompany.count
+            return self.viewModel.numberOfRows()
         case 2:
             return self.viewModel.arrayCompanies.count
         default:
@@ -50,30 +46,23 @@ extension NameCompanyViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell: UITableViewCell!
+        var cell = tableView.dequeueReusableCellWithIdentifier("NameCompany") as! NameCompanyTableViewCell
         
         switch indexPath.section {
         case 0:
-            let aCell = tableView.dequeueReusableCellWithIdentifier("CustomCell") as! CustomNameCompanyTableViewCell
-            aCell.nameLabel.text = "Tapp on me"
-            cell = aCell
+            cell.nameCompanyLabel.text = "Tap on me"
         case 1:
-            let aCell = tableView.dequeueReusableCellWithIdentifier("NameCompany") as! NameCompanyTableViewCell
-            aCell.nameCompanyLabel.text = self.viewModel.nameCompany.sorted("name")[indexPath.row].name
-            cell = aCell
+            cell = self.viewModel.cellForRow(cell, indexPath: indexPath)
         case 2:
-            let aCell = tableView.dequeueReusableCellWithIdentifier("NameCompany") as! NameCompanyTableViewCell
-            aCell.nameCompanyLabel.text = self.viewModel.arrayCompanies[indexPath.row].name
-            cell = aCell
+            cell.nameCompanyLabel.text = self.viewModel.arrayCompanies[indexPath.row].name
         default:
-            cell = nil
             print("Some Error")
         }
         return cell
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 3
+        return self.viewModel.numberOfSection
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -94,7 +83,6 @@ extension NameCompanyViewController: UITableViewDataSource {
         switch indexPath.section {
         case 0:
             self.viewModel.showAlert(self, tableView: tableView)
-            print("Tapp 1")
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
         case 1:
             print("Tapp 2")
