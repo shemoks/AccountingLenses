@@ -13,7 +13,7 @@ class NewViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var viewModel = NewViewModel()
-    
+    var textField:UITextField!
     var delegate:PassData!
     
     override func viewDidLoad() {
@@ -73,9 +73,7 @@ extension NewViewController:UITableViewDataSource {
             aCell.selectionStyle = .None
             aCell.titleLabel.text = "Date"
             aCell.textField.placeholder = "Please set up date"
-            if aCell.textField.text != "" {
-                self.viewModel.dateArray.append(aCell.textField.text!)
-            }
+            self.textField = aCell.textField
             cell = aCell
         case 3:
             let aCell = tableView.dequeueReusableCellWithIdentifier("Save") as! SaveTableViewCell
@@ -144,8 +142,8 @@ extension NewViewController:UITableViewDataSource {
                 
                 let newCell = tableView.cellForRowAtIndexPath(indexPath)
                 newCell?.accessoryType = .Checkmark
-                self.viewModel.dateArray = []
-                self.viewModel.dateArray.append("\(Term.arrayEnum[indexPath.row].rawValue)")
+                self.viewModel.dataArray = []
+                self.viewModel.dataArray.append("\(Term.arrayEnum[indexPath.row].rawValue)")
                 self.viewModel.lastSelectedIndexPath = indexPath
             }
         default:
@@ -195,6 +193,7 @@ extension NewViewController:SaveButtonTapp {
     
     func saveButtonTapp(cell: SaveTableViewCell) {
         tableView.reloadData()
+        self.viewModel.save(self.textField.text!)
         self.viewModel.saveInDataBase(self)
     }
 }
@@ -208,7 +207,7 @@ extension NewViewController: PassData {
 }
 
 extension NewViewController: PassDataDouble {
-
+    
     func passDataDouble(double: Double) {
         self.viewModel.stuc.opticalPower = double
         tableView.reloadData()

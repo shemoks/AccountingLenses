@@ -18,6 +18,7 @@ struct DataLens {
     var nameCompany:String
     var opticalPower:Double
     var count:Int
+    var time:String
 }
 
 class NewViewModel {
@@ -29,8 +30,8 @@ class NewViewModel {
     let arrayLens = List<Lens>()
     let arrayDays = List<Dates>()
     var arrayPasks: Results<Pask>!
-    var stuc = DataLens(nameCompany: "", opticalPower: 0, count: 0)
-    var dateArray = [String]()
+    var stuc = DataLens(nameCompany: "", opticalPower: 0, count: 0,time: "")
+    var dataArray = [String]()
     
     var lastSelectedIndexPath: NSIndexPath? = nil
     
@@ -81,19 +82,26 @@ class NewViewModel {
         }
     }
     
+    func save(text:String) {
+        dataArray.append(text)
+        dataArray.append(stuc.nameCompany)
+        dataArray.append("\(stuc.opticalPower)")
+        dataArray.append("\(stuc.count)")
+    }
+    
+    
     func saveInDataBase(viewController:UIViewController){
-        if dateArray.isEmpty != true{
-            if dateArray.count != 1 {
-                lens.termOfUsing = Int(dateArray[0])!
-                pask.name = dateArray[1]
-                lens.opticalPower = Double(dateArray[2])!
-                print(dateArray)
+        if dataArray.isEmpty != true{
+            if dataArray.count != 1 {
+                lens.termOfUsing = Int(dataArray[0])!
+                pask.name = dataArray[2]
+                lens.opticalPower = Double(dataArray[3])!
                 let expression = NSDateFormatter()
                 expression.dateFormat = "dd-MM-yyyy"
                 
-                if let dateBuy = expression.dateFromString(dateArray[4]) {
+                if let dateBuy = expression.dateFromString(dataArray[1]) {
                     
-                    if let numbers = Int(dateArray[3]) {
+                    if let numbers = Int(dataArray[4]) {
                         pask.numberOfLens = numbers
                         
                         if arrayPasks.count > 0 {
@@ -103,9 +111,9 @@ class NewViewModel {
                             pask.dateBuy = dateBuy
                         }
                         
-                        let tomorrow = HelperDates.addValueToDate(pask.dateBuy, value: Int(dateArray[0])! * Int(numbers/2))
+                        let tomorrow = HelperDates.addValueToDate(pask.dateBuy, value: Int(dataArray[0])! * Int(numbers/2))
                         pask.dateFinish = tomorrow
-                        let dates = HelperPask().datesForOnePask(numbers, numberOfDeys: Int(dateArray[0])!, dateOfBuy: pask.dateBuy)
+                        let dates = HelperPask().datesForOnePask(numbers, numberOfDeys: Int(dataArray[0])!, dateOfBuy: pask.dateBuy)
                         
                         for date in dates {
                             let event = Dates()
