@@ -12,16 +12,15 @@ import UIKit
 class NewViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    
     var viewModel = NewViewModel()
+    
+    var delegate:PassData!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewModel.getArray{object in
+        self.viewModel.getArray{object in }
+        self.title = "Add Lens"
         
-        }
-        self.title = "Add New Lens"
-
         self.setupTableView(tableView)
     }
 }
@@ -54,10 +53,19 @@ extension NewViewController:UITableViewDataSource {
         case 0:
             let aCell = tableView.dequeueReusableCellWithIdentifier("Cell") as! InputDataTableViewCell
             aCell.titleLabel.text = self.viewModel.arrayNameTitle[indexPath.row]
-            aCell.textField.placeholder = self.viewModel.arrayPlaceholder[indexPath.row]
-            aCell.selectionStyle = .None
-            if aCell.textField.text != "" {
-                self.viewModel.dateArray.append(aCell.textField.text!)
+            switch indexPath.row {
+            case 0:
+                if self.viewModel.data == nil{
+                    aCell.mainTitlelLabel.text = "Some text"
+                }else{
+                    aCell.mainTitlelLabel.text = self.viewModel.data
+                }
+            case 1:
+                aCell.mainTitlelLabel.text = "Label 2"
+            case 2:
+                aCell.mainTitlelLabel.text = "Label 3"
+            default:
+                print("Error")
             }
             cell = aCell
         case 1:
@@ -106,8 +114,27 @@ extension NewViewController:UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+      
         switch indexPath.section {
+        case 0:
+            switch indexPath.row {
+            case 0:
+                tableView.deselectRowAtIndexPath(indexPath, animated: true)
+                let controller = self.storyboard?.instantiateViewControllerWithIdentifier("NameView") as! NameCompanyViewController
+                controller.delegate = self
+                self.navigationController?.pushViewController(controller, animated: true)
+            case 1:
+                tableView.deselectRowAtIndexPath(indexPath, animated: true)
+                let controller = self.storyboard?.instantiateViewControllerWithIdentifier("OpticalView") as! OpticalPowerViewController
+                self.navigationController?.pushViewController(controller, animated: true)
+            case 2:
+                tableView.deselectRowAtIndexPath(indexPath, animated: true)
+                let controller = self.storyboard?.instantiateViewControllerWithIdentifier("NumberView") as! NumberViewController
+                self.navigationController?.pushViewController(controller, animated: true)
+            default:
+                print("Error")
+            }
+
         case 1:
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
             
@@ -126,7 +153,6 @@ extension NewViewController:UITableViewDataSource {
         default:
             print("Error")
         }
-        
     }
 }
 
@@ -147,7 +173,7 @@ extension NewViewController:UITableViewDelegate {
             return 0
         }
     }
-   
+    
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
         if section == 3{
@@ -172,5 +198,12 @@ extension NewViewController:SaveButtonTapp {
     func saveButtonTapp(cell: SaveTableViewCell) {
         tableView.reloadData()
         self.viewModel.saveInDataBase(self)
+    }
+}
+
+extension NewViewController: PassData {
+    func passData(text: String) {
+        self.viewModel.data = text
+        tableView.reloadData()
     }
 }

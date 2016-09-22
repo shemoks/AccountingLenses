@@ -24,7 +24,7 @@ class NewViewModel {
     let arrayLens = List<Lens>()
     let arrayDays = List<Dates>()
     var arrayPasks: Results<Pask>!
-    
+    var data:String!
     var dateArray = [String]()
     
     var lastSelectedIndexPath: NSIndexPath? = nil

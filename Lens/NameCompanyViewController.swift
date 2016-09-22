@@ -8,17 +8,27 @@
 
 import UIKit
 
+protocol PassData {
+    func passData(text:String)
+}
+
 class NameCompanyViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var viewModel = NameCompanyViewModel()
+    var delegate:PassData!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Name Company"
+        self.navigationItem.backBarButtonItem?.title = "Back"
         self.setupTableView(tableView)
         self.viewModel.parseLocalJSON()
         self.viewModel.getDataBase()
+    }
+    
+    @IBAction func backToRootView(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
     }
 }
 
@@ -84,8 +94,12 @@ extension NameCompanyViewController: UITableViewDataSource {
         case 0:
             self.viewModel.showAlert(self, tableView: tableView)
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            self.delegate.passData("My fucking name")
         case 1:
             print("Tapp 2")
+            let selecteIndexPath = tableView.indexPathForSelectedRow
+            let currentCell = tableView.cellForRowAtIndexPath(selecteIndexPath!) as! NameCompanyTableViewCell
+            self.delegate.passData(currentCell.nameCompanyLabel.text!)
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
         case 2:
             print("Tapp 3")
@@ -117,3 +131,4 @@ extension NameCompanyViewController: UITableViewDelegate {
         return 0
     }
 }
+
