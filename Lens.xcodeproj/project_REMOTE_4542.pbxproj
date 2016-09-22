@@ -7,7 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		445B12224DADB41CD3E75E7C /* Pods_Lens.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F905D9904B4606844F293A8A /* Pods_Lens.framework */; };
+		844C90111D92729D00ACFF8D /* OpticalPowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C90101D92729D00ACFF8D /* OpticalPowerViewController.swift */; };
+		844C90131D92742900ACFF8D /* OpticalPowerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844C90121D92742900ACFF8D /* OpticalPowerTableViewCell.xib */; };
+		844C90151D92750F00ACFF8D /* OpticalPowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C90141D92750F00ACFF8D /* OpticalPowerTableViewCell.swift */; };
+		844C90171D92761A00ACFF8D /* OpticalPowerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C90161D92761A00ACFF8D /* OpticalPowerViewModel.swift */; };
+		844C901C1D927DC800ACFF8D /* OpticalPower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C901B1D927DC800ACFF8D /* OpticalPower.swift */; };
+		844C901E1D927E3700ACFF8D /* OpticalPowerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C901D1D927E3700ACFF8D /* OpticalPowerModel.swift */; };
+		844C90201D927FA400ACFF8D /* OpticalPower.json in Resources */ = {isa = PBXBuildFile; fileRef = 844C901F1D927FA400ACFF8D /* OpticalPower.json */; };
+		844C90221D929F6A00ACFF8D /* NumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C90211D929F6A00ACFF8D /* NumberViewController.swift */; };
+		844C90251D92A0EC00ACFF8D /* NumberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844C90241D92A0EC00ACFF8D /* NumberTableViewCell.xib */; };
+		844C90271D92A26B00ACFF8D /* NumberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C90261D92A26B00ACFF8D /* NumberTableViewCell.swift */; };
+		844C90291D92A53500ACFF8D /* Number.json in Resources */ = {isa = PBXBuildFile; fileRef = 844C90281D92A53500ACFF8D /* Number.json */; };
+		844C902B1D92A56F00ACFF8D /* NumberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C902A1D92A56F00ACFF8D /* NumberViewModel.swift */; };
+		844C902D1D92A58E00ACFF8D /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C902C1D92A58E00ACFF8D /* Number.swift */; };
+		844C902F1D92A5A400ACFF8D /* NumberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844C902E1D92A5A400ACFF8D /* NumberModel.swift */; };
 		84A7B59F1D8AD7960040C701 /* InputDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7B59B1D8AD7960040C701 /* InputDataTableViewCell.swift */; };
 		84A7B5A01D8AD7960040C701 /* InputDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A7B59C1D8AD7960040C701 /* InputDataTableViewCell.xib */; };
 		84A7B5A11D8AD7960040C701 /* PeriodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7B59D1D8AD7960040C701 /* PeriodTableViewCell.swift */; };
@@ -23,6 +36,14 @@
 		84CDFE741D8BBE77001020C3 /* DatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84CDFE731D8BBE77001020C3 /* DatePicker.xib */; };
 		84CDFE761D8BBFD0001020C3 /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CDFE751D8BBFD0001020C3 /* DatePicker.swift */; };
 		84CDFE781D8BC387001020C3 /* UIView+Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CDFE771D8BC387001020C3 /* UIView+Extenstions.swift */; };
+		84F9CE681D91192600C3F053 /* NameCompanyStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F9CE671D91192600C3F053 /* NameCompanyStoryboard.storyboard */; };
+		84F9CE6A1D91198500C3F053 /* NameCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9CE691D91198500C3F053 /* NameCompanyViewController.swift */; };
+		84F9CE6D1D911BFC00C3F053 /* NameCompanyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84F9CE6C1D911BFC00C3F053 /* NameCompanyTableViewCell.xib */; };
+		84F9CE6F1D911D3500C3F053 /* NameCompanyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9CE6E1D911D3500C3F053 /* NameCompanyTableViewCell.swift */; };
+		84F9CE711D9123A000C3F053 /* NameCompanyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9CE701D9123A000C3F053 /* NameCompanyViewModel.swift */; };
+		84F9CE751D91270400C3F053 /* NameCompanyJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 84F9CE741D91270400C3F053 /* NameCompanyJSON.json */; };
+		84F9CE771D91281A00C3F053 /* NameCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9CE761D91281A00C3F053 /* NameCompany.swift */; };
+		84F9CE7D1D91390E00C3F053 /* NameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F9CE7C1D91390E00C3F053 /* NameModel.swift */; };
 		9A6483021D76E18C00C5462F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6483011D76E18C00C5462F /* AppDelegate.swift */; };
 		9A6483041D76E18C00C5462F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6483031D76E18C00C5462F /* ViewController.swift */; };
 		9A6483071D76E18C00C5462F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A6483051D76E18C00C5462F /* Main.storyboard */; };
@@ -35,11 +56,9 @@
 		9A6483721D770AE900C5462F /* HelperPask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6483711D770AE900C5462F /* HelperPask.swift */; };
 		9A6483751D784C7A00C5462F /* PaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6483741D784C7A00C5462F /* PaskController.swift */; };
 		9A6483771D785B6300C5462F /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6483761D785B6300C5462F /* CalendarView.swift */; };
-		9AC451C81D915E6700516218 /* EventsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AC451C71D915E6700516218 /* EventsStoryboard.storyboard */; };
-		9AC451CB1D916CD700516218 /* SliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AC451CA1D916CD700516218 /* SliderView.xib */; };
-		9AC451CD1D9181FE00516218 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC451CC1D9181FE00516218 /* SliderView.swift */; };
 		9AE093831D88523800F115F8 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE093821D88523800F115F8 /* Notification.swift */; };
 		9AE093871D8AC6B700F115F8 /* DatesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE093861D8AC6B700F115F8 /* DatesModel.swift */; };
+		9AE093891D8ADBA600F115F8 /* EventsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AE093881D8ADBA600F115F8 /* EventsStoryboard.storyboard */; };
 		9AE0938B1D8ADCE500F115F8 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE0938A1D8ADCE500F115F8 /* TableViewController.swift */; };
 		9AE0938E1D8AE00C00F115F8 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AE0938D1D8AE00C00F115F8 /* EventCell.xib */; };
 		9AE093901D8AE39A00F115F8 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE0938F1D8AE39A00F115F8 /* TableViewCell.swift */; };
@@ -51,8 +70,8 @@
 		9AE093A21D8C39C500F115F8 /* LastCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE093A11D8C39C500F115F8 /* LastCollection.swift */; };
 		9AE093A41D8FCE5E00F115F8 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AE093A31D8FCE5E00F115F8 /* View.xib */; };
 		9AE093A61D8FD1CC00F115F8 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE093A51D8FD1CC00F115F8 /* View.swift */; };
-		9AE093A81D90059D00F115F8 /* CollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE093A71D90059D00F115F8 /* CollectionController.swift */; };
 		9AE613BF1D7E973C0016277B /* AnimationClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE613BE1D7E973C0016277B /* AnimationClass.swift */; };
+		BCD5D488F6AA3E10A0F31523 /* Pods_Lens.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA99B47DAC0BA0B1B7C1131C /* Pods_Lens.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +92,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		844C90101D92729D00ACFF8D /* OpticalPowerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpticalPowerViewController.swift; sourceTree = "<group>"; };
+		844C90121D92742900ACFF8D /* OpticalPowerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpticalPowerTableViewCell.xib; sourceTree = "<group>"; };
+		844C90141D92750F00ACFF8D /* OpticalPowerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpticalPowerTableViewCell.swift; sourceTree = "<group>"; };
+		844C90161D92761A00ACFF8D /* OpticalPowerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpticalPowerViewModel.swift; sourceTree = "<group>"; };
+		844C901B1D927DC800ACFF8D /* OpticalPower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpticalPower.swift; sourceTree = "<group>"; };
+		844C901D1D927E3700ACFF8D /* OpticalPowerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpticalPowerModel.swift; sourceTree = "<group>"; };
+		844C901F1D927FA400ACFF8D /* OpticalPower.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = OpticalPower.json; sourceTree = "<group>"; };
+		844C90211D929F6A00ACFF8D /* NumberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberViewController.swift; sourceTree = "<group>"; };
+		844C90241D92A0EC00ACFF8D /* NumberTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NumberTableViewCell.xib; sourceTree = "<group>"; };
+		844C90261D92A26B00ACFF8D /* NumberTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberTableViewCell.swift; sourceTree = "<group>"; };
+		844C90281D92A53500ACFF8D /* Number.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Number.json; sourceTree = "<group>"; };
+		844C902A1D92A56F00ACFF8D /* NumberViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberViewModel.swift; sourceTree = "<group>"; };
+		844C902C1D92A58E00ACFF8D /* Number.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
+		844C902E1D92A5A400ACFF8D /* NumberModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberModel.swift; sourceTree = "<group>"; };
 		84A7B59B1D8AD7960040C701 /* InputDataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputDataTableViewCell.swift; sourceTree = "<group>"; };
 		84A7B59C1D8AD7960040C701 /* InputDataTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputDataTableViewCell.xib; sourceTree = "<group>"; };
 		84A7B59D1D8AD7960040C701 /* PeriodTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeriodTableViewCell.swift; sourceTree = "<group>"; };
@@ -88,6 +121,14 @@
 		84CDFE731D8BBE77001020C3 /* DatePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePicker.xib; sourceTree = "<group>"; };
 		84CDFE751D8BBFD0001020C3 /* DatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 		84CDFE771D8BC387001020C3 /* UIView+Extenstions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extenstions.swift"; sourceTree = "<group>"; };
+		84F9CE671D91192600C3F053 /* NameCompanyStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NameCompanyStoryboard.storyboard; sourceTree = "<group>"; };
+		84F9CE691D91198500C3F053 /* NameCompanyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameCompanyViewController.swift; sourceTree = "<group>"; };
+		84F9CE6C1D911BFC00C3F053 /* NameCompanyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NameCompanyTableViewCell.xib; sourceTree = "<group>"; };
+		84F9CE6E1D911D3500C3F053 /* NameCompanyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameCompanyTableViewCell.swift; sourceTree = "<group>"; };
+		84F9CE701D9123A000C3F053 /* NameCompanyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameCompanyViewModel.swift; sourceTree = "<group>"; };
+		84F9CE741D91270400C3F053 /* NameCompanyJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NameCompanyJSON.json; sourceTree = "<group>"; };
+		84F9CE761D91281A00C3F053 /* NameCompany.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameCompany.swift; sourceTree = "<group>"; };
+		84F9CE7C1D91390E00C3F053 /* NameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameModel.swift; sourceTree = "<group>"; };
 		9A6482FE1D76E18C00C5462F /* Lens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lens.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A6483011D76E18C00C5462F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A6483031D76E18C00C5462F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,11 +147,9 @@
 		9A6483711D770AE900C5462F /* HelperPask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperPask.swift; sourceTree = "<group>"; };
 		9A6483741D784C7A00C5462F /* PaskController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaskController.swift; sourceTree = "<group>"; };
 		9A6483761D785B6300C5462F /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
-		9AC451C71D915E6700516218 /* EventsStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventsStoryboard.storyboard; sourceTree = "<group>"; };
-		9AC451CA1D916CD700516218 /* SliderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SliderView.xib; sourceTree = "<group>"; };
-		9AC451CC1D9181FE00516218 /* SliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
 		9AE093821D88523800F115F8 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		9AE093861D8AC6B700F115F8 /* DatesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatesModel.swift; sourceTree = "<group>"; };
+		9AE093881D8ADBA600F115F8 /* EventsStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = EventsStoryboard.storyboard; path = ../EventsStoryboard.storyboard; sourceTree = "<group>"; };
 		9AE0938A1D8ADCE500F115F8 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		9AE0938D1D8AE00C00F115F8 /* EventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
 		9AE0938F1D8AE39A00F115F8 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -122,11 +161,10 @@
 		9AE093A11D8C39C500F115F8 /* LastCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastCollection.swift; sourceTree = "<group>"; };
 		9AE093A31D8FCE5E00F115F8 /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		9AE093A51D8FD1CC00F115F8 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		9AE093A71D90059D00F115F8 /* CollectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionController.swift; sourceTree = "<group>"; };
 		9AE613BE1D7E973C0016277B /* AnimationClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationClass.swift; sourceTree = "<group>"; };
-		F6AAFBE4FF585B0D67D80982 /* Pods-Lens.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lens.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lens/Pods-Lens.release.xcconfig"; sourceTree = "<group>"; };
-		F905D9904B4606844F293A8A /* Pods_Lens.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lens.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF92D2264EC149493E457590 /* Pods-Lens.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lens.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lens/Pods-Lens.debug.xcconfig"; sourceTree = "<group>"; };
+		9B2175FD117D234515F85BBF /* Pods-Lens.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lens.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lens/Pods-Lens.debug.xcconfig"; sourceTree = "<group>"; };
+		A7F05A11AE828905D3FC954E /* Pods-Lens.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lens.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lens/Pods-Lens.release.xcconfig"; sourceTree = "<group>"; };
+		AA99B47DAC0BA0B1B7C1131C /* Pods_Lens.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lens.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84B3F19B1D8C2F8500883677 /* IQKeyboardManagerSwift.framework in Frameworks */,
-				445B12224DADB41CD3E75E7C /* Pods_Lens.framework in Frameworks */,
+				BCD5D488F6AA3E10A0F31523 /* Pods_Lens.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,18 +198,46 @@
 			isa = PBXGroup;
 			children = (
 				84B3F19A1D8C2F8500883677 /* IQKeyboardManagerSwift.framework */,
-				F905D9904B4606844F293A8A /* Pods_Lens.framework */,
+				AA99B47DAC0BA0B1B7C1131C /* Pods_Lens.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		16C112978500D53D76F36B60 /* Pods */ = {
+		844C90181D92763200ACFF8D /* Files */ = {
 			isa = PBXGroup;
 			children = (
-				FF92D2264EC149493E457590 /* Pods-Lens.debug.xcconfig */,
-				F6AAFBE4FF585B0D67D80982 /* Pods-Lens.release.xcconfig */,
+				84F9CE741D91270400C3F053 /* NameCompanyJSON.json */,
+				844C90281D92A53500ACFF8D /* Number.json */,
+				844C901F1D927FA400ACFF8D /* OpticalPower.json */,
 			);
-			name = Pods;
+			name = Files;
+			sourceTree = "<group>";
+		};
+		844C90191D92771000ACFF8D /* NameCompanyTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				84F9CE6E1D911D3500C3F053 /* NameCompanyTableViewCell.swift */,
+				84F9CE6C1D911BFC00C3F053 /* NameCompanyTableViewCell.xib */,
+			);
+			name = NameCompanyTableViewCell;
+			sourceTree = "<group>";
+		};
+		844C901A1D92772E00ACFF8D /* OpticalPowerTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				844C90141D92750F00ACFF8D /* OpticalPowerTableViewCell.swift */,
+				844C90121D92742900ACFF8D /* OpticalPowerTableViewCell.xib */,
+			);
+			name = OpticalPowerTableViewCell;
+			sourceTree = "<group>";
+		};
+		844C90231D92A0C300ACFF8D /* NumberTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				844C90261D92A26B00ACFF8D /* NumberTableViewCell.swift */,
+				844C90241D92A0EC00ACFF8D /* NumberTableViewCell.xib */,
+			);
+			name = NumberTableViewCell;
 			sourceTree = "<group>";
 		};
 		84A7B5A31D8ADF820040C701 /* ViewModel */ = {
@@ -179,6 +245,9 @@
 			children = (
 				84A7B5A41D8ADF900040C701 /* NewViewModel.swift */,
 				84B3F1901D8BDF9600883677 /* CustomTextField.swift */,
+				84F9CE701D9123A000C3F053 /* NameCompanyViewModel.swift */,
+				844C90161D92761A00ACFF8D /* OpticalPowerViewModel.swift */,
+				844C902A1D92A56F00ACFF8D /* NumberViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -195,6 +264,9 @@
 		84C1F5B11D8AD63F006E6137 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				844C90231D92A0C300ACFF8D /* NumberTableViewCell */,
+				844C901A1D92772E00ACFF8D /* OpticalPowerTableViewCell */,
+				844C90191D92771000ACFF8D /* NameCompanyTableViewCell */,
 				84A7B59B1D8AD7960040C701 /* InputDataTableViewCell.swift */,
 				84A7B59C1D8AD7960040C701 /* InputDataTableViewCell.xib */,
 				84A7B59D1D8AD7960040C701 /* PeriodTableViewCell.swift */,
@@ -216,8 +288,8 @@
 				9A6483151D76E18C00C5462F /* LensTests */,
 				9A6483201D76E18C00C5462F /* LensUITests */,
 				9A6482FF1D76E18C00C5462F /* Products */,
+				AF5E69DFB7953CD9EF5A2678 /* Pods */,
 				0C5465D58D8B6F234D1887C9 /* Frameworks */,
-				16C112978500D53D76F36B60 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -234,6 +306,7 @@
 		9A6483001D76E18C00C5462F /* Lens */ = {
 			isa = PBXGroup;
 			children = (
+				844C90181D92763200ACFF8D /* Files */,
 				84C1F5B01D8AD63B006E6137 /* View */,
 				9AE0938C1D8ADFC900F115F8 /* Widgets */,
 				9AE093811D8851B400F115F8 /* Components */,
@@ -242,11 +315,12 @@
 				9A64836B1D77002E00C5462F /* Models */,
 				9A6483011D76E18C00C5462F /* AppDelegate.swift */,
 				9A6483051D76E18C00C5462F /* Main.storyboard */,
-				9AC451C71D915E6700516218 /* EventsStoryboard.storyboard */,
+				9AE093881D8ADBA600F115F8 /* EventsStoryboard.storyboard */,
 				9A6483081D76E18C00C5462F /* Assets.xcassets */,
 				9A64830A1D76E18C00C5462F /* LaunchScreen.storyboard */,
 				9A64830D1D76E18C00C5462F /* Info.plist */,
 				9AE613BE1D7E973C0016277B /* AnimationClass.swift */,
+				84F9CE671D91192600C3F053 /* NameCompanyStoryboard.storyboard */,
 			);
 			path = Lens;
 			sourceTree = "<group>";
@@ -277,6 +351,12 @@
 				9A6483761D785B6300C5462F /* CalendarView.swift */,
 				9AE093861D8AC6B700F115F8 /* DatesModel.swift */,
 				9AE0939B1D8C363A00F115F8 /* CollectionModel.swift */,
+				84F9CE761D91281A00C3F053 /* NameCompany.swift */,
+				84F9CE7C1D91390E00C3F053 /* NameModel.swift */,
+				844C901B1D927DC800ACFF8D /* OpticalPower.swift */,
+				844C901D1D927E3700ACFF8D /* OpticalPowerModel.swift */,
+				844C902C1D92A58E00ACFF8D /* Number.swift */,
+				844C902E1D92A5A400ACFF8D /* NumberModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -298,23 +378,16 @@
 				9A6483031D76E18C00C5462F /* ViewController.swift */,
 				84C1F5AE1D8AD5D6006E6137 /* NewViewController.swift */,
 				9AE0938A1D8ADCE500F115F8 /* TableViewController.swift */,
+				84F9CE691D91198500C3F053 /* NameCompanyViewController.swift */,
+				844C90101D92729D00ACFF8D /* OpticalPowerViewController.swift */,
+				844C90211D929F6A00ACFF8D /* NumberViewController.swift */,
 			);
 			name = Controllers;
-			sourceTree = "<group>";
-		};
-		9AC451C91D916C5600516218 /* CollectionWithSlider */ = {
-			isa = PBXGroup;
-			children = (
-				9AC451CA1D916CD700516218 /* SliderView.xib */,
-				9AC451CC1D9181FE00516218 /* SliderView.swift */,
-			);
-			name = CollectionWithSlider;
 			sourceTree = "<group>";
 		};
 		9AE093811D8851B400F115F8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				9AC451C91D916C5600516218 /* CollectionWithSlider */,
 				9AE093821D88523800F115F8 /* Notification.swift */,
 			);
 			name = Components;
@@ -347,9 +420,17 @@
 				9AE0939F1D8C38C600F115F8 /* LastCollection.xib */,
 				9AE093A11D8C39C500F115F8 /* LastCollection.swift */,
 				9AE093A51D8FD1CC00F115F8 /* View.swift */,
-				9AE093A71D90059D00F115F8 /* CollectionController.swift */,
 			);
 			name = CollectionView;
+			sourceTree = "<group>";
+		};
+		AF5E69DFB7953CD9EF5A2678 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9B2175FD117D234515F85BBF /* Pods-Lens.debug.xcconfig */,
+				A7F05A11AE828905D3FC954E /* Pods-Lens.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,7 +446,7 @@
 				9A6482FC1D76E18C00C5462F /* Resources */,
 				42E03BF81916EA50EDC577C7 /* [CP] Embed Pods Frameworks */,
 				DDD876913ED96D2FB402EBFC /* [CP] Copy Pods Resources */,
-				6E627C04E91056D0F15B0C25 /* Embed Pods Frameworks */,
+				DCBCA98F63E5CF33E92E1CE0 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -460,20 +541,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F9CE681D91192600C3F053 /* NameCompanyStoryboard.storyboard in Resources */,
 				84BB1DCA1D8FC36900E8C751 /* SaveTableViewCell.xib in Resources */,
 				84A7B5A21D8AD7960040C701 /* PeriodTableViewCell.xib in Resources */,
 				84B3F1951D8C056A00883677 /* DateTableViewCell.xib in Resources */,
+				844C90291D92A53500ACFF8D /* Number.json in Resources */,
 				84CDFE741D8BBE77001020C3 /* DatePicker.xib in Resources */,
 				84A7B5A01D8AD7960040C701 /* InputDataTableViewCell.xib in Resources */,
-				9AC451CB1D916CD700516218 /* SliderView.xib in Resources */,
+				844C90201D927FA400ACFF8D /* OpticalPower.json in Resources */,
+				9AE093891D8ADBA600F115F8 /* EventsStoryboard.storyboard in Resources */,
 				9A64830C1D76E18C00C5462F /* LaunchScreen.storyboard in Resources */,
-				9AC451C81D915E6700516218 /* EventsStoryboard.storyboard in Resources */,
 				9AE093981D8C332900F115F8 /* CollectionViewCell.xib in Resources */,
+				844C90251D92A0EC00ACFF8D /* NumberTableViewCell.xib in Resources */,
 				9A6483091D76E18C00C5462F /* Assets.xcassets in Resources */,
 				9AE093A41D8FCE5E00F115F8 /* View.xib in Resources */,
 				9AE0938E1D8AE00C00F115F8 /* EventCell.xib in Resources */,
 				9A6483071D76E18C00C5462F /* Main.storyboard in Resources */,
+				844C90131D92742900ACFF8D /* OpticalPowerTableViewCell.xib in Resources */,
 				9AE093A01D8C38C600F115F8 /* LastCollection.xib in Resources */,
+				84F9CE751D91270400C3F053 /* NameCompanyJSON.json in Resources */,
+				84F9CE6D1D911BFC00C3F053 /* NameCompanyTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,21 +596,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Lens/Pods-Lens-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6E627C04E91056D0F15B0C25 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Lens/Pods-Lens-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8DBACFB05D952B31581D5E8F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -537,6 +609,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DCBCA98F63E5CF33E92E1CE0 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Lens/Pods-Lens-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DDD876913ED96D2FB402EBFC /* [CP] Copy Pods Resources */ = {
@@ -561,12 +648,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				844C902D1D92A58E00ACFF8D /* Number.swift in Sources */,
+				84F9CE6A1D91198500C3F053 /* NameCompanyViewController.swift in Sources */,
 				84BB1DCC1D8FC44D00E8C751 /* SaveTableViewCell.swift in Sources */,
 				9A6483751D784C7A00C5462F /* PaskController.swift in Sources */,
+				844C902B1D92A56F00ACFF8D /* NumberViewModel.swift in Sources */,
 				84CDFE761D8BBFD0001020C3 /* DatePicker.swift in Sources */,
+				84F9CE771D91281A00C3F053 /* NameCompany.swift in Sources */,
 				84B3F1971D8C061800883677 /* DateTableViewCell.swift in Sources */,
+				844C90271D92A26B00ACFF8D /* NumberTableViewCell.swift in Sources */,
 				9A6483771D785B6300C5462F /* CalendarView.swift in Sources */,
 				84A7B59F1D8AD7960040C701 /* InputDataTableViewCell.swift in Sources */,
+				844C901E1D927E3700ACFF8D /* OpticalPowerModel.swift in Sources */,
+				844C90111D92729D00ACFF8D /* OpticalPowerViewController.swift in Sources */,
 				84B3F1911D8BDF9600883677 /* CustomTextField.swift in Sources */,
 				84C1F5AF1D8AD5D6006E6137 /* NewViewController.swift in Sources */,
 				9AE093831D88523800F115F8 /* Notification.swift in Sources */,
@@ -574,19 +668,25 @@
 				84CDFE781D8BC387001020C3 /* UIView+Extenstions.swift in Sources */,
 				84A7B5A11D8AD7960040C701 /* PeriodTableViewCell.swift in Sources */,
 				9AE093A61D8FD1CC00F115F8 /* View.swift in Sources */,
-				9AC451CD1D9181FE00516218 /* SliderView.swift in Sources */,
 				9A64836F1D77007900C5462F /* LensModel.swift in Sources */,
 				9AE093871D8AC6B700F115F8 /* DatesModel.swift in Sources */,
 				9AE0938B1D8ADCE500F115F8 /* TableViewController.swift in Sources */,
+				844C902F1D92A5A400ACFF8D /* NumberModel.swift in Sources */,
+				844C90151D92750F00ACFF8D /* OpticalPowerTableViewCell.swift in Sources */,
 				9A6483021D76E18C00C5462F /* AppDelegate.swift in Sources */,
 				9A6483301D76F12D00C5462F /* PaskModel.swift in Sources */,
 				9AE093941D8BD56300F115F8 /* HelperDates.swift in Sources */,
+				84F9CE711D9123A000C3F053 /* NameCompanyViewModel.swift in Sources */,
 				9AE0939A1D8C351300F115F8 /* CollectionViewCell.swift in Sources */,
+				844C90171D92761A00ACFF8D /* OpticalPowerViewModel.swift in Sources */,
 				9AE093901D8AE39A00F115F8 /* TableViewCell.swift in Sources */,
 				9A6483721D770AE900C5462F /* HelperPask.swift in Sources */,
-				9AE093A81D90059D00F115F8 /* CollectionController.swift in Sources */,
 				84A7B5A51D8ADF900040C701 /* NewViewModel.swift in Sources */,
+				84F9CE6F1D911D3500C3F053 /* NameCompanyTableViewCell.swift in Sources */,
+				844C90221D929F6A00ACFF8D /* NumberViewController.swift in Sources */,
+				84F9CE7D1D91390E00C3F053 /* NameModel.swift in Sources */,
 				9AE613BF1D7E973C0016277B /* AnimationClass.swift in Sources */,
+				844C901C1D927DC800ACFF8D /* OpticalPower.swift in Sources */,
 				9AE0939C1D8C363A00F115F8 /* CollectionModel.swift in Sources */,
 				9AE093A21D8C39C500F115F8 /* LastCollection.swift in Sources */,
 			);
@@ -730,7 +830,7 @@
 		};
 		9A6483271D76E18C00C5462F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF92D2264EC149493E457590 /* Pods-Lens.debug.xcconfig */;
+			baseConfigurationReference = 9B2175FD117D234515F85BBF /* Pods-Lens.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Lens/Info.plist;
@@ -742,7 +842,7 @@
 		};
 		9A6483281D76E18C00C5462F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F6AAFBE4FF585B0D67D80982 /* Pods-Lens.release.xcconfig */;
+			baseConfigurationReference = A7F05A11AE828905D3FC954E /* Pods-Lens.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Lens/Info.plist;

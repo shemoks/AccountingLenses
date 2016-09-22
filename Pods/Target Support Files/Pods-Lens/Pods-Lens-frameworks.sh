@@ -84,16 +84,16 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods-Lens/Bond.framework"
   install_framework "Pods-Lens/CVCalendar.framework"
   install_framework "Pods-Lens/IQKeyboardManagerSwift.framework"
   install_framework "Pods-Lens/Realm.framework"
   install_framework "Pods-Lens/RealmSwift.framework"
+  install_framework "Pods-Lens/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-Lens/Bond.framework"
   install_framework "Pods-Lens/CVCalendar.framework"
   install_framework "Pods-Lens/IQKeyboardManagerSwift.framework"
   install_framework "Pods-Lens/Realm.framework"
   install_framework "Pods-Lens/RealmSwift.framework"
+  install_framework "Pods-Lens/SwiftyJSON.framework"
 fi

@@ -20,7 +20,8 @@ class NewViewController: UIViewController {
         self.viewModel.getArray{object in
         
         }
-        self.title = "Add new Lens"
+        self.title = "Add New Lens"
+
         self.setupTableView(tableView)
     }
 }
