@@ -9,6 +9,12 @@
 import UIKit
 import RealmSwift
 
+public struct InfoForNotification {
+    var fireDate: NSDate
+    let alertBody: String
+}
+
+
 class NewViewModel {
     
     var arrayInfoNotification = [InfoForNotification]()
