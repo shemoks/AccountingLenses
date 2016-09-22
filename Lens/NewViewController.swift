@@ -55,15 +55,11 @@ extension NewViewController:UITableViewDataSource {
             aCell.titleLabel.text = self.viewModel.arrayNameTitle[indexPath.row]
             switch indexPath.row {
             case 0:
-                if self.viewModel.data == nil{
-                    aCell.mainTitlelLabel.text = "Some text"
-                }else{
-                    aCell.mainTitlelLabel.text = self.viewModel.data
-                }
+                self.viewModel.setCellInputData(aCell)
             case 1:
-                aCell.mainTitlelLabel.text = "Label 2"
+                self.viewModel.setCellOpticalPower(aCell)
             case 2:
-                aCell.mainTitlelLabel.text = "Label 3"
+                self.viewModel.setCellNumber(aCell)
             default:
                 print("Error")
             }
@@ -114,7 +110,7 @@ extension NewViewController:UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-      
+        
         switch indexPath.section {
         case 0:
             switch indexPath.row {
@@ -126,15 +122,17 @@ extension NewViewController:UITableViewDataSource {
             case 1:
                 tableView.deselectRowAtIndexPath(indexPath, animated: true)
                 let controller = self.storyboard?.instantiateViewControllerWithIdentifier("OpticalView") as! OpticalPowerViewController
+                controller.delegate = self
                 self.navigationController?.pushViewController(controller, animated: true)
             case 2:
                 tableView.deselectRowAtIndexPath(indexPath, animated: true)
                 let controller = self.storyboard?.instantiateViewControllerWithIdentifier("NumberView") as! NumberViewController
+                controller.delegate = self
                 self.navigationController?.pushViewController(controller, animated: true)
             default:
                 print("Error")
             }
-
+            
         case 1:
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
             
@@ -202,8 +200,24 @@ extension NewViewController:SaveButtonTapp {
 }
 
 extension NewViewController: PassData {
+    
     func passData(text: String) {
-        self.viewModel.data = text
+        self.viewModel.stuc.nameCompany = text
+        tableView.reloadData()
+    }
+}
+
+extension NewViewController: PassDataDouble {
+
+    func passDataDouble(double: Double) {
+        self.viewModel.stuc.opticalPower = double
+        tableView.reloadData()
+    }
+}
+
+extension NewViewController: PassDataInt {
+    func passDataInt(int: Int) {
+        self.viewModel.stuc.count = int
         tableView.reloadData()
     }
 }

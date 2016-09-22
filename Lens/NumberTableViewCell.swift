@@ -10,7 +10,6 @@ import UIKit
 
 class NumberTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var titileLabel: UILabel!
     @IBOutlet weak var countLensesLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

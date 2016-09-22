@@ -14,17 +14,22 @@ public struct InfoForNotification {
     let alertBody: String
 }
 
+struct DataLens {
+    var nameCompany:String
+    var opticalPower:Double
+    var count:Int
+}
 
 class NewViewModel {
     
     var arrayInfoNotification = [InfoForNotification]()
-    var arrayNameTitle = ["Title","Optical Power","Numbers of lens"]
+    var arrayNameTitle = ["Name Company","Optical Power","Numbers of lens"]
     var arrayPlaceholder = ["NameCompany","Power lins","Count","Date"]
     
     let arrayLens = List<Lens>()
     let arrayDays = List<Dates>()
     var arrayPasks: Results<Pask>!
-    var data:String!
+    var stuc = DataLens(nameCompany: "", opticalPower: 0, count: 0)
     var dateArray = [String]()
     
     var lastSelectedIndexPath: NSIndexPath? = nil
@@ -43,6 +48,37 @@ class NewViewModel {
         dispatch_async(dispatch_get_main_queue(), {
             obj(self.arrayPasks)
         })
+    }
+    
+    
+    func setCellInputData(cell:InputDataTableViewCell) -> InputDataTableViewCell{
+        if stuc.nameCompany == ""{
+            cell.mainTitlelLabel.text = "Tap on me"
+            return cell
+        }else{
+            cell.mainTitlelLabel.text = stuc.nameCompany
+            return cell
+        }
+    }
+    
+    func setCellOpticalPower(cell:InputDataTableViewCell) -> InputDataTableViewCell{
+        if stuc.opticalPower == 0{
+            cell.mainTitlelLabel.text = "Tap on me"
+            return cell
+        }else{
+            cell.mainTitlelLabel.text = "\(stuc.opticalPower)"
+            return cell
+        }
+    }
+    
+    func setCellNumber(cell:InputDataTableViewCell) -> InputDataTableViewCell{
+        if stuc.count == 0{
+            cell.mainTitlelLabel.text = "Tap on me"
+            return cell
+        }else{
+            cell.mainTitlelLabel.text = "\(stuc.count)"
+            return cell
+        }
     }
     
     func saveInDataBase(viewController:UIViewController){

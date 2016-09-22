@@ -50,16 +50,13 @@ class OpticalPowerViewModel {
     
     func cellForDataBaseRow(cell:OpticalPowerTableViewCell,indexPath:NSIndexPath)   {
         if self.opticalPower.isEmpty {
-            cell.titleLabel.text = "You don`t have any data in Data Base"
-            cell.tittleForOpticalPowerLabel.text = ""
+            cell.tittleForOpticalPowerLabel.text = "You don`t have any data in Data Base"
         }else{
-            cell.titleLabel.text = "Optical Power:"
             cell.tittleForOpticalPowerLabel.text = "\(opticalPower[indexPath.row].opticalPower)"
         }
     }
     
     func cellForJSONRow(cell:OpticalPowerTableViewCell,indexPath:NSIndexPath) {
-        cell.titleLabel.text = "Optical Power:"
         cell.tittleForOpticalPowerLabel.text = "\(arrayOpticalPower[indexPath.row].opticalPower)"
     }
     

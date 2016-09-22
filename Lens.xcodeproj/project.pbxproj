@@ -29,6 +29,7 @@
 		84203FA31D93C9BC00049865 /* OpticalPowerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84203FA11D93C9BC00049865 /* OpticalPowerTableViewCell.xib */; };
 		84203FA51D93C9C600049865 /* OpticalPowerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84203FA41D93C9C600049865 /* OpticalPowerViewModel.swift */; };
 		84203FA71D93C9E000049865 /* OpticalPowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84203FA61D93C9E000049865 /* OpticalPowerViewController.swift */; };
+		84203FA91D93E4A700049865 /* PassData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84203FA81D93E4A700049865 /* PassData.swift */; };
 		84A7B59F1D8AD7960040C701 /* InputDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7B59B1D8AD7960040C701 /* InputDataTableViewCell.swift */; };
 		84A7B5A01D8AD7960040C701 /* InputDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A7B59C1D8AD7960040C701 /* InputDataTableViewCell.xib */; };
 		84A7B5A11D8AD7960040C701 /* PeriodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7B59D1D8AD7960040C701 /* PeriodTableViewCell.swift */; };
@@ -114,6 +115,7 @@
 		84203FA11D93C9BC00049865 /* OpticalPowerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpticalPowerTableViewCell.xib; sourceTree = "<group>"; };
 		84203FA41D93C9C600049865 /* OpticalPowerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpticalPowerViewModel.swift; sourceTree = "<group>"; };
 		84203FA61D93C9E000049865 /* OpticalPowerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpticalPowerViewController.swift; sourceTree = "<group>"; };
+		84203FA81D93E4A700049865 /* PassData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassData.swift; sourceTree = "<group>"; };
 		84A7B59B1D8AD7960040C701 /* InputDataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputDataTableViewCell.swift; sourceTree = "<group>"; };
 		84A7B59C1D8AD7960040C701 /* InputDataTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputDataTableViewCell.xib; sourceTree = "<group>"; };
 		84A7B59D1D8AD7960040C701 /* PeriodTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeriodTableViewCell.swift; sourceTree = "<group>"; };
@@ -377,6 +379,7 @@
 				9A6483711D770AE900C5462F /* HelperPask.swift */,
 				84CDFE771D8BC387001020C3 /* UIView+Extenstions.swift */,
 				9AE093931D8BD56300F115F8 /* HelperDates.swift */,
+				84203FA81D93E4A700049865 /* PassData.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -687,6 +690,7 @@
 				84203FA51D93C9C600049865 /* OpticalPowerViewModel.swift in Sources */,
 				9AE0938B1D8ADCE500F115F8 /* TableViewController.swift in Sources */,
 				9A6483021D76E18C00C5462F /* AppDelegate.swift in Sources */,
+				84203FA91D93E4A700049865 /* PassData.swift in Sources */,
 				9A6483301D76F12D00C5462F /* PaskModel.swift in Sources */,
 				9AE093941D8BD56300F115F8 /* HelperDates.swift in Sources */,
 				84203F951D93C63B00049865 /* NumberTableViewCell.swift in Sources */,

@@ -12,6 +12,7 @@ class NumberViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var viewModel = NumberViewModel()
+    var delegate:PassDataInt!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,8 +51,7 @@ extension NumberViewController: UITableViewDataSource {
         
         switch indexPath.section {
         case 0:
-            cell.titileLabel.text = "Tap on me"
-            cell.countLensesLabel.text = ""
+            cell.countLensesLabel.text = "Tap on me"
         case 1:
             self.viewModel.cellForDataBaseRow(cell, indexPath: indexPath)
         case 2:
@@ -68,17 +68,21 @@ extension NumberViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let selecteIndexPath = tableView.indexPathForSelectedRow
+        let currentCell = tableView.cellForRowAtIndexPath(selecteIndexPath!) as! NumberTableViewCell
+        
         switch indexPath.section {
         case 0:
             self.viewModel.showAlert(self, tableView: tableView)
-            print("Tap 1")
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
         case 1:
-            print("Tap 2")
+            self.delegate.passDataInt(Int(currentCell.countLensesLabel.text!)!)
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            self.navigationController?.popViewControllerAnimated(true)
         case 2:
-            print("Tap 3")
+            self.delegate.passDataInt(Int(currentCell.countLensesLabel.text!)!)
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            self.navigationController?.popViewControllerAnimated(true)
         default:
             print("Error")
         }

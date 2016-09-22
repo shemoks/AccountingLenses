@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol PassData {
-    func passData(text:String)
-}
-
 class NameCompanyViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
@@ -90,25 +86,25 @@ extension NameCompanyViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let selecteIndexPath = tableView.indexPathForSelectedRow
+        let currentCell = tableView.cellForRowAtIndexPath(selecteIndexPath!) as! NameCompanyTableViewCell
+        
         switch indexPath.section {
         case 0:
             self.viewModel.showAlert(self, tableView: tableView)
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
-            self.delegate.passData("My fucking name")
         case 1:
-            print("Tapp 2")
-            let selecteIndexPath = tableView.indexPathForSelectedRow
-            let currentCell = tableView.cellForRowAtIndexPath(selecteIndexPath!) as! NameCompanyTableViewCell
             self.delegate.passData(currentCell.nameCompanyLabel.text!)
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            self.navigationController?.popViewControllerAnimated(true)
         case 2:
-            print("Tapp 3")
+            self.delegate.passData(currentCell.nameCompanyLabel.text!)
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            self.navigationController?.popViewControllerAnimated(true)
         default:
             print("Error")
         }
     }
-
 }
 
 extension NameCompanyViewController: UITableViewDelegate {

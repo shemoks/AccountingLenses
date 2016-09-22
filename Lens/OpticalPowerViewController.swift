@@ -12,6 +12,7 @@ class OpticalPowerViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var viewModel = OpticalPowerViewModel()
+    var delegate:PassDataDouble!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +30,7 @@ extension OpticalPowerViewController: UITableViewDataSource {
         
         switch indexPath.section {
         case 0:
-            cell.titleLabel.text = "Tap on me"
-            cell.tittleForOpticalPowerLabel.text = ""
+            cell.tittleForOpticalPowerLabel.text = "Tap on me"
         case 1:
             self.viewModel.cellForDataBaseRow(cell, indexPath: indexPath)
         case 2:
@@ -55,15 +55,21 @@ extension OpticalPowerViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let selecteIndexPath = tableView.indexPathForSelectedRow
+        let currentCell = tableView.cellForRowAtIndexPath(selecteIndexPath!) as! OpticalPowerTableViewCell
         
         switch indexPath.section {
         case 0:
             self.viewModel.showAlert(self, tableView: tableView)
             print("Tap 1")
         case 1:
-            print("Tap 2")
+            self.delegate.passDataDouble(Double(currentCell.tittleForOpticalPowerLabel.text!)!)
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            self.navigationController?.popViewControllerAnimated(true)
         case 2:
-            print("Tap 3")
+            self.delegate.passDataDouble(Double(currentCell.tittleForOpticalPowerLabel.text!)!)
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            self.navigationController?.popViewControllerAnimated(true)
         default:
             print("Error")
         }

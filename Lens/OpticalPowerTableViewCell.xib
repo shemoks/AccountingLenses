@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -14,29 +14,21 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Optical Power" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="SLc-d1-r6o">
-                        <rect key="frame" x="20" y="14" width="109" height="22"/>
-                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="18"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSS-Dd-uqk">
-                        <rect key="frame" x="139" y="14" width="41" height="22"/>
+                        <rect key="frame" x="20" y="10" width="41" height="29"/>
                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="SLc-d1-r6o" firstAttribute="leading" secondItem="03q-me-xQc" secondAttribute="leading" constant="20" id="TmN-LN-y2H"/>
-                    <constraint firstItem="CSS-Dd-uqk" firstAttribute="centerY" secondItem="03q-me-xQc" secondAttribute="centerY" id="ZXF-t6-gWx"/>
-                    <constraint firstItem="CSS-Dd-uqk" firstAttribute="leading" secondItem="SLc-d1-r6o" secondAttribute="trailing" constant="10" id="cY9-7g-d5G"/>
-                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="CSS-Dd-uqk" secondAttribute="trailing" constant="20" id="kJn-4S-u5T"/>
-                    <constraint firstItem="SLc-d1-r6o" firstAttribute="centerY" secondItem="03q-me-xQc" secondAttribute="centerY" id="oI7-xi-jiN"/>
+                    <constraint firstItem="CSS-Dd-uqk" firstAttribute="top" secondItem="03q-me-xQc" secondAttribute="top" constant="10" id="E2g-Yp-Ebo"/>
+                    <constraint firstItem="CSS-Dd-uqk" firstAttribute="leading" secondItem="03q-me-xQc" secondAttribute="leading" constant="20" id="chF-eM-P2N"/>
+                    <constraint firstAttribute="bottom" secondItem="CSS-Dd-uqk" secondAttribute="bottom" constant="10" id="tYo-MC-BdM"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="CSS-Dd-uqk" secondAttribute="trailing" constant="20" id="yEK-g8-Z5M"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="titleLabel" destination="SLc-d1-r6o" id="dCe-uD-9hD"/>
                 <outlet property="tittleForOpticalPowerLabel" destination="CSS-Dd-uqk" id="cub-OH-iY5"/>
             </connections>
             <point key="canvasLocation" x="330.5" y="252"/>
