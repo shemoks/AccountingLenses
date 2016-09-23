@@ -18,7 +18,6 @@ class CustomTextField: UITextField,UITextFieldDelegate {
     
     var viewModel = DatePicker()
     var date: NSDate?
- 
     let picker = DatePicker.fromNib()
     
     override func awakeFromNib() {

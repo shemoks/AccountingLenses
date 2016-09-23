@@ -10,7 +10,6 @@ import UIKit
 
 class OpticalPowerTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tittleForOpticalPowerLabel: UILabel!
     
     override func awakeFromNib() {

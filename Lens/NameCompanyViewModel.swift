@@ -15,7 +15,6 @@ class NameCompanyViewModel {
     var nameCompany: Results<NameModel>!
     var numberOfSection = 3
     let realm = try! Realm()
-    
     var arrayCompanies = [NameCompany]()
     var textForCustomName = "Tapp on me"
     
@@ -69,8 +68,7 @@ class NameCompanyViewModel {
         nameCompany.sorted("name")
     }
     
-    func showAlert(viewController:UIViewController,tableView:UITableView) {
-        
+    func showAlert(viewController:UIViewController,tableView:UITableView) -> String {
         let alert = UIAlertController(title: "Enter Input", message: nil, preferredStyle: .Alert)
         alert.addTextFieldWithConfigurationHandler{(textField) -> Void in
             textField.placeholder = "Please enter data"
@@ -85,5 +83,6 @@ class NameCompanyViewModel {
             tableView.reloadData()
         }))
         viewController.presentViewController(alert, animated: true, completion: nil)
+        return self.textForCustomName
     }
 }

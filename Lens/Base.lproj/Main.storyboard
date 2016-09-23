@@ -182,7 +182,7 @@
         <!--Optical Power View Controller-->
         <scene sceneID="AWo-PZ-07d">
             <objects>
-                <viewController id="B1V-4k-e2n" customClass="OpticalPowerViewController" customModule="Lens" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OpticalView" id="B1V-4k-e2n" customClass="OpticalPowerViewController" customModule="Lens" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="52N-wC-RGY"/>
                         <viewControllerLayoutGuide type="bottom" id="amC-ml-Fnq"/>
@@ -227,7 +227,7 @@
         <!--Name Company View Controller-->
         <scene sceneID="haL-Yl-N2S">
             <objects>
-                <viewController id="vq5-nN-eBa" customClass="NameCompanyViewController" customModule="Lens" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NameView" id="vq5-nN-eBa" customClass="NameCompanyViewController" customModule="Lens" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g2g-t4-a6C"/>
                         <viewControllerLayoutGuide type="bottom" id="fdY-LD-fgi"/>
@@ -265,7 +265,7 @@
         <!--Number View Controller-->
         <scene sceneID="rt6-8v-PYn">
             <objects>
-                <viewController id="zaX-sR-iWL" customClass="NumberViewController" customModule="Lens" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NumberView" id="zaX-sR-iWL" customClass="NumberViewController" customModule="Lens" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2ch-tX-BM3"/>
                         <viewControllerLayoutGuide type="bottom" id="Mg8-lb-TBs"/>

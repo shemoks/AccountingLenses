@@ -50,16 +50,13 @@ class NumberViewModel {
     
     func cellForDataBaseRow(cell:NumberTableViewCell,indexPath:NSIndexPath) {
         if self.resultNumber.isEmpty {
-            cell.titileLabel.text = "You don`t have any data in Data Base"
-            cell.countLensesLabel.text = ""
+            cell.countLensesLabel.text = "You don`t have any data in Data Base"
         }else{
-            cell.titileLabel.text = "Numbers of Lenses"
             cell.countLensesLabel.text = "\(resultNumber.sorted("number")[indexPath.row].number)"
         }
     }
     
     func cellForJson(cell:NumberTableViewCell,indexPath:NSIndexPath) {
-        cell.titileLabel.text = "Numbers of Lenses"
         cell.countLensesLabel.text = "\(arrayNumber[indexPath.row].number)"
     }
     
