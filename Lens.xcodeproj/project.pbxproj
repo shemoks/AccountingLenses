@@ -8,6 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		445B12224DADB41CD3E75E7C /* Pods_Lens.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F905D9904B4606844F293A8A /* Pods_Lens.framework */; };
+		84203F791D93C37800049865 /* NameCompanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84203F781D93C37800049865 /* NameCompanyViewController.swift */; };
+		84203F7B1D93C3BD00049865 /* NameCompanyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84203F7A1D93C3BD00049865 /* NameCompanyViewModel.swift */; };
+		84203F7F1D93C40300049865 /* NameCompanyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84203F7D1D93C40300049865 /* NameCompanyTableViewCell.swift */; };
+		84203F801D93C40300049865 /* NameCompanyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84203F7E1D93C40300049865 /* NameCompanyTableViewCell.xib */; };
+		84203F821D93C42800049865 /* NameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84203F811D93C42800049865 /* NameModel.swift */; };
+		84203F841D93C44100049865 /* NameCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84203F831D93C44100049865 /* NameCompany.swift */; };
+		84203F891D93C4B200049865 /* NameCompanyJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 84203F861D93C4B200049865 /* NameCompanyJSON.json */; };
+		84203F8A1D93C4B200049865 /* Number.json in Resources */ = {isa = PBXBuildFile; fileRef = 84203F871D93C4B200049865 /* Number.json */; };
+		84203F8B1D93C4B200049865 /* OpticalPower.json in Resources */ = {isa = PBXBuildFile; fileRef = 84203F881D93C4B200049865 /* OpticalPower.json */; };
+		84203F8D1D93C5EB00049865 /* NumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84203F8C1D93C5EB00049865 /* NumberViewController.swift */; };
+		84203F8F1D93C5F200049865 /* NumberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84203F8E1D93C5F200049865 /* NumberViewModel.swift */; };
+		84203F911D93C61300049865 /* NumberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84203F901D93C61300049865 /* NumberModel.swift */; };
+		84203F951D93C63B00049865 /* NumberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84203F931D93C63B00049865 /* NumberTableViewCell.swift */; };
+		84203F961D93C63B00049865 /* NumberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84203F941D93C63B00049865 /* NumberTableViewCell.xib */; };
+		84203F981D93C65700049865 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84203F971D93C65700049865 /* Number.swift */; };
+		84203F9D1D93C9A000049865 /* OpticalPower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84203F9B1D93C9A000049865 /* OpticalPower.swift */; };
+		84203F9E1D93C9A000049865 /* OpticalPowerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84203F9C1D93C9A000049865 /* OpticalPowerModel.swift */; };
+		84203FA21D93C9BC00049865 /* OpticalPowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84203FA01D93C9BC00049865 /* OpticalPowerTableViewCell.swift */; };
+		84203FA31D93C9BC00049865 /* OpticalPowerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84203FA11D93C9BC00049865 /* OpticalPowerTableViewCell.xib */; };
+		84203FA51D93C9C600049865 /* OpticalPowerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84203FA41D93C9C600049865 /* OpticalPowerViewModel.swift */; };
+		84203FA71D93C9E000049865 /* OpticalPowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84203FA61D93C9E000049865 /* OpticalPowerViewController.swift */; };
+		84203FA91D93E4A700049865 /* PassData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84203FA81D93E4A700049865 /* PassData.swift */; };
 		84A7B59F1D8AD7960040C701 /* InputDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7B59B1D8AD7960040C701 /* InputDataTableViewCell.swift */; };
 		84A7B5A01D8AD7960040C701 /* InputDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84A7B59C1D8AD7960040C701 /* InputDataTableViewCell.xib */; };
 		84A7B5A11D8AD7960040C701 /* PeriodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7B59D1D8AD7960040C701 /* PeriodTableViewCell.swift */; };
@@ -33,7 +55,6 @@
 		9A6483301D76F12D00C5462F /* PaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A64832F1D76F12D00C5462F /* PaskModel.swift */; };
 		9A64836F1D77007900C5462F /* LensModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A64836E1D77007900C5462F /* LensModel.swift */; };
 		9A6483721D770AE900C5462F /* HelperPask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6483711D770AE900C5462F /* HelperPask.swift */; };
-		9A6483751D784C7A00C5462F /* PaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6483741D784C7A00C5462F /* PaskController.swift */; };
 		9A6483771D785B6300C5462F /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6483761D785B6300C5462F /* CalendarView.swift */; };
 		9AC451C81D915E6700516218 /* EventsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AC451C71D915E6700516218 /* EventsStoryboard.storyboard */; };
 		9AC451CB1D916CD700516218 /* SliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AC451CA1D916CD700516218 /* SliderView.xib */; };
@@ -75,6 +96,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		84203F781D93C37800049865 /* NameCompanyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameCompanyViewController.swift; sourceTree = "<group>"; };
+		84203F7A1D93C3BD00049865 /* NameCompanyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameCompanyViewModel.swift; sourceTree = "<group>"; };
+		84203F7D1D93C40300049865 /* NameCompanyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameCompanyTableViewCell.swift; sourceTree = "<group>"; };
+		84203F7E1D93C40300049865 /* NameCompanyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NameCompanyTableViewCell.xib; sourceTree = "<group>"; };
+		84203F811D93C42800049865 /* NameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameModel.swift; sourceTree = "<group>"; };
+		84203F831D93C44100049865 /* NameCompany.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameCompany.swift; sourceTree = "<group>"; };
+		84203F861D93C4B200049865 /* NameCompanyJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NameCompanyJSON.json; sourceTree = "<group>"; };
+		84203F871D93C4B200049865 /* Number.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Number.json; sourceTree = "<group>"; };
+		84203F881D93C4B200049865 /* OpticalPower.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = OpticalPower.json; sourceTree = "<group>"; };
+		84203F8C1D93C5EB00049865 /* NumberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberViewController.swift; sourceTree = "<group>"; };
+		84203F8E1D93C5F200049865 /* NumberViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberViewModel.swift; sourceTree = "<group>"; };
+		84203F901D93C61300049865 /* NumberModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberModel.swift; sourceTree = "<group>"; };
+		84203F931D93C63B00049865 /* NumberTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberTableViewCell.swift; sourceTree = "<group>"; };
+		84203F941D93C63B00049865 /* NumberTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NumberTableViewCell.xib; sourceTree = "<group>"; };
+		84203F971D93C65700049865 /* Number.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
+		84203F9B1D93C9A000049865 /* OpticalPower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpticalPower.swift; sourceTree = "<group>"; };
+		84203F9C1D93C9A000049865 /* OpticalPowerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpticalPowerModel.swift; sourceTree = "<group>"; };
+		84203FA01D93C9BC00049865 /* OpticalPowerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpticalPowerTableViewCell.swift; sourceTree = "<group>"; };
+		84203FA11D93C9BC00049865 /* OpticalPowerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpticalPowerTableViewCell.xib; sourceTree = "<group>"; };
+		84203FA41D93C9C600049865 /* OpticalPowerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpticalPowerViewModel.swift; sourceTree = "<group>"; };
+		84203FA61D93C9E000049865 /* OpticalPowerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpticalPowerViewController.swift; sourceTree = "<group>"; };
+		84203FA81D93E4A700049865 /* PassData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassData.swift; sourceTree = "<group>"; };
 		84A7B59B1D8AD7960040C701 /* InputDataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputDataTableViewCell.swift; sourceTree = "<group>"; };
 		84A7B59C1D8AD7960040C701 /* InputDataTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputDataTableViewCell.xib; sourceTree = "<group>"; };
 		84A7B59D1D8AD7960040C701 /* PeriodTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeriodTableViewCell.swift; sourceTree = "<group>"; };
@@ -106,7 +149,6 @@
 		9A64832F1D76F12D00C5462F /* PaskModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaskModel.swift; sourceTree = "<group>"; };
 		9A64836E1D77007900C5462F /* LensModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LensModel.swift; sourceTree = "<group>"; };
 		9A6483711D770AE900C5462F /* HelperPask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperPask.swift; sourceTree = "<group>"; };
-		9A6483741D784C7A00C5462F /* PaskController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaskController.swift; sourceTree = "<group>"; };
 		9A6483761D785B6300C5462F /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		9AC451C71D915E6700516218 /* EventsStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventsStoryboard.storyboard; sourceTree = "<group>"; };
 		9AC451CA1D916CD700516218 /* SliderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SliderView.xib; sourceTree = "<group>"; };
@@ -178,11 +220,51 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		84203F7C1D93C3F400049865 /* NameCompanyTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				84203F7D1D93C40300049865 /* NameCompanyTableViewCell.swift */,
+				84203F7E1D93C40300049865 /* NameCompanyTableViewCell.xib */,
+			);
+			name = NameCompanyTableViewCell;
+			sourceTree = "<group>";
+		};
+		84203F851D93C49D00049865 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				84203F861D93C4B200049865 /* NameCompanyJSON.json */,
+				84203F871D93C4B200049865 /* Number.json */,
+				84203F881D93C4B200049865 /* OpticalPower.json */,
+			);
+			name = Files;
+			sourceTree = "<group>";
+		};
+		84203F921D93C62B00049865 /* NumberTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				84203F931D93C63B00049865 /* NumberTableViewCell.swift */,
+				84203F941D93C63B00049865 /* NumberTableViewCell.xib */,
+			);
+			name = NumberTableViewCell;
+			sourceTree = "<group>";
+		};
+		84203F9F1D93C9AB00049865 /* OpticalTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				84203FA01D93C9BC00049865 /* OpticalPowerTableViewCell.swift */,
+				84203FA11D93C9BC00049865 /* OpticalPowerTableViewCell.xib */,
+			);
+			name = OpticalTableViewCell;
+			sourceTree = "<group>";
+		};
 		84A7B5A31D8ADF820040C701 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				84203FA41D93C9C600049865 /* OpticalPowerViewModel.swift */,
 				84A7B5A41D8ADF900040C701 /* NewViewModel.swift */,
 				84B3F1901D8BDF9600883677 /* CustomTextField.swift */,
+				84203F7A1D93C3BD00049865 /* NameCompanyViewModel.swift */,
+				84203F8E1D93C5F200049865 /* NumberViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -199,6 +281,9 @@
 		84C1F5B11D8AD63F006E6137 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				84203F9F1D93C9AB00049865 /* OpticalTableViewCell */,
+				84203F921D93C62B00049865 /* NumberTableViewCell */,
+				84203F7C1D93C3F400049865 /* NameCompanyTableViewCell */,
 				84A7B59B1D8AD7960040C701 /* InputDataTableViewCell.swift */,
 				84A7B59C1D8AD7960040C701 /* InputDataTableViewCell.xib */,
 				84A7B59D1D8AD7960040C701 /* PeriodTableViewCell.swift */,
@@ -238,6 +323,7 @@
 		9A6483001D76E18C00C5462F /* Lens */ = {
 			isa = PBXGroup;
 			children = (
+				84203F851D93C49D00049865 /* Files */,
 				84C1F5B01D8AD63B006E6137 /* View */,
 				9AE0938C1D8ADFC900F115F8 /* Widgets */,
 				9AE093811D8851B400F115F8 /* Components */,
@@ -277,6 +363,12 @@
 		9A64836B1D77002E00C5462F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				84203F9B1D93C9A000049865 /* OpticalPower.swift */,
+				84203F9C1D93C9A000049865 /* OpticalPowerModel.swift */,
+				84203F811D93C42800049865 /* NameModel.swift */,
+				84203F831D93C44100049865 /* NameCompany.swift */,
+				84203F901D93C61300049865 /* NumberModel.swift */,
+				84203F971D93C65700049865 /* Number.swift */,
 				9A64832F1D76F12D00C5462F /* PaskModel.swift */,
 				9A64836E1D77007900C5462F /* LensModel.swift */,
 				9A6483761D785B6300C5462F /* CalendarView.swift */,
@@ -292,6 +384,7 @@
 				9A6483711D770AE900C5462F /* HelperPask.swift */,
 				84CDFE771D8BC387001020C3 /* UIView+Extenstions.swift */,
 				9AE093931D8BD56300F115F8 /* HelperDates.swift */,
+				84203FA81D93E4A700049865 /* PassData.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -299,11 +392,13 @@
 		9A6483731D784C0000C5462F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9A6483741D784C7A00C5462F /* PaskController.swift */,
 				9A6483031D76E18C00C5462F /* ViewController.swift */,
 				84C1F5AE1D8AD5D6006E6137 /* NewViewController.swift */,
 				9AE0938A1D8ADCE500F115F8 /* TableViewController.swift */,
 				9AC451D01D92CAEF00516218 /* SliderViewController.swift */,
+				84203F781D93C37800049865 /* NameCompanyViewController.swift */,
+				84203F8C1D93C5EB00049865 /* NumberViewController.swift */,
+				84203FA61D93C9E000049865 /* OpticalPowerViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -371,6 +466,7 @@
 				9A6482FC1D76E18C00C5462F /* Resources */,
 				42E03BF81916EA50EDC577C7 /* [CP] Embed Pods Frameworks */,
 				DDD876913ED96D2FB402EBFC /* [CP] Copy Pods Resources */,
+				6E627C04E91056D0F15B0C25 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -467,19 +563,25 @@
 			files = (
 				84BB1DCA1D8FC36900E8C751 /* SaveTableViewCell.xib in Resources */,
 				84A7B5A21D8AD7960040C701 /* PeriodTableViewCell.xib in Resources */,
+				84203FA31D93C9BC00049865 /* OpticalPowerTableViewCell.xib in Resources */,
 				84B3F1951D8C056A00883677 /* DateTableViewCell.xib in Resources */,
 				84CDFE741D8BBE77001020C3 /* DatePicker.xib in Resources */,
 				84A7B5A01D8AD7960040C701 /* InputDataTableViewCell.xib in Resources */,
 				9AC451CB1D916CD700516218 /* SliderView.xib in Resources */,
+				84203F8B1D93C4B200049865 /* OpticalPower.json in Resources */,
 				9A64830C1D76E18C00C5462F /* LaunchScreen.storyboard in Resources */,
 				9AC451C81D915E6700516218 /* EventsStoryboard.storyboard in Resources */,
 				9AE093981D8C332900F115F8 /* CollectionViewCell.xib in Resources */,
+				84203F961D93C63B00049865 /* NumberTableViewCell.xib in Resources */,
 				9A6483091D76E18C00C5462F /* Assets.xcassets in Resources */,
 				9AC451CF1D92C9E800516218 /* Component.storyboard in Resources */,
 				9AE093A41D8FCE5E00F115F8 /* View.xib in Resources */,
+				84203F8A1D93C4B200049865 /* Number.json in Resources */,
 				9AE0938E1D8AE00C00F115F8 /* EventCell.xib in Resources */,
 				9A6483071D76E18C00C5462F /* Main.storyboard in Resources */,
 				9AE093A01D8C38C600F115F8 /* LastCollection.xib in Resources */,
+				84203F891D93C4B200049865 /* NameCompanyJSON.json in Resources */,
+				84203F801D93C40300049865 /* NameCompanyTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,6 +610,21 @@
 			inputPaths = (
 			);
 			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Lens/Pods-Lens-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E627C04E91056D0F15B0C25 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -553,31 +670,46 @@
 			buildActionMask = 2147483647;
 			files = (
 				84BB1DCC1D8FC44D00E8C751 /* SaveTableViewCell.swift in Sources */,
-				9A6483751D784C7A00C5462F /* PaskController.swift in Sources */,
 				84CDFE761D8BBFD0001020C3 /* DatePicker.swift in Sources */,
 				84B3F1971D8C061800883677 /* DateTableViewCell.swift in Sources */,
+				84203F841D93C44100049865 /* NameCompany.swift in Sources */,
 				9A6483771D785B6300C5462F /* CalendarView.swift in Sources */,
+				84203F7B1D93C3BD00049865 /* NameCompanyViewModel.swift in Sources */,
 				84A7B59F1D8AD7960040C701 /* InputDataTableViewCell.swift in Sources */,
+				84203F911D93C61300049865 /* NumberModel.swift in Sources */,
+				84203FA71D93C9E000049865 /* OpticalPowerViewController.swift in Sources */,
 				84B3F1911D8BDF9600883677 /* CustomTextField.swift in Sources */,
 				84C1F5AF1D8AD5D6006E6137 /* NewViewController.swift in Sources */,
+				84203F8F1D93C5F200049865 /* NumberViewModel.swift in Sources */,
 				9AE093831D88523800F115F8 /* Notification.swift in Sources */,
+				84203F9D1D93C9A000049865 /* OpticalPower.swift in Sources */,
 				9A6483041D76E18C00C5462F /* ViewController.swift in Sources */,
 				84CDFE781D8BC387001020C3 /* UIView+Extenstions.swift in Sources */,
+				84203F981D93C65700049865 /* Number.swift in Sources */,
 				84A7B5A11D8AD7960040C701 /* PeriodTableViewCell.swift in Sources */,
+				84203F9E1D93C9A000049865 /* OpticalPowerModel.swift in Sources */,
 				9AE093A61D8FD1CC00F115F8 /* View.swift in Sources */,
 				9AC451CD1D9181FE00516218 /* SliderView.swift in Sources */,
 				9A64836F1D77007900C5462F /* LensModel.swift in Sources */,
 				9AE093871D8AC6B700F115F8 /* DatesModel.swift in Sources */,
+				84203FA21D93C9BC00049865 /* OpticalPowerTableViewCell.swift in Sources */,
+				84203F7F1D93C40300049865 /* NameCompanyTableViewCell.swift in Sources */,
+				84203FA51D93C9C600049865 /* OpticalPowerViewModel.swift in Sources */,
 				9AE0938B1D8ADCE500F115F8 /* TableViewController.swift in Sources */,
 				9A6483021D76E18C00C5462F /* AppDelegate.swift in Sources */,
+				84203FA91D93E4A700049865 /* PassData.swift in Sources */,
 				9A6483301D76F12D00C5462F /* PaskModel.swift in Sources */,
 				9AE093941D8BD56300F115F8 /* HelperDates.swift in Sources */,
+				84203F951D93C63B00049865 /* NumberTableViewCell.swift in Sources */,
 				9AE0939A1D8C351300F115F8 /* CollectionViewCell.swift in Sources */,
 				9AE093901D8AE39A00F115F8 /* TableViewCell.swift in Sources */,
 				9A6483721D770AE900C5462F /* HelperPask.swift in Sources */,
+				84203F791D93C37800049865 /* NameCompanyViewController.swift in Sources */,
 				9AE093A81D90059D00F115F8 /* CollectionController.swift in Sources */,
 				84A7B5A51D8ADF900040C701 /* NewViewModel.swift in Sources */,
+				84203F821D93C42800049865 /* NameModel.swift in Sources */,
 				9AE613BF1D7E973C0016277B /* AnimationClass.swift in Sources */,
+				84203F8D1D93C5EB00049865 /* NumberViewController.swift in Sources */,
 				9AE0939C1D8C363A00F115F8 /* CollectionModel.swift in Sources */,
 				9AC451D11D92CAEF00516218 /* SliderViewController.swift in Sources */,
 				9AE093A21D8C39C500F115F8 /* LastCollection.swift in Sources */,

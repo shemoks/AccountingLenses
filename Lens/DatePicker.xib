@@ -8,21 +8,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="NgI-h8-3s4" customClass="DatePicker" customModule="Lens" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bhu-vR-Pr3">
-                    <rect key="frame" x="326" y="4" width="39" height="33"/>
-                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
-                    <state key="normal" title="Done">
-                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="doneRightButtonAction:" destination="NgI-h8-3s4" eventType="touchUpInside" id="prd-lt-uCa"/>
-                    </connections>
-                </button>
                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Xpu-eg-TOh">
-                    <rect key="frame" x="0.0" y="34" width="375" height="216"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <date key="date" timeIntervalSinceReferenceDate="495697556.85454297">
                         <!--2016-09-16 05:45:56 +0000-->
@@ -38,11 +28,9 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Xpu-eg-TOh" secondAttribute="bottom" id="15s-1c-SQv"/>
-                <constraint firstItem="Bhu-vR-Pr3" firstAttribute="top" secondItem="NgI-h8-3s4" secondAttribute="top" constant="4" id="3Xg-Xz-Ndx"/>
                 <constraint firstItem="Xpu-eg-TOh" firstAttribute="leading" secondItem="NgI-h8-3s4" secondAttribute="leading" id="4XW-sf-T00"/>
                 <constraint firstAttribute="trailing" secondItem="Xpu-eg-TOh" secondAttribute="trailing" id="64f-Xs-51C"/>
-                <constraint firstAttribute="trailing" secondItem="Bhu-vR-Pr3" secondAttribute="trailing" constant="10" id="9BI-Rl-b8M"/>
-                <constraint firstItem="Xpu-eg-TOh" firstAttribute="top" secondItem="NgI-h8-3s4" secondAttribute="top" constant="34" id="mrQ-Hd-5i4"/>
+                <constraint firstItem="Xpu-eg-TOh" firstAttribute="top" secondItem="NgI-h8-3s4" secondAttribute="top" id="mrQ-Hd-5i4"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

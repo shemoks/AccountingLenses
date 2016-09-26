@@ -12,15 +12,15 @@ import UIKit
 class NewViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    
     var viewModel = NewViewModel()
+    var textField:UITextField!
+    var delegate:PassData!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewModel.getArray{object in
+        self.viewModel.getArray{object in }
+        self.title = "Add Lens"
         
-        }
-        self.title = "Add new Lens"
         self.setupTableView(tableView)
     }
 }
@@ -53,10 +53,15 @@ extension NewViewController:UITableViewDataSource {
         case 0:
             let aCell = tableView.dequeueReusableCellWithIdentifier("Cell") as! InputDataTableViewCell
             aCell.titleLabel.text = self.viewModel.arrayNameTitle[indexPath.row]
-            aCell.textField.placeholder = self.viewModel.arrayPlaceholder[indexPath.row]
-            aCell.selectionStyle = .None
-            if aCell.textField.text != "" {
-                self.viewModel.dateArray.append(aCell.textField.text!)
+            switch indexPath.row {
+            case 0:
+                self.viewModel.setCellInputData(aCell)
+            case 1:
+                self.viewModel.setCellOpticalPower(aCell)
+            case 2:
+                self.viewModel.setCellNumber(aCell)
+            default:
+                print("Error")
             }
             cell = aCell
         case 1:
@@ -68,9 +73,7 @@ extension NewViewController:UITableViewDataSource {
             aCell.selectionStyle = .None
             aCell.titleLabel.text = "Date"
             aCell.textField.placeholder = "Please set up date"
-            if aCell.textField.text != "" {
-                self.viewModel.dateArray.append(aCell.textField.text!)
-            }
+            self.textField = aCell.textField
             cell = aCell
         case 3:
             let aCell = tableView.dequeueReusableCellWithIdentifier("Save") as! SaveTableViewCell
@@ -107,6 +110,27 @@ extension NewViewController:UITableViewDataSource {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         switch indexPath.section {
+        case 0:
+            switch indexPath.row {
+            case 0:
+                tableView.deselectRowAtIndexPath(indexPath, animated: true)
+                let controller = self.storyboard?.instantiateViewControllerWithIdentifier("NameView") as! NameCompanyViewController
+                controller.delegate = self
+                self.navigationController?.pushViewController(controller, animated: true)
+            case 1:
+                tableView.deselectRowAtIndexPath(indexPath, animated: true)
+                let controller = self.storyboard?.instantiateViewControllerWithIdentifier("OpticalView") as! OpticalPowerViewController
+                controller.delegate = self
+                self.navigationController?.pushViewController(controller, animated: true)
+            case 2:
+                tableView.deselectRowAtIndexPath(indexPath, animated: true)
+                let controller = self.storyboard?.instantiateViewControllerWithIdentifier("NumberView") as! NumberViewController
+                controller.delegate = self
+                self.navigationController?.pushViewController(controller, animated: true)
+            default:
+                print("Error")
+            }
+            
         case 1:
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
             
@@ -118,14 +142,13 @@ extension NewViewController:UITableViewDataSource {
                 
                 let newCell = tableView.cellForRowAtIndexPath(indexPath)
                 newCell?.accessoryType = .Checkmark
-                self.viewModel.dateArray = []
-                self.viewModel.dateArray.append("\(Term.arrayEnum[indexPath.row].rawValue)")
+                self.viewModel.dataArray = []
+                self.viewModel.dataArray.append("\(Term.arrayEnum[indexPath.row].rawValue)")
                 self.viewModel.lastSelectedIndexPath = indexPath
             }
         default:
             print("Error")
         }
-        
     }
 }
 
@@ -146,7 +169,7 @@ extension NewViewController:UITableViewDelegate {
             return 0
         }
     }
-   
+    
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
         if section == 3{
@@ -170,6 +193,30 @@ extension NewViewController:SaveButtonTapp {
     
     func saveButtonTapp(cell: SaveTableViewCell) {
         tableView.reloadData()
+        self.viewModel.save(self.textField.text!)
         self.viewModel.saveInDataBase(self)
+    }
+}
+
+extension NewViewController: PassData {
+    
+    func passData(text: String) {
+        self.viewModel.stuc.nameCompany = text
+        tableView.reloadData()
+    }
+}
+
+extension NewViewController: PassDataDouble {
+    
+    func passDataDouble(double: Double) {
+        self.viewModel.stuc.opticalPower = double
+        tableView.reloadData()
+    }
+}
+
+extension NewViewController: PassDataInt {
+    func passDataInt(int: Int) {
+        self.viewModel.stuc.count = int
+        tableView.reloadData()
     }
 }
