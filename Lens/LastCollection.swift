@@ -10,5 +10,6 @@ import UIKit
 
 class LastCollection: UICollectionViewCell {
     
+    @IBOutlet weak var textLabel: UILabel!
     
    }

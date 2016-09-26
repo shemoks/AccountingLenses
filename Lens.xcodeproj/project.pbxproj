@@ -38,6 +38,8 @@
 		9AC451C81D915E6700516218 /* EventsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AC451C71D915E6700516218 /* EventsStoryboard.storyboard */; };
 		9AC451CB1D916CD700516218 /* SliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9AC451CA1D916CD700516218 /* SliderView.xib */; };
 		9AC451CD1D9181FE00516218 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC451CC1D9181FE00516218 /* SliderView.swift */; };
+		9AC451CF1D92C9E800516218 /* Component.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AC451CE1D92C9E800516218 /* Component.storyboard */; };
+		9AC451D11D92CAEF00516218 /* SliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC451D01D92CAEF00516218 /* SliderViewController.swift */; };
 		9AE093831D88523800F115F8 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE093821D88523800F115F8 /* Notification.swift */; };
 		9AE093871D8AC6B700F115F8 /* DatesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE093861D8AC6B700F115F8 /* DatesModel.swift */; };
 		9AE0938B1D8ADCE500F115F8 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE0938A1D8ADCE500F115F8 /* TableViewController.swift */; };
@@ -109,6 +111,8 @@
 		9AC451C71D915E6700516218 /* EventsStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EventsStoryboard.storyboard; sourceTree = "<group>"; };
 		9AC451CA1D916CD700516218 /* SliderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SliderView.xib; sourceTree = "<group>"; };
 		9AC451CC1D9181FE00516218 /* SliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
+		9AC451CE1D92C9E800516218 /* Component.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Component.storyboard; path = ../Component.storyboard; sourceTree = "<group>"; };
+		9AC451D01D92CAEF00516218 /* SliderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderViewController.swift; sourceTree = "<group>"; };
 		9AE093821D88523800F115F8 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		9AE093861D8AC6B700F115F8 /* DatesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatesModel.swift; sourceTree = "<group>"; };
 		9AE0938A1D8ADCE500F115F8 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -243,6 +247,7 @@
 				9A6483011D76E18C00C5462F /* AppDelegate.swift */,
 				9A6483051D76E18C00C5462F /* Main.storyboard */,
 				9AC451C71D915E6700516218 /* EventsStoryboard.storyboard */,
+				9AC451CE1D92C9E800516218 /* Component.storyboard */,
 				9A6483081D76E18C00C5462F /* Assets.xcassets */,
 				9A64830A1D76E18C00C5462F /* LaunchScreen.storyboard */,
 				9A64830D1D76E18C00C5462F /* Info.plist */,
@@ -298,6 +303,7 @@
 				9A6483031D76E18C00C5462F /* ViewController.swift */,
 				84C1F5AE1D8AD5D6006E6137 /* NewViewController.swift */,
 				9AE0938A1D8ADCE500F115F8 /* TableViewController.swift */,
+				9AC451D01D92CAEF00516218 /* SliderViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -469,6 +475,7 @@
 				9AC451C81D915E6700516218 /* EventsStoryboard.storyboard in Resources */,
 				9AE093981D8C332900F115F8 /* CollectionViewCell.xib in Resources */,
 				9A6483091D76E18C00C5462F /* Assets.xcassets in Resources */,
+				9AC451CF1D92C9E800516218 /* Component.storyboard in Resources */,
 				9AE093A41D8FCE5E00F115F8 /* View.xib in Resources */,
 				9AE0938E1D8AE00C00F115F8 /* EventCell.xib in Resources */,
 				9A6483071D76E18C00C5462F /* Main.storyboard in Resources */,
@@ -572,6 +579,7 @@
 				84A7B5A51D8ADF900040C701 /* NewViewModel.swift in Sources */,
 				9AE613BF1D7E973C0016277B /* AnimationClass.swift in Sources */,
 				9AE0939C1D8C363A00F115F8 /* CollectionModel.swift in Sources */,
+				9AC451D11D92CAEF00516218 /* SliderViewController.swift in Sources */,
 				9AE093A21D8C39C500F115F8 /* LastCollection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
