@@ -5,7 +5,12 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SliderView" customModule="Lens" customModuleProvider="target">
+            <connections>
+                <outlet property="collection" destination="laC-rl-hHV" id="ZjF-PG-cye"/>
+                <outlet property="slider" destination="2od-7x-tFJ" id="yXj-mZ-DAi"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="567" height="60"/>
@@ -13,27 +18,38 @@
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="laC-rl-hHV">
                     <rect key="frame" x="0.0" y="0.0" width="567" height="60"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eTG-pN-ynr">
-                        <size key="itemSize" width="50" height="50"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
+                    <collectionViewLayout key="collectionViewLayout" id="rQI-1M-zIV"/>
                 </collectionView>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dqv-8H-Dpc">
-                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2od-7x-tFJ">
+                    <rect key="frame" x="258" y="4" width="52" height="52"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="52" id="ZMT-Sm-8zL"/>
+                        <constraint firstAttribute="width" constant="52" id="doG-6J-ewf"/>
+                    </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="lkO-p6-FoH" appends="YES" id="wxe-uG-o0e"/>
+                    </connections>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="laC-rl-hHV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2u4-y3-Uml"/>
                 <constraint firstAttribute="bottom" secondItem="laC-rl-hHV" secondAttribute="bottom" id="7uw-0q-0T9"/>
+                <constraint firstItem="2od-7x-tFJ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="GBu-1X-NTE"/>
+                <constraint firstItem="2od-7x-tFJ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="HBv-M0-6bG"/>
                 <constraint firstItem="laC-rl-hHV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="NeF-3R-jfa"/>
                 <constraint firstAttribute="trailing" secondItem="laC-rl-hHV" secondAttribute="trailing" id="WO6-sY-lu3"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="412.5" y="-26.5"/>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="B0N-D5-Odn" appends="YES" id="NIP-tx-gyo"/>
+            </connections>
+            <point key="canvasLocation" x="427.5" y="-49"/>
         </view>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="lkO-p6-FoH"/>
+        <swipeGestureRecognizer direction="right" id="B0N-D5-Odn"/>
     </objects>
 </document>

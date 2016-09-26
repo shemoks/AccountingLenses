@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pZi-KX-hsb">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Slider View Controller-->
+        <scene sceneID="Dvi-TG-8zB">
+            <objects>
+                <viewController id="pZi-KX-hsb" customClass="SliderViewController" customModule="Lens" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="R4u-FQ-tRe"/>
+                        <viewControllerLayoutGuide type="bottom" id="Yk6-oh-IsH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TFt-d9-4Nr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JEJ-et-gSP" customClass="SliderView" customModule="Lens" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="458" width="600" height="142"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="142" id="ddO-Z0-fp3"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JEJ-et-gSP" firstAttribute="leading" secondItem="TFt-d9-4Nr" secondAttribute="leading" id="1vx-pg-5rl"/>
+                            <constraint firstAttribute="trailing" secondItem="JEJ-et-gSP" secondAttribute="trailing" id="upA-xs-gQ1"/>
+                            <constraint firstItem="Yk6-oh-IsH" firstAttribute="top" secondItem="JEJ-et-gSP" secondAttribute="bottom" id="wST-zd-7F5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="sliderView" destination="JEJ-et-gSP" id="DoL-VN-X6k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0xj-MR-lKe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="349" y="498"/>
+        </scene>
+    </scenes>
+</document>
