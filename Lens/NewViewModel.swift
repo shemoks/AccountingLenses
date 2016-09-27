@@ -91,7 +91,7 @@ class NewViewModel {
     
     
     func saveInDataBase(viewController:UIViewController){
-        if dataArray.isEmpty != true{
+        if dataArray.isEmpty != true {
             if dataArray.count != 1 {
                 lens.termOfUsing = Int(dataArray[0])!
                 pask.name = dataArray[2]
@@ -105,7 +105,7 @@ class NewViewModel {
                         pask.numberOfLens = numbers
                         
                         if arrayPasks.count > 0 {
-                            let lastValue = self.arrayPasks.last?.dateFinish
+                            let lastValue = self.arrayPasks.last?.dates.last?.dateChange
                             pask.dateBuy = lastValue!
                         } else {
                             pask.dateBuy = dateBuy

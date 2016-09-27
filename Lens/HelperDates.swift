@@ -59,4 +59,11 @@ class HelperDates {
         }
         return "="
     }
+    
+    static func subtructCustomDates(first: NSDate,second: NSDate) -> Int {
+        let dateBegin = getDateAsStruct(first)
+        let dateNow = getDateAsStruct(second)
+        
+        return abs(dateNow.day - dateBegin.day)
+    }
 }

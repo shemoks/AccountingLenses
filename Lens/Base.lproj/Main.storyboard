@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fK8-Xq-zBd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fK8-Xq-zBd">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -38,7 +38,7 @@
                                     <outlet property="calendarDelegate" destination="9dL-4u-KmX" id="gNs-NB-vtk"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1uX-u8-0iy">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1uX-u8-0iy">
                                 <rect key="frame" x="0.0" y="64" width="600" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVT-b1-Lvh">
@@ -50,28 +50,28 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmT-0x-35D">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmT-0x-35D">
                                         <rect key="frame" x="90" y="32" width="30" height="30"/>
                                         <state key="normal" title="«"/>
                                         <connections>
                                             <action selector="loadPrevious:" destination="9dL-4u-KmX" eventType="touchUpInside" id="3B0-nI-Px0"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LaU-tO-JON">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LaU-tO-JON">
                                         <rect key="frame" x="485" y="32" width="30" height="30"/>
                                         <state key="normal" title="»"/>
                                         <connections>
                                             <action selector="loadNext:" destination="9dL-4u-KmX" eventType="touchUpInside" id="nkS-o6-6Mg"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bbo-kb-3k1">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bbo-kb-3k1">
                                         <rect key="frame" x="537" y="32" width="42" height="30"/>
                                         <state key="normal" title="Today"/>
                                         <connections>
                                             <action selector="todayMonthView" destination="9dL-4u-KmX" eventType="touchUpInside" id="pi2-nN-Z0t"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ux7-cU-Rgl">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ux7-cU-Rgl">
                                         <rect key="frame" x="279" y="37" width="42" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="42" id="pbc-V1-km5"/>
@@ -118,6 +118,7 @@
                             <constraint firstAttribute="trailing" secondItem="7Uo-S2-gbG" secondAttribute="trailing" id="jQ8-Ir-I9p"/>
                             <constraint firstItem="1uX-u8-0iy" firstAttribute="top" secondItem="dRS-R3-ZcC" secondAttribute="bottom" id="pWg-mZ-Fb6"/>
                             <constraint firstItem="G2q-VG-JNN" firstAttribute="leading" secondItem="MJZ-8W-yLi" secondAttribute="leading" id="pkq-pw-HAq"/>
+                            <constraint firstItem="7Uo-S2-gbG" firstAttribute="top" secondItem="1uX-u8-0iy" secondAttribute="bottom" constant="51" id="rRp-Hk-9FB"/>
                             <constraint firstAttribute="trailing" secondItem="waD-WP-moM" secondAttribute="trailing" id="uRx-FA-NH2"/>
                         </constraints>
                     </view>
@@ -135,6 +136,7 @@
                         <outlet property="menuView" destination="waD-WP-moM" id="lkj-1g-2SB"/>
                         <outlet property="monthLabel" destination="rVT-b1-Lvh" id="eKl-Ta-XZn"/>
                         <segue destination="dWk-r4-IuP" kind="show" identifier="addPask" id="ix8-dY-wWU"/>
+                        <segue destination="7Hw-pb-285" kind="show" identifier="addDay" id="BeA-2Z-RjM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GA8-en-YsY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -215,6 +217,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WKn-B8-KWv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1020" y="1916"/>
+        </scene>
+        <!--Slider View Controller-->
+        <scene sceneID="Gz2-e6-Opz">
+            <objects>
+                <viewController id="7Hw-pb-285" customClass="SliderViewController" customModule="Lens" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HAD-mv-heX"/>
+                        <viewControllerLayoutGuide type="bottom" id="dFA-6P-Auv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bGV-Zk-bxU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ees-8J-JhD" customClass="SliderView" customModule="Lens" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dFA-6P-Auv" firstAttribute="top" secondItem="ees-8J-JhD" secondAttribute="bottom" id="6LT-hJ-sdI"/>
+                            <constraint firstItem="ees-8J-JhD" firstAttribute="leading" secondItem="bGV-Zk-bxU" secondAttribute="leading" id="MPe-6z-DVu"/>
+                            <constraint firstAttribute="trailing" secondItem="ees-8J-JhD" secondAttribute="trailing" id="MX4-M1-vfm"/>
+                            <constraint firstItem="ees-8J-JhD" firstAttribute="top" secondItem="HAD-mv-heX" secondAttribute="bottom" id="v38-Oh-Ef3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="sliderView" destination="ees-8J-JhD" id="LJc-Fe-sE0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Aa-zA-TyW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1965" y="418"/>
         </scene>
         <!--EventsStoryboard-->
         <scene sceneID="PpE-oA-r4n">

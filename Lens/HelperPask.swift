@@ -80,13 +80,10 @@ class HelperPask{
         var array: [NSDate] = []
         
         for pask in arrayOfPasks {
-            let last = self.arrayDates.last
-            let numberOfLenses = pask.numberOfLens
-            let days = pask.lenses[0].termOfUsing
-            let dayBuy = pask.dateBuy
-            let buy = arrayDates.count > 1 ? last : dayBuy
-            array = self.datesForOnePask(numberOfLenses, numberOfDeys: days, dateOfBuy: buy!)
+            for dates in pask.dates {
+            array.append(dates.dateChange)
         }
+    }
         return array
     }
     
@@ -113,7 +110,7 @@ class HelperPask{
             try! Realm().write() {
                 for pask in pasks {
                     for dates in pask.dates {
-                        if dates == dateValue || k > 0 {
+                        if HelperDates.compareDates(dateValue, secondDate: dates.dateChange) == "=" || k > 0 {
                             k += 1
                             dates.dateChange = HelperDates.addValueToDate(dates.dateChange, value: value)
                             listDates.append(dates)

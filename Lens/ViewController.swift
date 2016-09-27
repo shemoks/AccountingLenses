@@ -2,6 +2,12 @@ import UIKit
 import CVCalendar
 import RealmSwift
 
+public struct massDates{
+    var date: NSDate
+    var color: UIColor
+    var enabled: Bool
+}
+
 class ViewController: UIViewController {
     
     
@@ -20,8 +26,10 @@ class ViewController: UIViewController {
     var shouldShowDaysOut = true
     var animationFinished = true
     var indexDate: NSDate = NSDate()
+    var massDaysForSlider: [massDates] = []
+    var viewController: SliderViewController!
     
-    var selectedDay:DayView!
+
     
     //    @IBAction func okClick(sender: AnyObject) {
     ////        addValue {
@@ -69,6 +77,7 @@ class ViewController: UIViewController {
             self.menuView.commitMenuViewUpdate()
             self.calendarView.commitCalendarViewUpdate()
         }
+       
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -80,7 +89,15 @@ class ViewController: UIViewController {
                 self.performSegueWithIdentifier("addPask", sender: self)
             }
             self.collectionView.collectionView.reloadData()
-            
+            self.calendarView.contentController.refreshPresentedMonth()
+        }
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let vc = segue.destinationViewController as? SliderViewController
+            where segue.identifier == "addDay" {
+            self.viewController = vc
+            self.viewController.arrayOfDates = self.massDaysForSlider
+            self.viewController.arrayOfPasks = self.arrayOfPasks
         }
     }
     
@@ -160,22 +177,64 @@ extension ViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
     //        return true // Default value is true
     //    }
     //
-    //    func shouldSelectDayView(dayView: DayView) -> Bool {
-    //        return arc4random_uniform(33) == 0 ? true : false
-    //    }
-    //
-    //        func didSelectDayView(dayView: CVCalendarDayView, animationDidFinish: Bool) {
-    //            let strDate = dayView.date.commonDescription// "2015-10-06T15:42:34Z"
-    //            let dateFormatter = NSDateFormatter()
-    //            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-    //            indexDate = dateFormatter.dateFromString(strDate)!
-    //            //виклик вікна з бігунком
-    //            //
-    //            //
-    //            //
-    //            //
-    //            selectedDay = dayView
-    //        }
+//        func shouldSelectDayView(dayView: DayView) -> Bool {
+//            let dateComponents = NSDateComponents()
+//            dateComponents.day = dayView.date.day
+//            dateComponents.month = dayView.date.month
+//            dateComponents.year = dayView.date.year
+//            let calendar = NSCalendar.currentCalendar()
+//            let currentDate = calendar.dateFromComponents(dateComponents)
+//            for date in arrayOfDates {
+//                if HelperDates.compareDates(date, secondDate: currentDate!) == "=" && HelperDates.compareDates(NSDate(), secondDate: currentDate!) == "<" {
+//                   return true
+//                }
+//            }
+//            return  false
+//        }
+    
+            func didSelectDayView(dayView: CVCalendarDayView, animationDidFinish: Bool) {
+                var flag = false
+                massDaysForSlider = []
+                var structForSlider = massDates(date: NSDate(), color:.blueColor(), enabled: true)
+                let dateComponents = NSDateComponents()
+                dateComponents.day = dayView.date.day
+                dateComponents.month = dayView.date.month
+                dateComponents.year = dayView.date.year
+                let calendar = NSCalendar.currentCalendar()
+                let currentDate = calendar.dateFromComponents(dateComponents)
+                for date in arrayOfDates {
+                    if HelperDates.compareDates(date, secondDate: currentDate!) == "=" && HelperDates.compareDates(NSDate(), secondDate: currentDate!) == "<" && HelperDates.compareDates(arrayOfDates.last!, secondDate: currentDate!) != "="{
+                    flag = true
+                    }
+                }
+                if flag {
+                let finishDate = HelperDates.addValueToDate(currentDate!, value: 7)
+                var firstDate = HelperDates.addValueToDate(currentDate!, value: -7)
+                while HelperDates.compareDates(firstDate, secondDate: finishDate) != "=" {
+                    if HelperDates.compareDates(firstDate, secondDate: currentDate!) == "<" {
+                      structForSlider.enabled = false
+                      structForSlider.date = firstDate
+                        structForSlider.color = .grayColor()
+                      massDaysForSlider.append(structForSlider)
+                    }
+                    if  HelperDates.compareDates(firstDate, secondDate: currentDate!) == ">" {
+                        structForSlider.enabled = true
+                        structForSlider.color = .blueColor()
+                        structForSlider.date = firstDate
+                        massDaysForSlider.append(structForSlider)
+                    }
+                    if  HelperDates.compareDates(firstDate, secondDate: currentDate!) == "=" {
+                        structForSlider.enabled = true
+                        structForSlider.date = firstDate
+                        structForSlider.color = .redColor()
+                        massDaysForSlider.append(structForSlider)
+                    }
+                    firstDate = HelperDates.addValueToDate(firstDate, value: 1)
+                }
+              self.performSegueWithIdentifier("addDay", sender: self)
+                
+            }
+    }
     
     func presentedDateUpdated(date: CVDate) {
         if monthLabel.text != date.globalDescription && self.animationFinished {
@@ -259,9 +318,9 @@ extension ViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
     //        return { UIBezierPath(rect: CGRectMake(0, 0, $0.width, $0.height)) }
     //    }
     
-    //        func shouldShowCustomSingleSelection() -> Bool {
-    //            return true
-    //        }
+//            func shouldShowCustomSingleSelection() -> Bool {
+//                return true
+//            }
     //
     //        func preliminaryView(viewOnDayView dayView: DayView) -> UIView {
     //            let circleView = CVAuxiliaryView(dayView: dayView, rect: dayView.bounds, shape: CVShape.Circle)
@@ -275,6 +334,9 @@ extension ViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
     //            }
     //            return false
     //        }
+    func shouldAutoSelectDayOnMonthChange() -> Bool {
+     return false
+    }
     
     func supplementaryView(viewOnDayView dayView: DayView) -> UIView {
         let π = M_PI
