@@ -30,8 +30,8 @@ class View: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDataSour
         self.collectionView.registerNib(UINib(nibName: "CollectionViewCell",bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
         self.collectionView.registerNib(UINib(nibName: "LastCollection",bundle: nil), forCellWithReuseIdentifier: "LastCollection")
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
-        layout.itemSize = CGSize(width: 70, height: 118)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        layout.itemSize = CGSize(width: 120, height: 118)
         layout.scrollDirection = .Horizontal
         self.collectionView.setCollectionViewLayout(layout, animated: false)
         self.collectionView.delegate = self
