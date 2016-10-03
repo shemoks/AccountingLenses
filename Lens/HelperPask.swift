@@ -81,9 +81,9 @@ class HelperPask{
         
         for pask in arrayOfPasks {
             for dates in pask.dates {
-            array.append(dates.dateChange)
+                array.append(dates.dateChange)
+            }
         }
-    }
         return array
     }
     
@@ -136,14 +136,16 @@ class HelperPask{
         var numberOfLensesNow: [Collection] = []
         let minDateBuy = pasks.filter("isActive = true").first?.dateBuy
         for pask in pasks {
+            var numberOfLenses = pask.numberOfLens
             let collection = Collection()
-            let dateBuy = pask.dateBuy
-            let numberOfLenses = HelperDates.subtructDates(dateBuy) * 2
             if HelperDates.compareDates(pask.dateBuy, secondDate: minDateBuy!) == "=" {
-                collection.number = pask.numberOfLens - numberOfLenses
-            } else {
-                collection.number = pask.numberOfLens
+                for date in pask.dates {
+                    if HelperDates.compareDates(date.dateChange, secondDate: NSDate()) == "<" {
+                        numberOfLenses = pask.numberOfLens - 2
+                    }
+                }
             }
+            collection.number = numberOfLenses
             collection.name = pask.name
             numberOfLensesNow.append(collection)
         }

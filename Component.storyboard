@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pZi-KX-hsb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ugf-Xe-PX8">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -8,20 +8,20 @@
         <!--Slider View Controller-->
         <scene sceneID="Dvi-TG-8zB">
             <objects>
-                <viewController id="pZi-KX-hsb" customClass="SliderViewController" customModule="Lens" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="formSheet" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pZi-KX-hsb" customClass="SliderViewController" customModule="Lens" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="R4u-FQ-tRe"/>
                         <viewControllerLayoutGuide type="bottom" id="Yk6-oh-IsH"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="TFt-d9-4Nr">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JEJ-et-gSP" customClass="SliderView" customModule="Lens" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="458" width="600" height="142"/>
+                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="JEJ-et-gSP" customClass="ScrollComponent" customModule="Lens" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="142" id="ddO-Z0-fp3"/>
+                                    <constraint firstAttribute="height" constant="70" id="ddO-Z0-fp3"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -32,13 +32,35 @@
                             <constraint firstItem="Yk6-oh-IsH" firstAttribute="top" secondItem="JEJ-et-gSP" secondAttribute="bottom" id="wST-zd-7F5"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="HKp-NW-at6"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="600" height="142"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="70"/>
                     <connections>
                         <outlet property="sliderView" destination="JEJ-et-gSP" id="DoL-VN-X6k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0xj-MR-lKe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="349" y="498"/>
+            <point key="canvasLocation" x="1174" y="177"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qP1-xC-5fI">
+            <objects>
+                <navigationController storyboardIdentifier="NavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="ugf-Xe-PX8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bZo-sx-FfA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pZi-KX-hsb" kind="relationship" relationship="rootViewController" id="Q5v-uK-pEY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="khv-t0-bc8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="362" y="177"/>
         </scene>
     </scenes>
 </document>

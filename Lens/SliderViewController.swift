@@ -13,16 +13,16 @@ class SliderViewController: UIViewController {
     var arrayOfPasks: Results<Pask>!
     var arrayOfDates: [massDates] = []
     
-    @IBOutlet weak var sliderView: SliderView!
+    @IBOutlet weak var sliderView: ScrollComponent!
     override func viewDidLoad() {
         super.viewDidLoad()
           
-          self.sliderView.arrayOfDates = self.arrayOfDates
-        self.sliderView.arrayOfPasks = arrayOfPasks
-            self.sliderView.onTouch = { object in
-              self.presentViewController(object, animated: true, completion: nil)
-            }
-//          self.sliderView.collection.reloadData()
+        self.sliderView.arrayOfDates = self.arrayOfDates
+        self.sliderView.arrayOfPasks = self.arrayOfPasks
+//            self.sliderView.onTouch = { object in
+//              self.presentViewController(object, animated: true, completion: nil)
+//            }
+       //self.sliderView.collection.reloadData()
 //            
 //        }
     }

@@ -61,9 +61,15 @@ class HelperDates {
     }
     
     static func subtructCustomDates(first: NSDate,second: NSDate) -> Int {
-        let dateBegin = getDateAsStruct(first)
-        let dateNow = getDateAsStruct(second)
+        let calendar: NSCalendar = NSCalendar.currentCalendar()
         
-        return abs(dateNow.day - dateBegin.day)
-    }
+        // Replace the hour (time) of both dates with 00:00
+        let date1 = calendar.startOfDayForDate(first)
+        let date2 = calendar.startOfDayForDate(second)
+        
+        let flags = NSCalendarUnit.Day
+        let components = calendar.components(flags, fromDate: date1, toDate: date2, options: [])
+        
+       return components.day
+}
 }

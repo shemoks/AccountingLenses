@@ -7,8 +7,12 @@ public struct massDates{
     var color: UIColor
     var enabled: Bool
 }
+public struct location{
+    var x: CGFloat
+    var y: CGFloat
+}
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UIPopoverPresentationControllerDelegate {
     
     
     @IBOutlet weak var collectionView: View!
@@ -28,7 +32,7 @@ class ViewController: UIViewController {
     var indexDate: NSDate = NSDate()
     var massDaysForSlider: [massDates] = []
     var viewController: SliderViewController!
-    
+    var coordinates: location = location(x: 0, y: 0)
 
     
     //    @IBAction func okClick(sender: AnyObject) {
@@ -80,6 +84,14 @@ class ViewController: UIViewController {
        
     }
     
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .None
+    }
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
+        return .None
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         getArrayOfDates { object in
@@ -92,12 +104,23 @@ class ViewController: UIViewController {
             self.calendarView.contentController.refreshPresentedMonth()
         }
     }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let vc = segue.destinationViewController as? SliderViewController
+        if let vc = segue.destinationViewController as? UINavigationController
             where segue.identifier == "addDay" {
-            self.viewController = vc
+            self.viewController = vc.viewControllers.first as! SliderViewController
             self.viewController.arrayOfDates = self.massDaysForSlider
             self.viewController.arrayOfPasks = self.arrayOfPasks
+            let controller = vc.popoverPresentationController
+            vc.preferredContentSize = CGSize(width: 300, height: 70)
+            //controller.frame.origin.x = coordinates.x + 135
+            
+     //       vc.preferredContentSize = CGRectMake(0, coordinates.y, 600, 70)
+        
+            controller!.sourceRect = CGRect(x: coordinates.x - 135, y: coordinates.y + 60, width: 300.0, height: 70.0)
+            if controller != nil {
+                controller?.delegate = self
+            }
         }
     }
     
@@ -208,8 +231,8 @@ extension ViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
                     }
                 }
                 if flag {
-                let finishDate = HelperDates.addValueToDate(currentDate!, value: 7)
-                var firstDate = HelperDates.addValueToDate(currentDate!, value: -7)
+                let finishDate = HelperDates.addValueToDate(currentDate!, value: 8)
+                var firstDate = HelperDates.addValueToDate(currentDate!, value: -1)
                 while HelperDates.compareDates(firstDate, secondDate: finishDate) != "=" {
                     if HelperDates.compareDates(firstDate, secondDate: currentDate!) == "<" {
                       structForSlider.enabled = false
@@ -219,7 +242,7 @@ extension ViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
                     }
                     if  HelperDates.compareDates(firstDate, secondDate: currentDate!) == ">" {
                         structForSlider.enabled = true
-                        structForSlider.color = .blueColor()
+                        structForSlider.color = .whiteColor()
                         structForSlider.date = firstDate
                         massDaysForSlider.append(structForSlider)
                     }
@@ -231,8 +254,23 @@ extension ViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
                     }
                     firstDate = HelperDates.addValueToDate(firstDate, value: 1)
                 }
-              self.performSegueWithIdentifier("addDay", sender: self)
-                
+                    if HelperDates.compareDates(firstDate, secondDate: finishDate) == "=" {
+                        structForSlider.enabled = false
+                        structForSlider.date = firstDate
+                        structForSlider.color = .grayColor()
+                        massDaysForSlider.append(structForSlider)
+                    
+                    }
+                    
+                    self.coordinates.x = dayView.frame.origin.x
+
+                    
+                   // self.coordinates.y = dayView.layer.bounds.origin.y
+                    
+                self.coordinates.y = dayView.weekView.frame.origin.y - 60
+                    print("\(self.coordinates.x)")
+                    print("\(self.coordinates.y)")
+                    self.performSegueWithIdentifier("addDay", sender: self)
             }
     }
     
@@ -345,7 +383,7 @@ extension ViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
         let ringVerticalOffset: CGFloat = 1.0
         var ringLayer: CAShapeLayer!
         let ringLineWidth: CGFloat = 4.0
-        let ringLineColour: UIColor = .blueColor()
+        let ringLineColour: UIColor = .grayColor()
         let ringLastLineColour: UIColor = .redColor()
         let newView = UIView(frame: dayView.bounds)
         let diameter: CGFloat = (newView.bounds.width) - ringSpacing - 10

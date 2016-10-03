@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScrollComponent" customModule="Lens" customModuleProvider="target">
+            <connections>
+                <outlet property="collection" destination="nOL-qv-Pdu" id="yzc-CP-5np"/>
+                <outlet property="holeView" destination="4fu-t2-gpm" id="slY-ih-LUA"/>
+                <outlet property="slider" destination="aMG-cR-Tvw" id="UZV-1b-nWc"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="595" height="54"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="nOL-qv-Pdu">
+                    <rect key="frame" x="0.0" y="0.0" width="595" height="54"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Zcb-jg-Ioe">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4fu-t2-gpm">
+                    <rect key="frame" x="238" y="0.0" width="120" height="54"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="54" id="GHF-Vw-Y2j"/>
+                        <constraint firstAttribute="width" constant="120" id="wpB-bX-FiL"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aMG-cR-Tvw">
+                    <rect key="frame" x="283" y="12" width="30" height="30"/>
+                    <color key="backgroundColor" white="1" alpha="0.46349676724137934" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="lyH-9c-aTY"/>
+                        <constraint firstAttribute="height" constant="30" id="oEL-Xx-Rr0"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeq-Dn-r9i">
+                    <rect key="frame" x="532" y="24" width="46" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="DONE">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="buttonClick:" destination="-1" eventType="touchUpInside" id="Yb2-yG-RB3"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="4fu-t2-gpm" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="0Sx-lT-7eM"/>
+                <constraint firstAttribute="trailing" secondItem="aeq-Dn-r9i" secondAttribute="trailing" constant="17" id="8IM-SG-Uu8"/>
+                <constraint firstAttribute="trailing" secondItem="nOL-qv-Pdu" secondAttribute="trailing" id="Blw-07-HjD"/>
+                <constraint firstItem="aMG-cR-Tvw" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ILY-FB-FEH"/>
+                <constraint firstAttribute="bottom" secondItem="nOL-qv-Pdu" secondAttribute="bottom" id="KZT-Pb-RvU"/>
+                <constraint firstItem="nOL-qv-Pdu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="RoJ-Wd-AKd"/>
+                <constraint firstAttribute="bottom" secondItem="aeq-Dn-r9i" secondAttribute="bottom" id="Sms-PD-fsC"/>
+                <constraint firstItem="nOL-qv-Pdu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Syt-Up-ib3"/>
+                <constraint firstItem="aMG-cR-Tvw" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="teu-u6-zgT"/>
+                <constraint firstItem="4fu-t2-gpm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="uUf-ov-AnC"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="370.5" y="99"/>
+        </view>
+    </objects>
+</document>
