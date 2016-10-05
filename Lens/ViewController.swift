@@ -33,7 +33,7 @@ class ViewController: UIViewController,UIPopoverPresentationControllerDelegate {
     var massDaysForSlider: [massDates] = []
     var viewController: SliderViewController!
     var coordinates: location = location(x: 0, y: 0)
-
+    var click = 0
     
     //    @IBAction func okClick(sender: AnyObject) {
     ////        addValue {
@@ -68,8 +68,16 @@ class ViewController: UIViewController,UIPopoverPresentationControllerDelegate {
             self.collectionView.onTouch = { () in
                 self.performSegueWithIdentifier("addPask", sender: self)
             }
+            if self.click > 0 {
+                self.viewController.onTouch = { () in
+                    self.collectionView.collectionView.reloadData()
+                    self.calendarView.contentController.refreshPresentedMonth()
+                    self.calendarView.commitCalendarViewUpdate()
+                }
+            }
+
             self.collectionView.collectionView.reloadData()
-            
+            self.calendarView.contentController.refreshPresentedMonth()
         }
     }
     
@@ -81,7 +89,6 @@ class ViewController: UIViewController,UIPopoverPresentationControllerDelegate {
             self.menuView.commitMenuViewUpdate()
             self.calendarView.commitCalendarViewUpdate()
         }
-       
     }
     
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
@@ -95,31 +102,37 @@ class ViewController: UIViewController,UIPopoverPresentationControllerDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         getArrayOfDates { object in
-            self.calendarView.toggleCurrentDayView()
+    //        self.calendarView.toggleCurrentDayView()
             self.collectionView.arrayOfPasks = HelperPask.numberOfLenses(self.arrayOfPasks)
             self.collectionView.onTouch = { () in
                 self.performSegueWithIdentifier("addPask", sender: self)
             }
             self.collectionView.collectionView.reloadData()
             self.calendarView.contentController.refreshPresentedMonth()
+            self.calendarView.commitCalendarViewUpdate()
         }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let vc = segue.destinationViewController as? UINavigationController
             where segue.identifier == "addDay" {
+            self.click += 1
             self.viewController = vc.viewControllers.first as! SliderViewController
             self.viewController.arrayOfDates = self.massDaysForSlider
             self.viewController.arrayOfPasks = self.arrayOfPasks
+            self.viewController.onTouch = { () in
+               self.getArrayOfDates { object in
+                self.collectionView.arrayOfPasks = HelperPask.numberOfLenses(self.arrayOfPasks)
+                self.collectionView.collectionView.reloadData()
+                self.calendarView.contentController.refreshPresentedMonth()
+                self.calendarView.commitCalendarViewUpdate()
+            }
+            }
             let controller = vc.popoverPresentationController
             vc.preferredContentSize = CGSize(width: 300, height: 70)
-            //controller.frame.origin.x = coordinates.x + 135
-            
-     //       vc.preferredContentSize = CGRectMake(0, coordinates.y, 600, 70)
-        
             controller!.sourceRect = CGRect(x: coordinates.x - 135, y: coordinates.y + 60, width: 300.0, height: 70.0)
             if controller != nil {
-                controller?.delegate = self
+            controller?.delegate = self
             }
         }
     }
@@ -207,14 +220,14 @@ extension ViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
 //            dateComponents.year = dayView.date.year
 //            let calendar = NSCalendar.currentCalendar()
 //            let currentDate = calendar.dateFromComponents(dateComponents)
-//            for date in arrayOfDates {
-//                if HelperDates.compareDates(date, secondDate: currentDate!) == "=" && HelperDates.compareDates(NSDate(), secondDate: currentDate!) == "<" {
-//                   return true
+//            for day in arrayOfDates {
+//                if HelperDates.compareDates(day, secondDate: currentDate!) == "=" {
+//                   return  true
 //                }
 //            }
 //            return  false
 //        }
-    
+
             func didSelectDayView(dayView: CVCalendarDayView, animationDidFinish: Bool) {
                 var flag = false
                 massDaysForSlider = []
@@ -226,7 +239,7 @@ extension ViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
                 let calendar = NSCalendar.currentCalendar()
                 let currentDate = calendar.dateFromComponents(dateComponents)
                 for date in arrayOfDates {
-                    if HelperDates.compareDates(date, secondDate: currentDate!) == "=" && HelperDates.compareDates(NSDate(), secondDate: currentDate!) == "<" && HelperDates.compareDates(arrayOfDates.last!, secondDate: currentDate!) != "="{
+                    if HelperDates.compareDates(date, secondDate: currentDate!) == "=" && HelperDates.compareDates(arrayOfDates.last!, secondDate: currentDate!) != "=" {
                     flag = true
                     }
                 }
@@ -357,7 +370,7 @@ extension ViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
     //    }
     
 //            func shouldShowCustomSingleSelection() -> Bool {
-//                return true
+//                return false
 //            }
     //
     //        func preliminaryView(viewOnDayView dayView: DayView) -> UIView {
@@ -372,6 +385,7 @@ extension ViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
     //            }
     //            return false
     //        }
+    
     func shouldAutoSelectDayOnMonthChange() -> Bool {
      return false
     }
@@ -413,25 +427,24 @@ extension ViewController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
         last = 0
         self.menuView.commitMenuViewUpdate()
         self.calendarView.commitCalendarViewUpdate()
-        var k = 0
+        var k = -1
         for obj in arrayOfDates {
             k += 1
-            if k>1 {
+           
                 var lastDateStructure = dateStruct(day: 0, month: 0, year: 0)
                 var nowDateStructure = dateStruct(day: 0, month: 0, year: 0)
                 lastDateStructure = HelperDates.getDateAsStruct(obj)
                 nowDateStructure = HelperDates.getDateAsStruct(NSDate())
-                if k == arrayOfDates.count {
+                if k == arrayOfDates.count - 1 {
                     last = 1
                 }
                 if (lastDateStructure.day >= nowDateStructure.day || lastDateStructure.year > nowDateStructure.year || lastDateStructure.month > nowDateStructure.month) && dayView.date != nil && lastDateStructure.day == dayView.date.day && lastDateStructure.month == dayView.date.month && lastDateStructure.year == dayView.date.year {
-                    
                     return true
                 }
             }
-        }
         return false
-    }
+        }
+
     
     func dayOfWeekTextColor() -> UIColor {
         return UIColor.whiteColor()

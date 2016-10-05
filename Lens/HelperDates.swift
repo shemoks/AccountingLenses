@@ -40,13 +40,6 @@ class HelperDates {
         return structValue
     }
     
-    static func subtructDates(dateValue: NSDate) -> Int {
-        let dateBegin = getDateAsStruct(dateValue)
-        let dateNow = getDateAsStruct(NSDate())
-        
-        return dateNow.day - dateBegin.day
-    }
-    
     static func compareDates(firstDate: NSDate, secondDate: NSDate) -> String {
         if firstDate.compare(secondDate) == NSComparisonResult.OrderedSame{
             return "="

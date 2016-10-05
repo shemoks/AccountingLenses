@@ -40,8 +40,8 @@ class HelperPask{
             for obj in objs {
                 var lastDateStructure = dateStruct(day: 0, month: 0, year: 0)
                 var nowDateStructure = dateStruct(day: 0, month: 0, year: 0)
-                let lastDate = obj.dateFinish
-                lastDateStructure = HelperDates.getDateAsStruct(lastDate)
+                let lastDate = obj.dates.last?.dateChange
+                lastDateStructure = HelperDates.getDateAsStruct(lastDate!)
                 nowDateStructure = HelperDates.getDateAsStruct(NSDate())
                 if lastDateStructure.year == nowDateStructure.year && lastDateStructure.day < nowDateStructure.day && lastDateStructure.month == nowDateStructure.month {
                     obj.isActive = false
@@ -150,5 +150,21 @@ class HelperPask{
             numberOfLensesNow.append(collection)
         }
         return numberOfLensesNow
+    }
+    
+    static func sendNotifications() {
+        var arrayInfoNotification = [InfoForNotification]()
+        let pasks = self.getActivePask()
+        for pask in pasks {
+            for date in pask.dates {
+                let message = date.message
+                let date = date.dateChange
+                let info = InfoForNotification(fireDate: date, alertBody: message)
+                arrayInfoNotification.append(info)
+            }
+        }
+        if arrayInfoNotification.count > 0 {
+            Notification(atributiesOfNotifications: arrayInfoNotification).getNotification()
+        }
     }
 }

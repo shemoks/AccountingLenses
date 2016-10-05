@@ -9,11 +9,6 @@
 import UIKit
 import RealmSwift
 
-public struct InfoForNotification {
-    var fireDate: NSDate
-    let alertBody: String
-}
-
 struct DataLens {
     var nameCompany:String
     var opticalPower:Double
@@ -23,7 +18,6 @@ struct DataLens {
 
 class NewViewModel {
     
-    var arrayInfoNotification = [InfoForNotification]()
     var arrayNameTitle = ["Name Company","Optical Power","Numbers of lens"]
     var arrayPlaceholder = ["NameCompany","Power lins","Count","Date"]
     
@@ -38,11 +32,6 @@ class NewViewModel {
     var date:String!
     let pask = Pask()
     let lens = Lens()
-    
-    func sendNotification() {
-        let info = self.arrayInfoNotification
-        Notification(atributiesOfNotifications: info).getNotification()
-    }
     
     func getArray(obj: (Results<Pask>) -> ()){
         self.arrayPasks = HelperPask.getActivePask()
@@ -83,6 +72,7 @@ class NewViewModel {
     }
     
     func save(text:String) {
+        
         dataArray.append(text)
         dataArray.append(stuc.nameCompany)
         dataArray.append("\(stuc.opticalPower)")
@@ -91,11 +81,19 @@ class NewViewModel {
     
     
     func saveInDataBase(viewController:UIViewController){
-        if dataArray.isEmpty != true {
-            if dataArray.count != 1 {
-                lens.termOfUsing = Int(dataArray[0])!
-                pask.name = dataArray[2]
-                lens.opticalPower = Double(dataArray[3])!
+   
+          
+                if let termin = Int(dataArray[0]) {
+                    lens.termOfUsing = termin
+                }
+                if  dataArray[2] != "" {
+                    pask.name = dataArray[2]
+                }
+                
+                if let optical = Double(dataArray[3]) {
+                    lens.opticalPower = optical
+                }
+                
                 let expression = NSDateFormatter()
                 expression.dateFormat = "dd-MM-yyyy"
                 
@@ -137,19 +135,12 @@ class NewViewModel {
                 datePikcer.minimumDate = NSDate()
                 
                 if  HelperPask.validation(pask, minDatePicker: datePikcer.minimumDate!) {
-                    self.arrayInfoNotification = []
                     HelperPask.addToDataBase(pask)
-                    for events in pask.dates {
-                        let message = events.message
-                        let date = events.dateChange
-                        let info = InfoForNotification(fireDate: date, alertBody: message)
-                        self.arrayInfoNotification.append(info)
-                        self.sendNotification()
-                    }
+                    HelperPask.sendNotifications()
+                    viewController.navigationController?.popViewControllerAnimated(true)
                 }
-                viewController.navigationController?.popViewControllerAnimated(true)
-            }
-        }else{
+            
+         else {
             let alertController = UIAlertController(title: "Error", message:
                 "Complite all fields and select period!", preferredStyle: UIAlertControllerStyle.Alert)
             let okButton = UIAlertAction(title: "Ok", style: .Default) { action -> Void in
@@ -158,5 +149,4 @@ class NewViewModel {
             viewController.presentViewController(alertController, animated: true, completion: nil)
         }
     }
-    
 }

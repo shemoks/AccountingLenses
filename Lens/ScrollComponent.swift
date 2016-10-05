@@ -11,40 +11,6 @@ import RealmSwift
 
 class ScrollComponent: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UIGestureRecognizerDelegate {
 
-    @IBAction func buttonClick(sender: AnyObject) {
-       var  numberDays = 0
-       let add = collection.contentOffset.x
-        print("\(add)")
-        print("\(frameHole.origin.x)")
-        if add > 0 {
-        var index = lroundf(Float(add/120))
-            if index > Int(arrayOfDates.count/2) {
-                index = index - 1
-            }
-            print ("\(index)")
-            if index < arrayOfDates.count - 1 && index > 0 {
-                 print ("\(numberDays)")
-                 HelperPask().addValueToDate(self.arrayOfDates[1].date, value: index, pasks: self.arrayOfPasks)
-            
-        }
-//                print("\(arrayOfDates[i])")
-//                print ("\(numberDays)")
-//                }
-        }
-        
-//           // let attributes = self.collection.layoutAttributesForItemAtIndexPath(cellIndexPath)
-//            frameCell = attributes!.frame
-//            let intersection = CGRectIntersection( frameHole,frameCell)
-//            if(CGRectIsNull(intersection)) {
-//                // Not touching yet - null intersection
-//            } else {
-//                let numberDays = HelperDates.subtructCustomDates(self.arrayOfDates[6].date, second: self.arrayOfDates[i].date)
-//                print("\(arrayOfDates[i])")
-//                print ("\(numberDays)")
-//                break
-//                //        HelperPask().addValueToDate(self.arrayOfDates[7].date, value: numberDays, pasks: self.arrayOfPasks)
- }
-     //  print("\(attributes)")
     @IBOutlet weak var holeView: UIView!
     @IBOutlet weak var slider: UIView!
     @IBOutlet weak var collection: UICollectionView!
@@ -55,13 +21,12 @@ class ScrollComponent: UIView, UICollectionViewDelegateFlowLayout, UICollectionV
     var currentDate: NSDate = NSDate()
     var coordFirst: CGPoint = CGPoint(x: 0.0, y: 0.0)
     var nibName: String = "ScrollComponent"
-//    typealias CollectionAction = (UIAlertController) -> ()
-  //  var onTouch: CollectionAction?
     var frameHole: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
     var frameCell: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
+    typealias ButtonAction = () -> ()
+    var onTouch: ButtonAction?
     
     required init(coder aDecoder: NSCoder) {
-        
         super.init(coder: aDecoder)!
         setup()
         
@@ -75,15 +40,7 @@ class ScrollComponent: UIView, UICollectionViewDelegateFlowLayout, UICollectionV
         
         addSubview(view)
         let swipeRight = UIPanGestureRecognizer(target: self,action: #selector(handleLongPress(_:)))
-        //        swipeRight.minimumPressDuration = 0.5
-        //        swipeRight.delaysTouchesBegan = true
-        //        swipeRight.delegate = self
-        //                swipe.minimumPressDuration = 0.5
-        //                swipe.delaysTouchesBegan = true
-        //                swipe.delegate = self
-        
         slider.addGestureRecognizer(swipeRight)
-        
         self.collection.registerNib(UINib(nibName: "DateCell",bundle: nil), forCellWithReuseIdentifier: "DateCell")
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -104,6 +61,28 @@ class ScrollComponent: UIView, UICollectionViewDelegateFlowLayout, UICollectionV
         let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
         
         return view
+    }
+   
+    @IBAction func buttonClick(sender: AnyObject) {
+        let  numberDays = 0
+        let add = collection.contentOffset.x
+        print("\(add)")
+        print("\(frameHole.origin.x)")
+        if add > 0 {
+            var index = lroundf(Float(add/120))
+            if index > Int(arrayOfDates.count/2) {
+                index = index - 1
+            }
+            print ("\(index)")
+            if index < arrayOfDates.count - 1 && index > 0 {
+                print ("\(numberDays)")
+                HelperPask().addValueToDate(self.arrayOfDates[1].date, value: index, pasks: self.arrayOfPasks)
+                 UIApplication.sharedApplication().cancelAllLocalNotifications()
+                 HelperPask.sendNotifications()
+            }
+            
+        }
+        onTouch?()
     }
     
     func handleLongPress(recognizer:UIPanGestureRecognizer) {

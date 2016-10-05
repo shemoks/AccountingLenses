@@ -12,6 +12,8 @@ import RealmSwift
 class SliderViewController: UIViewController {
     var arrayOfPasks: Results<Pask>!
     var arrayOfDates: [massDates] = []
+    typealias ButtonAction = () -> ()
+    var onTouch: ButtonAction?
     
     @IBOutlet weak var sliderView: ScrollComponent!
     override func viewDidLoad() {
@@ -19,10 +21,7 @@ class SliderViewController: UIViewController {
           
         self.sliderView.arrayOfDates = self.arrayOfDates
         self.sliderView.arrayOfPasks = self.arrayOfPasks
-//            self.sliderView.onTouch = { object in
-//              self.presentViewController(object, animated: true, completion: nil)
-//            }
-       //self.sliderView.collection.reloadData()
+        self.sliderView.onTouch = self.onTouch       //self.sliderView.collection.reloadData()
 //            
 //        }
     }
